@@ -10,7 +10,8 @@ import Nosotros from "./pages/Nosotros.tsx";
 import Soluciones from "./pages/Soluciones.tsx";
 import ConsejoFelino from "./pages/ConsejoFelino.tsx";
 import ComoTrabajamos from "./pages/ComoTrabajamos.tsx";
-import { Placeholder } from "./pages/Placeholder";
+import Contacto from "./pages/Contacto.tsx";
+import FAQ from "./pages/FAQ.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -29,8 +30,8 @@ const App = () => (
               <Route path="/soluciones" element={<Soluciones />} />
               <Route path="/consejo-felino" element={<ConsejoFelino />} />
               <Route path="/como-trabajamos" element={<ComoTrabajamos />} />
-              <Route path="/contacto" element={<Placeholder titleKey="nav.contacto" />} />
-              <Route path="/faq" element={<Placeholder titleKey="nav.consejo" />} />
+              <Route path="/contacto" element={<Contacto />} />
+              <Route path="/faq" element={<FAQ />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
