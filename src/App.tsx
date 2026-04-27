@@ -6,6 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import { Layout } from "@/components/Layout";
 import Index from "./pages/Index.tsx";
+import Nosotros from "./pages/Nosotros.tsx";
+import Soluciones from "./pages/Soluciones.tsx";
 import { Placeholder } from "./pages/Placeholder";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -21,8 +23,8 @@ const App = () => (
           <Layout>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/nosotros" element={<Placeholder titleKey="nav.nosotros" />} />
-              <Route path="/soluciones" element={<Placeholder titleKey="nav.soluciones" />} />
+              <Route path="/nosotros" element={<Nosotros />} />
+              <Route path="/soluciones" element={<Soluciones />} />
               <Route path="/consejo-felino" element={<Placeholder titleKey="nav.consejo" />} />
               <Route path="/como-trabajamos" element={<Placeholder titleKey="nav.como" />} />
               <Route path="/contacto" element={<Placeholder titleKey="nav.contacto" />} />
