@@ -243,20 +243,12 @@ const Index = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
         <div className="aspect-[16/9] md:aspect-auto md:h-full">
           <PhotoPlaceholder label={es ? "FOTO: CATIO / ESPACIO FELINO" : "PHOTO: CATIO / FELINE SPACE"} />
         </div>
       </section>
 
-      {/* Hero desktop padding override */}
-      <style>{`
-        @media (min-width: 768px) {
-          section:first-of-type > div:first-of-type { padding: 80px 64px; }
-        }
-      `}</style>
 
       {/* SECTION 2 — BRAND TEASER */}
       <section
