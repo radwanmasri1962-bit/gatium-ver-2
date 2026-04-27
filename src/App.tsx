@@ -8,6 +8,8 @@ import { Layout } from "@/components/Layout";
 import Index from "./pages/Index.tsx";
 import Nosotros from "./pages/Nosotros.tsx";
 import Soluciones from "./pages/Soluciones.tsx";
+import ConsejoFelino from "./pages/ConsejoFelino.tsx";
+import ComoTrabajamos from "./pages/ComoTrabajamos.tsx";
 import { Placeholder } from "./pages/Placeholder";
 import NotFound from "./pages/NotFound.tsx";
 
