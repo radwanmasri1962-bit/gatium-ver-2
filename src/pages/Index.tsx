@@ -188,14 +188,9 @@ const Index = () => {
         className="grid grid-cols-1 md:grid-cols-2"
         style={{ minHeight: "90vh", backgroundColor: "hsl(var(--cream))" }}
       >
-        <div
-          className="flex flex-col justify-center"
-          style={{ padding: "48px 18px" }}
-        >
-          <div className="md:px-0" style={{}}>
-            <div className="md:p-0" style={{ padding: 0 }}>
-              <div className="hero-inner mx-auto md:mx-0" style={{ maxWidth: "560px" }}>
-                <div style={eyebrowStyle}>
+        <div className="flex flex-col justify-center px-[18px] py-[48px] md:px-16 md:py-20">
+          <div className="hero-inner mx-auto md:mx-0 w-full" style={{ maxWidth: "560px" }}>
+            <div style={eyebrowStyle}>
                   {es ? "DISEÑO FELINO CON CRITERIO" : "FELINE DESIGN WITH PURPOSE"}
                 </div>
                 <h1
