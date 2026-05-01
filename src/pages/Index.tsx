@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { HeroCarousel } from "@/components/HeroCarousel";
+import bornAtHome from "@/assets/born-at-home.jpg";
 
 const WHATSAPP = "https://wa.me/521XXXXXXXXXX";
 
@@ -233,30 +234,6 @@ const Index = () => {
                 ? "Creamos soluciones que responden a la forma en que tus gatos realmente habitan, sin romper la armonía del hogar."
                 : "We create solutions that respond to how your cats really live, without breaking the harmony of your home."}
             </p>
-            <div className="flex flex-wrap" style={{ marginTop: "36px", gap: "12px" }}>
-              <a
-                href={WHATSAPP}
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  ...primaryBtn,
-                  backgroundColor: "hsl(var(--gold))",
-                  color: "hsl(var(--near-black))",
-                }}
-              >
-                {es ? "ENVÍANOS TU ESPACIO" : "SEND US YOUR SPACE"}
-              </a>
-              <Link
-                to="/soluciones"
-                style={{
-                  ...secondaryBtn,
-                  border: "1px solid rgba(245,239,230,0.5)",
-                  color: "hsl(var(--cream))",
-                }}
-              >
-                {es ? "CONOCE NUESTRAS SOLUCIONES" : "EXPLORE OUR SOLUTIONS"}
-              </Link>
-            </div>
           </div>
         </div>
       </HeroCarousel>
@@ -268,7 +245,11 @@ const Index = () => {
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="aspect-[4/3]">
-          <PhotoPlaceholder label={es ? "FOTO: MAJO Y YANI CON SUS GATOS" : "PHOTO: MAJO AND YANI WITH THEIR CATS"} />
+          <img
+            src={bornAtHome}
+            alt={es ? "Majo y Yani diseñando en el atelier" : "Majo and Yani designing at the atelier"}
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="flex flex-col justify-center md:pl-16">
           <div style={eyebrowStyle}>

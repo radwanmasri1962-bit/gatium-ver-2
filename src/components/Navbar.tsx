@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink as RouterNavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logoDark from "@/assets/logo-dark.png";
+import logoDark from "@/assets/logo-gatium.svg";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { LanguageToggle } from "./LanguageToggle";
 
