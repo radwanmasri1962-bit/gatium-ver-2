@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { HeroCarousel } from "@/components/HeroCarousel";
+import bornAtHome from "@/assets/born-at-home.jpg";
 
 const WHATSAPP = "https://wa.me/521XXXXXXXXXX";
 
