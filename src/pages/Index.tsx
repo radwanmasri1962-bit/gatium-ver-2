@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { HeroCarousel } from "@/components/HeroCarousel";
 
 const WHATSAPP = "https://wa.me/521XXXXXXXXXX";
 
@@ -183,70 +184,82 @@ const Index = () => {
 
   return (
     <>
-      {/* SECTION 1 — HERO */}
-      <section
-        className="grid grid-cols-1 md:grid-cols-2"
-        style={{ minHeight: "90vh", backgroundColor: "hsl(var(--cream))" }}
-      >
-        <div className="flex flex-col justify-center px-[18px] py-[48px] md:px-16 md:py-20">
-          <div className="hero-inner mx-auto md:mx-0 w-full" style={{ maxWidth: "560px" }}>
-            <div style={eyebrowStyle}>
-                  {es ? "DISEÑO FELINO CON CRITERIO" : "FELINE DESIGN WITH PURPOSE"}
-                </div>
-                <h1
-                  style={{
-                    fontFamily: "'Montserrat', sans-serif",
-                    fontWeight: 700,
-                    color: "#000",
-                    lineHeight: 1.1,
-                    marginTop: "20px",
-                  }}
-                  className="text-[32px] md:text-[56px]"
-                >
-                  {es
-                    ? "Diseñamos espacios felinos con criterio, pensados desde la "
-                    : "We design feline spaces with purpose, rooted in "}
-                  <span
-                    style={{
-                      fontFamily: "'Cormorant Garamond', serif",
-                      fontWeight: 600,
-                      fontStyle: "italic",
-                      color: "hsl(var(--gold))",
-                      display: "block",
-                    }}
-                  >
-                    {es ? "convivencia real." : "real cohabitation."}
-                  </span>
-                </h1>
-                <p
-                  style={{
-                    fontFamily: "'Open Sans', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "15px",
-                    color: "rgba(0,0,0,0.72)",
-                    maxWidth: "480px",
-                    marginTop: "20px",
-                    lineHeight: 1.7,
-                  }}
-                >
-                  {es
-                    ? "Creamos soluciones que responden a la forma en que tus gatos realmente habitan, sin romper la armonía del hogar."
-                    : "We create solutions that respond to how your cats really live, without breaking the harmony of your home."}
-                </p>
-                <div className="flex flex-wrap" style={{ marginTop: "36px", gap: "12px" }}>
-                  <a href={WHATSAPP} target="_blank" rel="noreferrer" style={primaryBtn}>
-                    {es ? "ENVÍANOS TU ESPACIO" : "SEND US YOUR SPACE"}
-                  </a>
-                  <Link to="/soluciones" style={secondaryBtn}>
-                    {es ? "CONOCE NUESTRAS SOLUCIONES" : "EXPLORE OUR SOLUTIONS"}
-                  </Link>
-                </div>
-              </div>
+      {/* SECTION 1 — HERO CAROUSEL */}
+      <HeroCarousel>
+        <div className="w-full px-[18px] md:px-16">
+          <div className="hero-inner mx-auto md:mx-0 w-full" style={{ maxWidth: "640px" }}>
+            <div style={{ ...eyebrowStyle, color: "hsl(var(--gold))" }}>
+              {es ? "DISEÑO FELINO CON CRITERIO" : "FELINE DESIGN WITH PURPOSE"}
             </div>
-        <div className="aspect-[16/9] md:aspect-auto md:h-full">
-          <PhotoPlaceholder label={es ? "FOTO: CATIO / ESPACIO FELINO" : "PHOTO: CATIO / FELINE SPACE"} />
+            <h1
+              style={{
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 700,
+                color: "hsl(var(--cream))",
+                lineHeight: 1.1,
+                marginTop: "20px",
+                textShadow: "0 2px 24px rgba(0,0,0,0.4)",
+              }}
+              className="text-[32px] md:text-[56px]"
+            >
+              {es
+                ? "Diseñamos espacios felinos con criterio, pensados desde la "
+                : "We design feline spaces with purpose, rooted in "}
+              <span
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 600,
+                  fontStyle: "italic",
+                  color: "hsl(var(--gold))",
+                  display: "block",
+                }}
+              >
+                {es ? "convivencia real." : "real cohabitation."}
+              </span>
+            </h1>
+            <p
+              style={{
+                fontFamily: "'Open Sans', sans-serif",
+                fontWeight: 400,
+                fontSize: "15px",
+                color: "rgba(245,239,230,0.92)",
+                maxWidth: "480px",
+                marginTop: "20px",
+                lineHeight: 1.7,
+                textShadow: "0 1px 12px rgba(0,0,0,0.4)",
+              }}
+            >
+              {es
+                ? "Creamos soluciones que responden a la forma en que tus gatos realmente habitan, sin romper la armonía del hogar."
+                : "We create solutions that respond to how your cats really live, without breaking the harmony of your home."}
+            </p>
+            <div className="flex flex-wrap" style={{ marginTop: "36px", gap: "12px" }}>
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  ...primaryBtn,
+                  backgroundColor: "hsl(var(--gold))",
+                  color: "hsl(var(--near-black))",
+                }}
+              >
+                {es ? "ENVÍANOS TU ESPACIO" : "SEND US YOUR SPACE"}
+              </a>
+              <Link
+                to="/soluciones"
+                style={{
+                  ...secondaryBtn,
+                  border: "1px solid rgba(245,239,230,0.5)",
+                  color: "hsl(var(--cream))",
+                }}
+              >
+                {es ? "CONOCE NUESTRAS SOLUCIONES" : "EXPLORE OUR SOLUTIONS"}
+              </Link>
+            </div>
+          </div>
         </div>
-      </section>
+      </HeroCarousel>
 
 
       {/* SECTION 2 — BRAND TEASER */}
