@@ -43,8 +43,16 @@ export const Navbar = ({ transparent = false }: Props) => {
             src={logoDark}
             alt="GATIUM Atelier Felino"
             className="h-[52px] w-auto transition-all duration-500"
-            style={{ filter: transparent ? "none" : "brightness(0)" }}
+            style={
+              transparent
+                ? undefined
+                : {
+                    filter:
+                      "brightness(0) saturate(100%) invert(15%) sepia(28%) saturate(1100%) hue-rotate(353deg) brightness(94%) contrast(88%)",
+                  }
+            }
           />
+
         </Link>
 
         {/* Center: Desktop links */}
