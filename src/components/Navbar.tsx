@@ -68,6 +68,9 @@ export const Navbar = ({ transparent = false }: Props) => {
               className={({ isActive }) =>
                 `nav-link nav-link--${transparent ? "light" : "dark"} ${isActive ? "active" : ""}`
               }
+              style={({ isActive }) =>
+                isActive ? undefined : { color: transparent ? "#F5EFE6" : "#3B2A1A" }
+              }
             >
               {t(l.key)}
             </RouterNavLink>
