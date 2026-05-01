@@ -42,7 +42,7 @@ export const Navbar = ({ transparent = false }: Props) => {
           <img
             src={logoDark}
             alt="GATIUM Atelier Felino"
-            className="h-9 w-auto transition-all duration-500"
+            className="h-[52px] w-auto transition-all duration-500"
             style={{ filter: transparent ? "brightness(0) invert(1)" : "none" }}
           />
         </Link>
@@ -66,7 +66,7 @@ export const Navbar = ({ transparent = false }: Props) => {
         {/* Right: lang + CTA */}
         <div className="hidden md:flex items-center gap-4">
           <LanguageToggle />
-          <a href="#contacto" className="btn-gold">
+          <a href="#contacto" className="btn-gold" style={{ borderRadius: "8px" }}>
             {t("nav.cta")}
           </a>
         </div>
