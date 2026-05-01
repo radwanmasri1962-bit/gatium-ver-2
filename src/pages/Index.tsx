@@ -93,6 +93,7 @@ const Index = () => {
   const solutions = [
     {
       Icon: IconHouseGrid,
+      image: solution1,
       title: es ? "Catios y espacios exteriores seguros" : "Safe outdoor catios",
       desc: es
         ? "Libertad controlada para explorar, tomar sol y observar."
@@ -100,6 +101,7 @@ const Index = () => {
     },
     {
       Icon: IconVertical,
+      image: solution2,
       title: es ? "Muros y recorridos verticales" : "Wall circuits and vertical routes",
       desc: es
         ? "Altura, circulación y territorio en equilibrio."
@@ -107,11 +109,13 @@ const Index = () => {
     },
     {
       Icon: IconArch,
+      image: solution3,
       title: es ? "Zonas de descanso y refugio" : "Rest zones and refuges",
       desc: es ? "Espacios que brindan seguridad y calma." : "Spaces that provide security and calm.",
     },
     {
       Icon: IconFurniture,
+      image: solution4,
       title: es ? "Mobiliario funcional para convivencia felina" : "Functional feline furniture",
       desc: es
         ? "Diseño que se integra al hogar y facilita el día a día."
@@ -119,6 +123,7 @@ const Index = () => {
     },
     {
       Icon: IconBox,
+      image: solution5,
       title: es ? "Areneros y muebles arenero" : "Litter box furniture",
       desc: es
         ? "Soluciones discretas y funcionales que mejoran la higiene."
@@ -126,6 +131,7 @@ const Index = () => {
     },
     {
       Icon: IconColony,
+      image: solution6,
       title: es ? "Diseño integral para manadas" : "Integral design for colonies",
       desc: es
         ? "Proyectos a medida que consideran la dinámica de todos."
