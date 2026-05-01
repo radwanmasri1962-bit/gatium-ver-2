@@ -3,6 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import bornAtHome from "@/assets/born-at-home.jpg";
+import solution1 from "@/assets/solution-1-catios.jpg";
+import solution2 from "@/assets/solution-2-vertical.jpg";
+import solution3 from "@/assets/solution-3-rest.jpg";
+import solution4 from "@/assets/solution-4-furniture.jpg";
+import solution5 from "@/assets/solution-5-litter.jpg";
+import solution6 from "@/assets/solution-6-colonies.jpg";
 
 const WHATSAPP = "https://wa.me/521XXXXXXXXXX";
 
