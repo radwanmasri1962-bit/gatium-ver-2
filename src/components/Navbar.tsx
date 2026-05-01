@@ -45,7 +45,10 @@ export const Navbar = ({ transparent = false }: Props) => {
             className="h-[52px] w-auto transition-all duration-500"
             style={
               transparent
-                ? undefined
+                ? {
+                    filter:
+                      "brightness(0) saturate(100%) invert(98%) sepia(8%) saturate(380%) hue-rotate(2deg) brightness(101%) contrast(94%)",
+                  }
                 : {
                     filter:
                       "brightness(0) saturate(100%) invert(15%) sepia(28%) saturate(1100%) hue-rotate(353deg) brightness(94%) contrast(88%)",
