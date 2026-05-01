@@ -22,13 +22,13 @@ export const Navbar = ({ transparent = false }: Props) => {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
 
-  // When transparent: light text over photos. When solid: cream bg with dark text.
+  // When transparent: light text over photos. When solid: dark brown bg with cream text.
   const headerStyle: React.CSSProperties = {
-    backgroundColor: transparent ? "transparent" : "hsl(var(--cream))",
-    borderBottom: transparent ? "1px solid transparent" : "1px solid hsl(var(--border))",
+    backgroundColor: transparent ? "transparent" : "#3B2A1A",
+    borderBottom: transparent ? "1px solid transparent" : "1px solid rgba(255,255,255,0.08)",
     transition: "background-color 400ms ease, border-color 400ms ease",
   };
-  const iconColor = transparent ? "hsl(var(--cream))" : "hsl(var(--near-black))";
+  const iconColor = "hsl(var(--cream))";
 
   return (
     <header
