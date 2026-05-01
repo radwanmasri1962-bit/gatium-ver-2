@@ -3,6 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import bornAtHome from "@/assets/born-at-home.jpg";
+import solution1 from "@/assets/solution-1-catios.jpg";
+import solution2 from "@/assets/solution-2-vertical.jpg";
+import solution3 from "@/assets/solution-3-rest.jpg";
+import solution4 from "@/assets/solution-4-furniture.jpg";
+import solution5 from "@/assets/solution-5-litter.jpg";
+import solution6 from "@/assets/solution-6-colonies.jpg";
 
 const WHATSAPP = "https://wa.me/521XXXXXXXXXX";
 
@@ -87,6 +93,7 @@ const Index = () => {
   const solutions = [
     {
       Icon: IconHouseGrid,
+      image: solution1,
       title: es ? "Catios y espacios exteriores seguros" : "Safe outdoor catios",
       desc: es
         ? "Libertad controlada para explorar, tomar sol y observar."
@@ -94,6 +101,7 @@ const Index = () => {
     },
     {
       Icon: IconVertical,
+      image: solution2,
       title: es ? "Muros y recorridos verticales" : "Wall circuits and vertical routes",
       desc: es
         ? "Altura, circulación y territorio en equilibrio."
@@ -101,11 +109,13 @@ const Index = () => {
     },
     {
       Icon: IconArch,
+      image: solution3,
       title: es ? "Zonas de descanso y refugio" : "Rest zones and refuges",
       desc: es ? "Espacios que brindan seguridad y calma." : "Spaces that provide security and calm.",
     },
     {
       Icon: IconFurniture,
+      image: solution4,
       title: es ? "Mobiliario funcional para convivencia felina" : "Functional feline furniture",
       desc: es
         ? "Diseño que se integra al hogar y facilita el día a día."
@@ -113,6 +123,7 @@ const Index = () => {
     },
     {
       Icon: IconBox,
+      image: solution5,
       title: es ? "Areneros y muebles arenero" : "Litter box furniture",
       desc: es
         ? "Soluciones discretas y funcionales que mejoran la higiene."
@@ -120,6 +131,7 @@ const Index = () => {
     },
     {
       Icon: IconColony,
+      image: solution6,
       title: es ? "Diseño integral para manadas" : "Integral design for colonies",
       desc: es
         ? "Proyectos a medida que consideran la dinámica de todos."
@@ -315,7 +327,7 @@ const Index = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8"
           style={{ marginTop: "56px" }}
         >
-          {solutions.map(({ Icon, title, desc }) => (
+          {solutions.map(({ Icon, image, title, desc }) => (
             <div
               key={title}
               className="group flex flex-col items-start"
@@ -329,6 +341,16 @@ const Index = () => {
               }
               onMouseLeave={(e) => (e.currentTarget.style.borderBottomColor = "transparent")}
             >
+              <div
+                className="w-full overflow-hidden"
+                style={{ height: "180px", marginBottom: "18px" }}
+              >
+                <img
+                  src={image}
+                  alt={title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
               <div style={{ color: "hsl(var(--gold))" }}>
                 <Icon />
               </div>
