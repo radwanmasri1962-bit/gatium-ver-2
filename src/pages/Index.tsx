@@ -139,7 +139,7 @@ const Index = () => {
     },
   ];
 
-  const cats = ["ASLAN", "ARES", "ARAGORN", "APOLO", "AQUILES", "ANUBIS", "ATENEA"];
+  
 
   const eyebrowStyle: React.CSSProperties = {
     fontFamily: "'Montserrat', sans-serif",
@@ -351,9 +351,6 @@ const Index = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div style={{ color: "hsl(var(--gold))" }}>
-                <Icon />
-              </div>
               <div
                 style={{
                   fontFamily: "'Montserrat', sans-serif",
@@ -387,88 +384,6 @@ const Index = () => {
           <Link to="/soluciones" style={goldLinkStyle}>
             {es ? "EXPLORA NUESTRAS SOLUCIONES" : "EXPLORE OUR SOLUTIONS"} <span>→</span>
           </Link>
-        </div>
-      </section>
-
-      {/* SECTION 4 — FELINE COUNCIL TEASER */}
-      <section
-        className="grid grid-cols-1 md:grid-cols-[45%_55%] gap-12 md:gap-16 section-padding"
-        style={{ backgroundColor: "hsl(var(--near-black))" }}
-      >
-        <div className="flex flex-col justify-center">
-          <div style={eyebrowStyle}>
-            {es ? "EL CONSEJO FELINO" : "THE FELINE COUNCIL"}
-          </div>
-          <h2
-            style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 700,
-              fontSize: "38px",
-              color: "hsl(var(--cream))",
-              marginTop: "12px",
-              lineHeight: 1.15,
-            }}
-          >
-            {es
-              ? "Siete miradas. Siete formas de habitar. Un mismo hogar."
-              : "Seven gazes. Seven ways of living. One home."}
-          </h2>
-          <p
-            style={{
-              fontFamily: "'Open Sans', sans-serif",
-              fontSize: "15px",
-              color: "rgba(245,239,230,0.65)",
-              marginTop: "16px",
-              lineHeight: 1.75,
-            }}
-          >
-            {es
-              ? "El Consejo Felino no es un concepto inventado. Es el sistema de observación que dio origen al criterio GATIUM."
-              : "The Feline Council is not an invented concept. It is the observation system that gave rise to the GATIUM criterion."}
-          </p>
-          <Link to="/consejo-felino" style={{ ...goldLinkStyle, marginTop: "24px" }}>
-            {es ? "CONOCE AL CONSEJO" : "MEET THE COUNCIL"} <span>→</span>
-          </Link>
-        </div>
-
-        <div
-          className="flex gap-6 overflow-x-auto pb-2"
-          style={{ scrollbarWidth: "thin" }}
-        >
-          {cats.map((name) => (
-            <div key={name} className="flex flex-col items-center flex-shrink-0">
-              <div
-                style={{
-                  width: "100px",
-                  height: "100px",
-                  borderRadius: "50%",
-                  backgroundColor: "#2C2420",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontStyle: "italic",
-                  color: "rgba(196,154,90,0.4)",
-                  fontSize: "12px",
-                }}
-              >
-                ©
-              </div>
-              <div
-                style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "9px",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.15em",
-                  color: "rgba(196,154,90,0.7)",
-                  marginTop: "12px",
-                }}
-              >
-                {name}
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
