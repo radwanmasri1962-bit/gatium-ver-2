@@ -139,7 +139,7 @@ const Index = () => {
     },
   ];
 
-  const cats = ["ASLAN", "ARES", "ARAGORN", "APOLO", "AQUILES", "ANUBIS", "ATENEA"];
+  
 
   const eyebrowStyle: React.CSSProperties = {
     fontFamily: "'Montserrat', sans-serif",
