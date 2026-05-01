@@ -55,7 +55,7 @@ export const Navbar = ({ transparent = false }: Props) => {
               to={l.to}
               end={l.to === "/"}
               className={({ isActive }) =>
-                `nav-link nav-link--light ${isActive ? "active" : ""}`
+                `nav-link nav-link--${transparent ? "light" : "dark"} ${isActive ? "active" : ""}`
               }
             >
               {t(l.key)}
