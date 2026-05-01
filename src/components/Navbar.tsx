@@ -8,7 +8,7 @@ import { LanguageToggle } from "./LanguageToggle";
 const links = [
   { to: "/", key: "nav.inicio" },
   { to: "/nosotros", key: "nav.nosotros" },
-  { to: "/soluciones", key: "nav.soluciones" },
+  
   { to: "/consejo-felino", key: "nav.consejo" },
   { to: "/como-trabajamos", key: "nav.como" },
   { to: "/contacto", key: "nav.contacto" },
