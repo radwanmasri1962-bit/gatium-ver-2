@@ -233,30 +233,6 @@ const Index = () => {
                 ? "Creamos soluciones que responden a la forma en que tus gatos realmente habitan, sin romper la armonía del hogar."
                 : "We create solutions that respond to how your cats really live, without breaking the harmony of your home."}
             </p>
-            <div className="flex flex-wrap" style={{ marginTop: "36px", gap: "12px" }}>
-              <a
-                href={WHATSAPP}
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  ...primaryBtn,
-                  backgroundColor: "hsl(var(--gold))",
-                  color: "hsl(var(--near-black))",
-                }}
-              >
-                {es ? "ENVÍANOS TU ESPACIO" : "SEND US YOUR SPACE"}
-              </a>
-              <Link
-                to="/soluciones"
-                style={{
-                  ...secondaryBtn,
-                  border: "1px solid rgba(245,239,230,0.5)",
-                  color: "hsl(var(--cream))",
-                }}
-              >
-                {es ? "CONOCE NUESTRAS SOLUCIONES" : "EXPLORE OUR SOLUTIONS"}
-              </Link>
-            </div>
           </div>
         </div>
       </HeroCarousel>
