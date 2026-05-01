@@ -302,7 +302,7 @@ const Index = () => {
       </section>
 
       {/* SECTION 3 — SOLUTIONS INTRO + GRID */}
-      <section className="section-padding" style={{ backgroundColor: "hsl(var(--cream))" }}>
+      <section id="solutions" className="section-padding" style={{ backgroundColor: "hsl(var(--cream))" }}>
         {/* Intro block (moved from /soluciones) */}
         <div className="mx-auto" style={{ maxWidth: "880px", textAlign: "center" }}>
           <div style={eyebrowStyle}>{es ? "SOLUCIONES" : "SOLUTIONS"}</div>
