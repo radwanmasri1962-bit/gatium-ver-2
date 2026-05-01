@@ -14,19 +14,37 @@ const links = [
   { to: "/contacto", key: "nav.contacto" },
 ];
 
-export const Navbar = () => {
+interface Props {
+  transparent?: boolean;
+}
+
+export const Navbar = ({ transparent = false }: Props) => {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
+
+  // When transparent: light text over photos. When solid: cream bg with dark text.
+  const headerStyle: React.CSSProperties = {
+    backgroundColor: transparent ? "transparent" : "hsl(var(--cream))",
+    borderBottom: transparent ? "1px solid transparent" : "1px solid hsl(var(--border))",
+    transition: "background-color 400ms ease, border-color 400ms ease",
+  };
+  const iconColor = transparent ? "hsl(var(--cream))" : "hsl(var(--near-black))";
 
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50"
-      style={{ backgroundColor: "hsl(var(--near-black))" }}
+      style={headerStyle}
+      data-transparent={transparent}
     >
       <div className="h-[60px] md:h-[72px] px-4 md:px-8 flex items-center justify-between">
         {/* Left: Logo */}
         <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <img src={logoDark} alt="GATIUM Atelier Felino" className="h-9 w-auto" />
+          <img
+            src={logoDark}
+            alt="GATIUM Atelier Felino"
+            className="h-9 w-auto transition-all duration-500"
+            style={{ filter: transparent ? "brightness(0) invert(1)" : "none" }}
+          />
         </Link>
 
         {/* Center: Desktop links */}
@@ -36,7 +54,9 @@ export const Navbar = () => {
               key={l.to}
               to={l.to}
               end={l.to === "/"}
-              className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+              className={({ isActive }) =>
+                `nav-link nav-link--${transparent ? "light" : "dark"} ${isActive ? "active" : ""}`
+              }
             >
               {t(l.key)}
             </RouterNavLink>
@@ -54,9 +74,9 @@ export const Navbar = () => {
         {/* Mobile hamburger */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden text-cream"
+          className="md:hidden"
           aria-label="Menu"
-          style={{ color: "hsl(var(--cream))" }}
+          style={{ color: iconColor }}
         >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -75,7 +95,7 @@ export const Navbar = () => {
                 to={l.to}
                 end={l.to === "/"}
                 onClick={() => setOpen(false)}
-                className={({ isActive }) => `nav-link text-base ${isActive ? "active" : ""}`}
+                className={({ isActive }) => `nav-link nav-link--light text-base ${isActive ? "active" : ""}`}
                 style={{ fontSize: "16px" }}
               >
                 {t(l.key)}
