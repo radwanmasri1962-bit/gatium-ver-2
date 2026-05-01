@@ -338,34 +338,65 @@ const Index = () => {
 
           {/* Three pillars */}
           <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto"
-            style={{ marginTop: "44px", maxWidth: "780px" }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto"
+            style={{ marginTop: "44px", maxWidth: "880px" }}
           >
             {[
               {
                 title: es ? "SEGURAS" : "SAFE",
                 desc: es ? "Materiales resistentes y estructuras estables." : "Resistant materials and stable structures.",
+                icon: (
+                  <svg width="36" height="36" viewBox="0 0 32 32" fill="none" stroke="#B8963E" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 4 L26 8 V16 C26 22 21 27 16 28 C11 27 6 22 6 16 V8 Z" />
+                  </svg>
+                ),
               },
               {
                 title: es ? "FUNCIONALES" : "FUNCTIONAL",
                 desc: es
                   ? "Diseños que se adaptan a tu espacio y comportamiento."
                   : "Designs that adapt to your space and behavior.",
+                icon: (
+                  <svg width="36" height="36" viewBox="0 0 32 32" fill="none" stroke="#B8963E" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="16" cy="16" r="3.5" />
+                    <path d="M16 4 V8 M16 24 V28 M4 16 H8 M24 16 H28 M7.5 7.5 L10.3 10.3 M21.7 21.7 L24.5 24.5 M7.5 24.5 L10.3 21.7 M21.7 10.3 L24.5 7.5" />
+                  </svg>
+                ),
               },
               {
                 title: es ? "ESTÉTICAS" : "AESTHETIC",
                 desc: es ? "Piezas que complementan tu hogar con elegancia." : "Pieces that complement your home with elegance.",
+                icon: (
+                  <svg width="36" height="36" viewBox="0 0 32 32" fill="none" stroke="#B8963E" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 4 L28 16 L16 28 L4 16 Z" />
+                    <path d="M10 16 L16 10 L22 16 L16 22 Z" />
+                  </svg>
+                ),
               },
             ].map((p) => (
-              <div key={p.title} style={{ textAlign: "center" }}>
+              <div
+                key={p.title}
+                style={{
+                  textAlign: "center",
+                  backgroundColor: "#FDFAF6",
+                  border: "1px solid #E0D5C5",
+                  borderRadius: "10px",
+                  padding: "36px 28px",
+                  boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <div style={{ marginBottom: "18px" }}>{p.icon}</div>
                 <div
                   style={{
                     fontFamily: "'Montserrat', sans-serif",
                     fontWeight: 700,
-                    fontSize: "11px",
+                    fontSize: "12px",
                     letterSpacing: "0.25em",
                     textTransform: "uppercase",
-                    color: "hsl(var(--gold))",
+                    color: "#B8963E",
                   }}
                 >
                   {p.title}
@@ -374,9 +405,9 @@ const Index = () => {
                   style={{
                     fontFamily: "'Open Sans', sans-serif",
                     fontSize: "13px",
-                    color: "rgba(0,0,0,0.65)",
-                    lineHeight: 1.6,
-                    marginTop: "8px",
+                    color: "#3B2A1A",
+                    lineHeight: 1.65,
+                    marginTop: "12px",
                   }}
                 >
                   {p.desc}
