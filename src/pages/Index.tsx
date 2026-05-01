@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { HeroCarousel } from "@/components/HeroCarousel";
 
 const WHATSAPP = "https://wa.me/521XXXXXXXXXX";
 
