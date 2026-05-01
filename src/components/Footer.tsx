@@ -15,7 +15,7 @@ export const Footer = () => {
   const navLinks = [
     { to: "/", key: "nav.inicio" },
     { to: "/nosotros", key: "nav.nosotros" },
-    { to: "/soluciones", key: "nav.soluciones" },
+    { to: "/#solutions", key: "nav.soluciones" },
     { to: "/consejo-felino", key: "nav.consejo" },
     { to: "/como-trabajamos", key: "nav.como" },
     { to: "/contacto", key: "nav.contacto" },
@@ -81,7 +81,7 @@ export const Footer = () => {
           <ul>
             {solLinks.map((k) => (
               <li key={k}>
-                <Link to="/soluciones" style={linkStyle} className="hover:!text-[hsl(var(--gold))]">
+                <Link to="/#solutions" style={linkStyle} className="hover:!text-[hsl(var(--gold))]">
                   {t(k)}
                 </Link>
               </li>
