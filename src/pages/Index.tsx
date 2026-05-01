@@ -351,9 +351,6 @@ const Index = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div style={{ color: "hsl(var(--gold))" }}>
-                <Icon />
-              </div>
               <div
                 style={{
                   fontFamily: "'Montserrat', sans-serif",
