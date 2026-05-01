@@ -245,7 +245,11 @@ const Index = () => {
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="aspect-[4/3]">
-          <PhotoPlaceholder label={es ? "FOTO: MAJO Y YANI CON SUS GATOS" : "PHOTO: MAJO AND YANI WITH THEIR CATS"} />
+          <img
+            src={bornAtHome}
+            alt={es ? "Majo y Yani diseñando en el atelier" : "Majo and Yani designing at the atelier"}
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="flex flex-col justify-center md:pl-16">
           <div style={eyebrowStyle}>
