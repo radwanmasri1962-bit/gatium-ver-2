@@ -578,7 +578,7 @@ const Contacto = () => {
             </p>
           </div>
           <Link
-            to="/soluciones"
+            to="/#solutions"
             className="inline-flex items-center gap-2"
             style={{
               marginTop: "10px",

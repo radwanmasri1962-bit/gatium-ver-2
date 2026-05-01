@@ -7,7 +7,7 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import { Layout } from "@/components/Layout";
 import Index from "./pages/Index.tsx";
 import Nosotros from "./pages/Nosotros.tsx";
-import Soluciones from "./pages/Soluciones.tsx";
+
 import ConsejoFelino from "./pages/ConsejoFelino.tsx";
 import ComoTrabajamos from "./pages/ComoTrabajamos.tsx";
 import Contacto from "./pages/Contacto.tsx";
@@ -27,7 +27,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/nosotros" element={<Nosotros />} />
-              <Route path="/soluciones" element={<Soluciones />} />
+              
               <Route path="/consejo-felino" element={<ConsejoFelino />} />
               <Route path="/como-trabajamos" element={<ComoTrabajamos />} />
               <Route path="/contacto" element={<Contacto />} />

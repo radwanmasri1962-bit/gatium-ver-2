@@ -375,7 +375,7 @@ const ComoTrabajamos = () => {
               : "Because when they are well, everything flows better."}
           </p>
           <Link
-            to="/soluciones"
+            to="/#solutions"
             className="inline-flex items-center gap-2"
             style={{
               marginTop: "24px",

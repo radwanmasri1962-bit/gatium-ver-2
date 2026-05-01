@@ -301,19 +301,100 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SECTION 3 — SOLUTIONS OVERVIEW */}
-      <section className="section-padding" style={{ backgroundColor: "hsl(var(--cream))" }}>
-        <div className="text-center" style={eyebrowStyle}>
-          {es ? "DISEÑAMOS DESDE LA NECESIDAD REAL" : "DESIGNED FROM REAL NEED"}
+      {/* SECTION 3 — SOLUTIONS INTRO + GRID */}
+      <section id="solutions" className="section-padding" style={{ backgroundColor: "hsl(var(--cream))" }}>
+        {/* Intro block (moved from /soluciones) */}
+        <div className="mx-auto" style={{ maxWidth: "880px", textAlign: "center" }}>
+          <div style={eyebrowStyle}>{es ? "SOLUCIONES" : "SOLUTIONS"}</div>
+          <h2
+            className="text-[28px] md:text-[44px]"
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 700,
+              color: "#000",
+              lineHeight: 1.15,
+              marginTop: "16px",
+            }}
+          >
+            {es
+              ? "Diseños que responden a la forma en que tus gatos realmente viven."
+              : "Designs that respond to how your cats really live."}
+          </h2>
+          <p
+            className="mx-auto"
+            style={{
+              fontFamily: "'Open Sans', sans-serif",
+              fontSize: "15px",
+              color: "rgba(0,0,0,0.72)",
+              maxWidth: "640px",
+              marginTop: "20px",
+              lineHeight: 1.7,
+            }}
+          >
+            {es
+              ? "Creamos espacios funcionales, estéticos y seguros que mejoran la convivencia y el bienestar de tu manada, sin romper la armonía de tu hogar."
+              : "We create functional, aesthetic and safe spaces that improve the cohabitation and wellbeing of your colony, without breaking the harmony of your home."}
+          </p>
+
+          {/* Three pillars */}
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto"
+            style={{ marginTop: "44px", maxWidth: "780px" }}
+          >
+            {[
+              {
+                title: es ? "SEGURAS" : "SAFE",
+                desc: es ? "Materiales resistentes y estructuras estables." : "Resistant materials and stable structures.",
+              },
+              {
+                title: es ? "FUNCIONALES" : "FUNCTIONAL",
+                desc: es
+                  ? "Diseños que se adaptan a tu espacio y comportamiento."
+                  : "Designs that adapt to your space and behavior.",
+              },
+              {
+                title: es ? "ESTÉTICAS" : "AESTHETIC",
+                desc: es ? "Piezas que complementan tu hogar con elegancia." : "Pieces that complement your home with elegance.",
+              },
+            ].map((p) => (
+              <div key={p.title} style={{ textAlign: "center" }}>
+                <div
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "11px",
+                    letterSpacing: "0.25em",
+                    textTransform: "uppercase",
+                    color: "hsl(var(--gold))",
+                  }}
+                >
+                  {p.title}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "'Open Sans', sans-serif",
+                    fontSize: "13px",
+                    color: "rgba(0,0,0,0.65)",
+                    lineHeight: 1.6,
+                    marginTop: "8px",
+                  }}
+                >
+                  {p.desc}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* Section heading kept */}
         <h2
           className="text-center mx-auto"
           style={{
             fontFamily: "'Montserrat', sans-serif",
             fontWeight: 700,
-            fontSize: "38px",
+            fontSize: "32px",
             maxWidth: "640px",
-            marginTop: "16px",
+            marginTop: "72px",
             lineHeight: 1.2,
             color: "#000",
           }}
@@ -323,67 +404,71 @@ const Index = () => {
             : "Solutions for the way your cats really live."}
         </h2>
 
+        {/* 3 x 2 card grid */}
         <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8"
-          style={{ marginTop: "56px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          style={{ marginTop: "48px" }}
         >
-          {solutions.map(({ Icon, image, title, desc }) => (
+          {solutions.map(({ image, title, desc }) => (
             <div
               key={title}
-              className="group flex flex-col items-start"
+              className="overflow-hidden transition-transform duration-300 hover:-translate-y-1 group"
               style={{
-                paddingBottom: "16px",
-                borderBottom: "1px solid transparent",
-                transition: "border-color 250ms ease",
+                backgroundColor: "#FFFFFF",
+                borderRadius: "8px",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.borderBottomColor = "hsl(var(--gold))")
-              }
-              onMouseLeave={(e) => (e.currentTarget.style.borderBottomColor = "transparent")}
             >
-              <div
-                className="w-full overflow-hidden"
-                style={{ height: "180px", marginBottom: "18px" }}
-              >
+              <div className="aspect-[16/9] overflow-hidden">
                 <img
                   src={image}
                   alt={title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div
-                style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "12px",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: "#000",
-                  marginTop: "14px",
-                  lineHeight: 1.3,
-                }}
-              >
-                {title}
-              </div>
-              <div
-                style={{
-                  fontFamily: "'Open Sans', sans-serif",
-                  fontSize: "13px",
-                  color: "rgba(0,0,0,0.65)",
-                  lineHeight: 1.6,
-                  marginTop: "8px",
-                }}
-              >
-                {desc}
+              <div style={{ padding: "24px" }}>
+                <div
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "12px",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "#000",
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {title}
+                </div>
+                <p
+                  style={{
+                    fontFamily: "'Open Sans', sans-serif",
+                    fontSize: "13px",
+                    color: "rgba(0,0,0,0.65)",
+                    lineHeight: 1.6,
+                    marginTop: "10px",
+                  }}
+                >
+                  {desc}
+                </p>
+                <Link
+                  to="/contacto"
+                  className="inline-flex items-center gap-2"
+                  style={{
+                    marginTop: "18px",
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "10px",
+                    letterSpacing: "0.2em",
+                    textTransform: "uppercase",
+                    color: "hsl(var(--gold))",
+                  }}
+                >
+                  {es ? "VER MÁS" : "SEE MORE"} <span>→</span>
+                </Link>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center" style={{ marginTop: "48px" }}>
-          <Link to="/soluciones" style={goldLinkStyle}>
-            {es ? "EXPLORA NUESTRAS SOLUCIONES" : "EXPLORE OUR SOLUTIONS"} <span>→</span>
-          </Link>
         </div>
       </section>
 

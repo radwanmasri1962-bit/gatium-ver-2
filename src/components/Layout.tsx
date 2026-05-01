@@ -11,7 +11,10 @@ export const Layout = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     setScrolled(false);
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => {
+      const threshold = isHome ? window.innerHeight - 80 : 80;
+      setScrolled(window.scrollY > threshold);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);

@@ -494,7 +494,7 @@ const ConsejoFelino = () => {
             : "Thanks to them we understand what others miss, and we design solutions that really work."}
         </p>
         <Link
-          to="/soluciones"
+          to="/#solutions"
           className="inline-flex"
           style={{
             marginTop: "32px",
