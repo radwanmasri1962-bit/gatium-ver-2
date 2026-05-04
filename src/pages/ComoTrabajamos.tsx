@@ -506,7 +506,7 @@ const ComoTrabajamos = () => {
               borderRadius: "2px",
             }}
           >
-            {es ? "ENVÍANOS TU ESPACIO →" : "SEND US YOUR SPACE →"}
+            {es ? "Quiero empezar con un Diagnóstico GATIUM →" : "I want to start with a GATIUM Diagnosis →"}
           </a>
         </div>
       </section>
