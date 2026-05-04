@@ -487,24 +487,9 @@ const ConsejoFelino = () => {
           }}
         >
           {es
-            ? "Siete miradas. Siete personalidades. Un mismo propósito: vivir mejor juntos."
-            : "Seven gazes. Seven personalities. One purpose: living better together."}
+            ? "No diseñamos para gatos imaginarios. Diseñamos desde una convivencia real."
+            : "We don't design for imaginary cats. We design from real cohabitation."}
         </h2>
-        <p
-          className="mx-auto"
-          style={{
-            fontFamily: "'Open Sans', sans-serif",
-            fontSize: "15px",
-            color: "rgba(0,0,0,0.65)",
-            maxWidth: "520px",
-            margin: "16px auto 0",
-            lineHeight: 1.7,
-          }}
-        >
-          {es
-            ? "Gracias a ellos entendemos lo que otros pasan por alto, y diseñamos soluciones que realmente funcionan."
-            : "Thanks to them we understand what others miss, and we design solutions that really work."}
-        </p>
         <Link
           to="/#solutions"
           className="inline-flex"
@@ -521,7 +506,7 @@ const ConsejoFelino = () => {
             borderRadius: "2px",
           }}
         >
-          {es ? "DESCUBRE NUESTRAS SOLUCIONES →" : "DISCOVER OUR SOLUTIONS →"}
+          {es ? "CONOCE NUESTRAS SOLUCIONES →" : "DISCOVER OUR SOLUTIONS →"}
         </Link>
       </section>
     </>
