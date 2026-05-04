@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
+import majoYaniHero from "@/assets/majo-yani-1.jpg";
+import interiorHogar from "@/assets/nosotros-interior.jpg";
+import majoYaniPortrait from "@/assets/majo-yani-2.jpg";
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
@@ -141,8 +144,10 @@ const Nosotros = () => {
           </div>
         </div>
         <div className="aspect-[16/9] md:aspect-auto md:h-full">
-          <PhotoPlaceholder
-            label={es ? "FOTO: MAJO Y YANI CON SUS GATOS EN CASA" : "PHOTO: MAJO AND YANI WITH THEIR CATS AT HOME"}
+          <img
+            src={majoYaniHero}
+            alt={es ? "Majo y Yani con sus gatos en casa" : "Majo and Yani with their cats at home"}
+            className="w-full h-full object-cover"
           />
         </div>
       </section>
@@ -154,8 +159,10 @@ const Nosotros = () => {
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="aspect-[4/3]">
-          <PhotoPlaceholder
-            label={es ? "FOTO: INTERIOR DEL HOGAR CON GATOS Y MOBILIARIO" : "PHOTO: HOME INTERIOR WITH CATS AND FURNITURE"}
+          <img
+            src={interiorHogar}
+            alt={es ? "Interior del hogar con gatos y mobiliario" : "Home interior with cats and furniture"}
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="flex flex-col justify-center md:pl-16">
@@ -263,9 +270,10 @@ const Nosotros = () => {
         </div>
         <div className="relative">
           <div className="aspect-[4/3]">
-            <PhotoPlaceholder
-              label={es ? "FOTO: RETRATO MAJO Y YANI" : "PHOTO: MAJO AND YANI PORTRAIT"}
-              dark
+          <img
+              src={majoYaniPortrait}
+              alt={es ? "Retrato de Majo y Yani" : "Portrait of Majo and Yani"}
+              className="w-full h-full object-cover"
             />
           </div>
           <div
