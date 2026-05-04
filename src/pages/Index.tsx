@@ -94,7 +94,7 @@ const Index = () => {
     {
       Icon: IconHouseGrid,
       image: solution1,
-      title: es ? "Catios y espacios exteriores seguros" : "Safe outdoor catios",
+      title: es ? "Patios y espacios exteriores seguros" : "Safe outdoor patios",
       desc: es
         ? "Libertad controlada para explorar, tomar sol y observar."
         : "Controlled freedom to explore, sunbathe and observe.",
@@ -108,34 +108,12 @@ const Index = () => {
         : "Height, circulation and territory in balance.",
     },
     {
-      Icon: IconArch,
-      image: solution3,
-      title: es ? "Zonas de descanso y refugio" : "Rest zones and refuges",
-      desc: es ? "Espacios que brindan seguridad y calma." : "Spaces that provide security and calm.",
-    },
-    {
       Icon: IconFurniture,
       image: solution4,
       title: es ? "Mobiliario funcional para convivencia felina" : "Functional feline furniture",
       desc: es
-        ? "Diseño que se integra al hogar y facilita el día a día."
-        : "Design that integrates into the home and eases daily life.",
-    },
-    {
-      Icon: IconBox,
-      image: solution5,
-      title: es ? "Areneros y muebles arenero" : "Litter box furniture",
-      desc: es
-        ? "Soluciones discretas y funcionales que mejoran la higiene."
-        : "Discreet and functional solutions that improve hygiene.",
-    },
-    {
-      Icon: IconColony,
-      image: solution6,
-      title: es ? "Diseño integral para manadas" : "Integral design for colonies",
-      desc: es
-        ? "Proyectos a medida que consideran la dinámica de todos."
-        : "Custom projects that consider the dynamics of all.",
+        ? "Espacios que facilitan la limpieza y la convivencia."
+        : "Spaces that ease cleaning and cohabitation.",
     },
   ];
 
@@ -216,19 +194,8 @@ const Index = () => {
               className="text-[32px] md:text-[56px]"
             >
               {es
-                ? "Diseñamos espacios felinos con criterio, pensados desde la "
-                : "We design feline spaces with purpose, rooted in "}
-              <span
-                style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontWeight: 600,
-                  fontStyle: "italic",
-                  color: "hsl(var(--gold))",
-                  display: "block",
-                }}
-              >
-                {es ? "convivencia real." : "real cohabitation."}
-              </span>
+                ? "Soluciones para la forma en que tus gatos realmente habitan."
+                : "Solutions for the way your cats really live."}
             </h1>
             <p
               style={{
@@ -243,9 +210,45 @@ const Index = () => {
               }}
             >
               {es
-                ? "Creamos soluciones que responden a la forma en que tus gatos realmente habitan, sin romper la armonía del hogar."
-                : "We create solutions that respond to how your cats really live, without breaking the harmony of your home."}
+                ? "Diseñamos espacios felinos con criterio. Sin romper la armonía de tu hogar."
+                : "We design feline spaces with purpose. Without breaking the harmony of your home."}
             </p>
+            <div className="flex flex-wrap" style={{ marginTop: "32px", gap: "14px" }}>
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  backgroundColor: "hsl(var(--gold))",
+                  color: "hsl(var(--near-black))",
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "10px",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  padding: "14px 28px",
+                  borderRadius: "2px",
+                }}
+              >
+                {es ? "Envíanos tu espacio" : "Send us your space"}
+              </a>
+              <a
+                href="#solutions"
+                style={{
+                  border: "1px solid rgba(245,239,230,0.6)",
+                  color: "hsl(var(--cream))",
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "10px",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  padding: "14px 28px",
+                  borderRadius: "2px",
+                }}
+              >
+                {es ? "Conoce nuestras soluciones" : "Discover our solutions"}
+              </a>
+            </div>
           </div>
         </div>
       </HeroCarousel>
@@ -317,24 +320,9 @@ const Index = () => {
             }}
           >
             {es
-              ? "Diseños que responden a la forma en que tus gatos realmente viven."
-              : "Designs that respond to how your cats really live."}
+              ? "Cada hogar tiene pistas. Nosotras te ayudamos a leerlas."
+              : "Every home has clues. We help you read them."}
           </h2>
-          <p
-            className="mx-auto"
-            style={{
-              fontFamily: "'Open Sans', sans-serif",
-              fontSize: "15px",
-              color: "rgba(0,0,0,0.72)",
-              maxWidth: "640px",
-              marginTop: "20px",
-              lineHeight: 1.7,
-            }}
-          >
-            {es
-              ? "Creamos espacios funcionales, estéticos y seguros que mejoran la convivencia y el bienestar de tu manada, sin romper la armonía de tu hogar."
-              : "We create functional, aesthetic and safe spaces that improve the cohabitation and wellbeing of your colony, without breaking the harmony of your home."}
-          </p>
 
           {/* Three pillars */}
           <div
