@@ -198,7 +198,7 @@ const ComoTrabajamos = () => {
             lineHeight: 1.2,
           }}
         >
-          {es ? "Un proceso pensado para ellos. Hecho para ti." : "A process designed for them. Made for you."}
+          {es ? "No necesitas saber exactamente qué pedir. Nosotras te ayudamos a leerlo." : "You don't need to know exactly what to ask for. We help you read it."}
         </h2>
         <div
           className="flex flex-col md:flex-row md:items-stretch justify-center gap-8 md:gap-3"
