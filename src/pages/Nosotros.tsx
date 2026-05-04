@@ -147,7 +147,8 @@ const Nosotros = () => {
           <img
             src={majoYaniHero}
             alt={es ? "Majo y Yani con sus gatos en casa" : "Majo and Yani with their cats at home"}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
+            style={{ backgroundColor: "hsl(var(--cream))" }}
           />
         </div>
       </section>
@@ -162,7 +163,8 @@ const Nosotros = () => {
           <img
             src={interiorHogar}
             alt={es ? "Interior del hogar con gatos y mobiliario" : "Home interior with cats and furniture"}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
+            style={{ backgroundColor: "hsl(var(--cream))" }}
           />
         </div>
         <div className="flex flex-col justify-center md:pl-16">
@@ -273,7 +275,8 @@ const Nosotros = () => {
           <img
               src={majoYaniPortrait}
               alt={es ? "Retrato de Majo y Yani" : "Portrait of Majo and Yani"}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
+              style={{ backgroundColor: "hsl(var(--beige))" }}
             />
           </div>
           <div
