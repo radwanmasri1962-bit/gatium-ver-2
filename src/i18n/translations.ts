@@ -38,12 +38,9 @@ export const translations = {
       en: "Terms and conditions · Privacy policy",
     },
     sol: {
-      catios: { es: "Catios", en: "Catios" },
-      verticales: { es: "Verticales", en: "Vertical spaces" },
-      refugios: { es: "Refugios", en: "Shelters" },
-      mobiliario: { es: "Mobiliario funcional", en: "Functional furniture" },
-      areneros: { es: "Areneros y muebles arenero", en: "Litter boxes & cabinets" },
-      integral: { es: "Diseño integral", en: "Integral design" },
+      catios: { es: "Patios y espacios exteriores seguros", en: "Safe patios and outdoor spaces" },
+      verticales: { es: "Muros y recorridos verticales", en: "Vertical walls and pathways" },
+      mobiliario: { es: "Mobiliario funcional para convivencia felina", en: "Functional furniture for feline cohabitation" },
     },
   },
 } as const;
