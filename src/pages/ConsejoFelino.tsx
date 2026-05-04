@@ -43,52 +43,52 @@ const ConsejoFelino = () => {
       name: "ASLAN",
       role: es ? "Guardián del Territorio" : "Territory Guardian",
       desc: es
-        ? "Observa, protege y asegura que cada espacio tenga su propósito."
+        ? "Observación, refugio y control visual. Aslan nos enseñó que cada espacio necesita un punto de mando."
         : "Observes, protects and ensures every space has its purpose.",
       keywords: es ? "Territorio · Observación · Refugio" : "Territory · Observation · Refuge",
       Icon: Eye,
     },
     {
       name: "ARES",
-      role: es ? "Maestro del Confort y la Accesibilidad" : "Master of Comfort and Accessibility",
+      role: es ? "Maestro del Confort" : "Master of Comfort and Accessibility",
       desc: es
-        ? "Cree en el descanso profundo y en accesos cómodos para todos los gatos."
+        ? "Descanso, ergonomía y accesos amables. Ares nos enseñó que el confort también se diseña."
         : "Believes in deep rest and comfortable access for all cats.",
       keywords: es ? "Confort · Accesibilidad · Bienestar" : "Comfort · Accessibility · Wellbeing",
       Icon: Crown,
     },
     {
       name: "ARAGORN",
-      role: es ? "Custodio de la Agilidad y las Rutas de Escape" : "Custodian of Agility and Escape Routes",
+      role: es ? "Custodio de las Rutas" : "Custodian of Agility and Escape Routes",
       desc: es
-        ? "Diseña caminos seguros y fluidos para moverse con libertad."
+        ? "Alturas, rutas seguras y fluidez. Aragorn nos enseñó que el movimiento necesita estructura."
         : "Designs safe and fluid paths to move freely.",
       keywords: es ? "Rutas · Fluidez · Escape" : "Routes · Fluidity · Escape",
       Icon: ArrowRight,
     },
     {
       name: "APOLO",
-      role: es ? "Inspector de Seguridad y Libertad" : "Security and Freedom Inspector",
+      role: es ? "Inspector de Seguridad" : "Security and Freedom Inspector",
       desc: es
-        ? "Valida alturas, estructuras y límites para que la libertad sea segura."
+        ? "Escalada segura y libertad con límites. Apolo nos enseñó que el diseño debe ser realmente funcional."
         : "Validates heights, structures and limits so freedom is safe.",
       keywords: es ? "Seguridad · Libertad · Validación" : "Security · Freedom · Validation",
       Icon: Shield,
     },
     {
       name: "AQUILES",
-      role: es ? "Embajador del Juego y la Exploración" : "Ambassador of Play and Exploration",
+      role: es ? "Embajador del Juego" : "Ambassador of Play and Exploration",
       desc: es
-        ? "Fomenta el juego, la curiosidad y el estímulo diario."
+        ? "Movimiento, exploración y estímulo. Aquiles nos enseñó que jugar también es una necesidad."
         : "Promotes play, curiosity and daily stimulation.",
       keywords: es ? "Juego · Exploración · Estímulo" : "Play · Exploration · Stimulation",
       Icon: PawPrint,
     },
     {
       name: "ANUBIS",
-      role: es ? "Guardián de la Regulación y la Calma" : "Guardian of Regulation and Calm",
+      role: es ? "Guardián de la Calma" : "Guardian of Regulation and Calm",
       desc: es
-        ? "Cuida el equilibrio emocional y los espacios de calma."
+        ? "Contención, suavidad y descanso. Anubis nos enseñó que reducir el estrés también se diseña."
         : "Cares for emotional balance and calm spaces.",
       keywords: es
         ? "Calma · Contención · Bienestar emocional"
@@ -97,9 +97,9 @@ const ConsejoFelino = () => {
     },
     {
       name: "ATENEA",
-      role: es ? "Ministra de Energía, Velocidad y Rendimiento" : "Minister of Energy, Speed and Performance",
+      role: es ? "Ministra de Energía" : "Minister of Energy, Speed and Performance",
       desc: es
-        ? "Eleva el diseño para gatos activos y de alto rendimiento."
+        ? "Verticalidad, resistencia y alto rendimiento. Atenea nos enseñó que algunos gatos necesitan más."
         : "Elevates design for active and high-performance cats.",
       keywords: es ? "Energía · Velocidad · Rendimiento" : "Energy · Speed · Performance",
       Icon: Zap,
@@ -139,7 +139,7 @@ const ConsejoFelino = () => {
       >
         <div className="flex flex-col justify-center px-[18px] py-[48px] md:px-16 md:py-20">
           <div className="mx-auto md:mx-0 w-full" style={{ maxWidth: "520px" }}>
-            <div style={eyebrow}>{es ? "EL CONSEJO FELINO" : "THE FELINE COUNCIL"}</div>
+            <div style={eyebrow}>{es ? "CONSEJO FELINO" : "FELINE COUNCIL"}</div>
             <h1
               className="text-[30px] md:text-[52px]"
               style={{
@@ -151,9 +151,7 @@ const ConsejoFelino = () => {
                 maxWidth: "480px",
               }}
             >
-              {es
-                ? "Siete gatos. Siete formas de habitar. Un criterio de diseño nacido de la "
-                : "Seven cats. Seven ways of living. A design criterion born from "}
+              {es ? "Siete gatos. " : "Seven cats. "}
               <span
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
@@ -163,7 +161,7 @@ const ConsejoFelino = () => {
                   display: "block",
                 }}
               >
-                {es ? "convivencia real." : "real cohabitation."}
+                {es ? "Siete formas de habitar." : "Seven ways of living."}
               </span>
             </h1>
             <p
@@ -177,8 +175,22 @@ const ConsejoFelino = () => {
               }}
             >
               {es
-                ? "No son mascotas de marca. Son nuestra manada, nuestros maestros y la razón por la que diseñamos diferente."
-                : "They are not brand mascots. They are our colony, our teachers and the reason we design differently."}
+                ? "El Consejo Felino no es un concepto inventado. Es el origen real del criterio GATIUM."
+                : "The Feline Council is not an invented concept. It is the real origin of the GATIUM criterion."}
+            </p>
+            <p
+              style={{
+                fontFamily: "'Open Sans', sans-serif",
+                fontSize: "14px",
+                color: "rgba(0,0,0,0.65)",
+                maxWidth: "420px",
+                marginTop: "12px",
+                lineHeight: 1.7,
+              }}
+            >
+              {es
+                ? "Cada gato de la manada habita distinto. Observarlos fue la base de todo lo que diseñamos."
+                : "Each cat in the colony lives differently. Observing them was the basis of everything we design."}
             </p>
             <a
               href="#members"
@@ -475,24 +487,9 @@ const ConsejoFelino = () => {
           }}
         >
           {es
-            ? "Siete miradas. Siete personalidades. Un mismo propósito: vivir mejor juntos."
-            : "Seven gazes. Seven personalities. One purpose: living better together."}
+            ? "No diseñamos para gatos imaginarios. Diseñamos desde una convivencia real."
+            : "We don't design for imaginary cats. We design from real cohabitation."}
         </h2>
-        <p
-          className="mx-auto"
-          style={{
-            fontFamily: "'Open Sans', sans-serif",
-            fontSize: "15px",
-            color: "rgba(0,0,0,0.65)",
-            maxWidth: "520px",
-            margin: "16px auto 0",
-            lineHeight: 1.7,
-          }}
-        >
-          {es
-            ? "Gracias a ellos entendemos lo que otros pasan por alto, y diseñamos soluciones que realmente funcionan."
-            : "Thanks to them we understand what others miss, and we design solutions that really work."}
-        </p>
         <Link
           to="/#solutions"
           className="inline-flex"
@@ -509,7 +506,7 @@ const ConsejoFelino = () => {
             borderRadius: "2px",
           }}
         >
-          {es ? "DESCUBRE NUESTRAS SOLUCIONES →" : "DISCOVER OUR SOLUTIONS →"}
+          {es ? "CONOCE NUESTRAS SOLUCIONES →" : "DISCOVER OUR SOLUTIONS →"}
         </Link>
       </section>
     </>
