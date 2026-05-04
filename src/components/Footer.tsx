@@ -24,10 +24,7 @@ export const Footer = () => {
   const solLinks = [
     "footer.sol.catios",
     "footer.sol.verticales",
-    "footer.sol.refugios",
     "footer.sol.mobiliario",
-    "footer.sol.areneros",
-    "footer.sol.integral",
   ];
 
   const linkStyle: React.CSSProperties = {
