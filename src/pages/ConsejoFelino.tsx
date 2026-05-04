@@ -232,7 +232,7 @@ const ConsejoFelino = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           style={{ marginTop: "48px" }}
         >
-          {participate.map(({ Icon, title, desc }) => (
+          {participate.map(({ Icon, title, quote, author }) => (
             <div
               key={title}
               style={{
@@ -260,15 +260,30 @@ const ConsejoFelino = () => {
               </div>
               <p
                 style={{
-                  fontFamily: "'Open Sans', sans-serif",
-                  fontSize: "14px",
-                  color: "rgba(0,0,0,0.65)",
-                  marginTop: "10px",
+                  fontFamily: "'Playfair Display', 'Cormorant Garamond', serif",
+                  fontStyle: "italic",
+                  fontSize: "16px",
+                  color: "#6B5744",
+                  marginTop: "12px",
                   lineHeight: 1.6,
+                  whiteSpace: "pre-line",
                 }}
               >
-                {desc}
+                {quote}
               </p>
+              <div
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "10px",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "hsl(var(--gold))",
+                  marginTop: "12px",
+                }}
+              >
+                {author}
+              </div>
             </div>
           ))}
         </div>
