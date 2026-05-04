@@ -280,7 +280,7 @@ const Nosotros = () => {
             />
           </div>
           <div
-            className="md:absolute static md:-bottom-5 md:-right-5 mt-6 md:mt-0"
+            className="md:absolute static md:bottom-0 md:right-0 md:translate-y-3/4 md:-translate-x-2 mt-6 md:mt-0"
             style={{
               backgroundColor: "#FFFFFF",
               borderRadius: "8px",
