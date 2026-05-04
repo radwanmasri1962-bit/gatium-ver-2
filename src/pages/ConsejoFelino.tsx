@@ -139,7 +139,7 @@ const ConsejoFelino = () => {
       >
         <div className="flex flex-col justify-center px-[18px] py-[48px] md:px-16 md:py-20">
           <div className="mx-auto md:mx-0 w-full" style={{ maxWidth: "520px" }}>
-            <div style={eyebrow}>{es ? "EL CONSEJO FELINO" : "THE FELINE COUNCIL"}</div>
+            <div style={eyebrow}>{es ? "CONSEJO FELINO" : "FELINE COUNCIL"}</div>
             <h1
               className="text-[30px] md:text-[52px]"
               style={{
@@ -151,9 +151,7 @@ const ConsejoFelino = () => {
                 maxWidth: "480px",
               }}
             >
-              {es
-                ? "Siete gatos. Siete formas de habitar. Un criterio de diseño nacido de la "
-                : "Seven cats. Seven ways of living. A design criterion born from "}
+              {es ? "Siete gatos. " : "Seven cats. "}
               <span
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
@@ -163,7 +161,7 @@ const ConsejoFelino = () => {
                   display: "block",
                 }}
               >
-                {es ? "convivencia real." : "real cohabitation."}
+                {es ? "Siete formas de habitar." : "Seven ways of living."}
               </span>
             </h1>
             <p
@@ -177,8 +175,22 @@ const ConsejoFelino = () => {
               }}
             >
               {es
-                ? "No son mascotas de marca. Son nuestra manada, nuestros maestros y la razón por la que diseñamos diferente."
-                : "They are not brand mascots. They are our colony, our teachers and the reason we design differently."}
+                ? "El Consejo Felino no es un concepto inventado. Es el origen real del criterio GATIUM."
+                : "The Feline Council is not an invented concept. It is the real origin of the GATIUM criterion."}
+            </p>
+            <p
+              style={{
+                fontFamily: "'Open Sans', sans-serif",
+                fontSize: "14px",
+                color: "rgba(0,0,0,0.65)",
+                maxWidth: "420px",
+                marginTop: "12px",
+                lineHeight: 1.7,
+              }}
+            >
+              {es
+                ? "Cada gato de la manada habita distinto. Observarlos fue la base de todo lo que diseñamos."
+                : "Each cat in the colony lives differently. Observing them was the basis of everything we design."}
             </p>
             <a
               href="#members"
