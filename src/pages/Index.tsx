@@ -320,24 +320,9 @@ const Index = () => {
             }}
           >
             {es
-              ? "Diseños que responden a la forma en que tus gatos realmente viven."
-              : "Designs that respond to how your cats really live."}
+              ? "Cada hogar tiene pistas. Nosotras te ayudamos a leerlas."
+              : "Every home has clues. We help you read them."}
           </h2>
-          <p
-            className="mx-auto"
-            style={{
-              fontFamily: "'Open Sans', sans-serif",
-              fontSize: "15px",
-              color: "rgba(0,0,0,0.72)",
-              maxWidth: "640px",
-              marginTop: "20px",
-              lineHeight: 1.7,
-            }}
-          >
-            {es
-              ? "Creamos espacios funcionales, estéticos y seguros que mejoran la convivencia y el bienestar de tu manada, sin romper la armonía de tu hogar."
-              : "We create functional, aesthetic and safe spaces that improve the cohabitation and wellbeing of your colony, without breaking the harmony of your home."}
-          </p>
 
           {/* Three pillars */}
           <div
