@@ -106,8 +106,22 @@ const Nosotros = () => {
               }}
             >
               {es
-                ? "Antes de convertirse en una marca, GATIUM fue una necesidad real: entender, adaptar y transformar el espacio para convivir mejor con una manada diversa."
-                : "Before becoming a brand, GATIUM was a real need: to understand, adapt and transform the space to better coexist with a diverse colony."}
+                ? "No surgió como tendencia ni como producto pensado desde afuera. Nació dentro de casa, observando cómo siete gatos con personalidades distintas habitaban un mismo espacio."
+                : "It did not emerge as a trend or as a product thought from outside. It was born inside the home, observing how seven cats with distinct personalities inhabited the same space."}
+            </p>
+            <p
+              style={{
+                fontFamily: "'Open Sans', sans-serif",
+                fontSize: "15px",
+                color: "rgba(0,0,0,0.72)",
+                maxWidth: "440px",
+                marginTop: "16px",
+                lineHeight: 1.7,
+              }}
+            >
+              {es
+                ? "Majo y Yani no diseñan desde afuera. Diseñan desde adentro — desde la experiencia real de adaptar, corregir y transformar un hogar para que la convivencia funcione mejor para todos."
+                : "Majo and Yani do not design from outside. They design from inside — from the real experience of adapting, correcting and transforming a home so cohabitation works better for everyone."}
             </p>
             <a
               href="#story"
@@ -385,7 +399,7 @@ const Nosotros = () => {
             borderRadius: "2px",
           }}
         >
-          {es ? "CONOCE AL CONSEJO FELINO →" : "MEET THE FELINE COUNCIL →"}
+          {es ? "Conoce al Consejo Felino →" : "Meet the Feline Council →"}
         </Link>
       </section>
     </>
