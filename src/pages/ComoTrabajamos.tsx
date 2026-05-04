@@ -33,42 +33,42 @@ const ComoTrabajamos = () => {
     {
       photo: es ? "FOTO: CONVERSACIÓN, ESCUCHA ACTIVA" : "PHOTO: CONVERSATION, ACTIVE LISTENING",
       Icon: MessageCircle,
-      title: es ? "ESCUCHAMOS" : "WE LISTEN",
+      title: es ? "PASO 1" : "STEP 1",
       desc: es
-        ? "Conocemos tu hogar, tu manada y sus rutinas. Te escuchamos para entender qué necesitan realmente."
-        : "We get to know your home, your colony and their routines. We listen to understand what they really need.",
+        ? "Nos compartes tu espacio y tu dinámica."
+        : "You share your space and your dynamic with us.",
     },
     {
       photo: es ? "FOTO: GATO SIENDO OBSERVADO EN SU ESPACIO" : "PHOTO: CAT BEING OBSERVED IN ITS SPACE",
       Icon: Eye,
-      title: es ? "OBSERVAMOS" : "WE OBSERVE",
+      title: es ? "PASO 2" : "STEP 2",
       desc: es
-        ? "Observamos comportamientos, interacciones y dinámicas para identificar oportunidades de mejora y bienestar."
-        : "We observe behaviors, interactions and dynamics to identify opportunities for improvement and wellbeing.",
+        ? "Realizamos un Diagnóstico GATIUM."
+        : "We carry out a GATIUM Diagnosis.",
     },
     {
       photo: es ? "FOTO: PLANOS DE DISEÑO, BOCETOS" : "PHOTO: DESIGN PLANS, SKETCHES",
       Icon: Pencil,
-      title: es ? "DISEÑAMOS" : "WE DESIGN",
+      title: es ? "PASO 3" : "STEP 3",
       desc: es
-        ? "Creamos propuestas personalizadas que integran estética, funcionalidad y esencia felina."
-        : "We create personalized proposals that integrate aesthetics, functionality and feline essence.",
+        ? "Diseñamos una propuesta personalizada."
+        : "We design a personalized proposal.",
     },
     {
       photo: es ? "FOTO: FABRICACIÓN, MADERA, MANOS TRABAJANDO" : "PHOTO: BUILDING, WOOD, HANDS WORKING",
       Icon: Hammer,
-      title: es ? "FABRICAMOS E INSTALAMOS" : "WE BUILD AND INSTALL",
+      title: es ? "PASO 4" : "STEP 4",
       desc: es
-        ? "Materializamos cada pieza con calidad y detalle, instalando soluciones seguras y duraderas en tu hogar."
-        : "We materialize each piece with quality and detail, installing safe and durable solutions in your home.",
+        ? "Refinamos la propuesta contigo."
+        : "We refine the proposal with you.",
     },
     {
       photo: es ? "FOTO: GATO DISFRUTANDO EL NUEVO ESPACIO" : "PHOTO: CAT ENJOYING THE NEW SPACE",
       Icon: Heart,
-      title: es ? "ACOMPAÑAMOS" : "WE ACCOMPANY",
+      title: es ? "PASO 5" : "STEP 5",
       desc: es
-        ? "Te acompañamos en el proceso de adaptación y estamos siempre disponibles para seguir mejorando."
-        : "We accompany you through the adaptation process and are always available to keep improving.",
+        ? "Convertimos la idea en una solución habitable."
+        : "We turn the idea into a livable solution.",
     },
   ];
 
@@ -132,8 +132,8 @@ const ComoTrabajamos = () => {
               }}
             >
               {es
-                ? "Diseñamos espacios que respetan su naturaleza y transforman tu hogar."
-                : "We design spaces that respect their nature and transform your home."}
+                ? "Antes de diseñar, entendemos cómo viven tus gatos."
+                : "Before designing, we understand how your cats live."}
             </h1>
             <p
               style={{
@@ -146,8 +146,8 @@ const ComoTrabajamos = () => {
               }}
             >
               {es
-                ? "Nuestro proceso combina observación, sensibilidad felina y diseño funcional para crear soluciones a medida que mejoran la convivencia y el bienestar de toda la manada."
-                : "Our process combines observation, feline sensitivity and functional design to create tailored solutions that improve cohabitation and wellbeing."}
+                ? "Nuestro proceso no empieza construyendo. Empieza observando."
+                : "Our process does not begin by building. It begins by observing."}
             </p>
             <a
               href="#process"
@@ -165,7 +165,7 @@ const ComoTrabajamos = () => {
                 borderRadius: "2px",
               }}
             >
-              {es ? "CONOCE NUESTRO PROCESO →" : "LEARN OUR PROCESS →"}
+              {es ? "Quiero empezar con un Diagnóstico GATIUM" : "I want to start with a GATIUM Diagnosis"}
             </a>
           </div>
         </div>
@@ -198,7 +198,7 @@ const ComoTrabajamos = () => {
             lineHeight: 1.2,
           }}
         >
-          {es ? "Un proceso pensado para ellos. Hecho para ti." : "A process designed for them. Made for you."}
+          {es ? "No necesitas saber exactamente qué pedir. Nosotras te ayudamos a leerlo." : "You don't need to know exactly what to ask for. We help you read it."}
         </h2>
         <div
           className="flex flex-col md:flex-row md:items-stretch justify-center gap-8 md:gap-3"
@@ -506,7 +506,7 @@ const ComoTrabajamos = () => {
               borderRadius: "2px",
             }}
           >
-            {es ? "ENVÍANOS TU ESPACIO →" : "SEND US YOUR SPACE →"}
+            {es ? "Quiero empezar con un Diagnóstico GATIUM →" : "I want to start with a GATIUM Diagnosis →"}
           </a>
         </div>
       </section>
