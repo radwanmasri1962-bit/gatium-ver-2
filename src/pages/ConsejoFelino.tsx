@@ -43,7 +43,7 @@ const ConsejoFelino = () => {
       name: "ASLAN",
       role: es ? "Guardián del Territorio" : "Territory Guardian",
       desc: es
-        ? "Observa, protege y asegura que cada espacio tenga su propósito."
+        ? "Observación, refugio y control visual. Aslan nos enseñó que cada espacio necesita un punto de mando."
         : "Observes, protects and ensures every space has its purpose.",
       keywords: es ? "Territorio · Observación · Refugio" : "Territory · Observation · Refuge",
       Icon: Eye,
