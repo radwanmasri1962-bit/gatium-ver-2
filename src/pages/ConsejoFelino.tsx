@@ -20,21 +20,20 @@ const ConsejoFelino = () => {
     {
       Icon: Eye,
       title: es ? "OBSERVAN" : "THEY OBSERVE",
-      desc: es
-        ? "Viven, exploran y prueban cada rincón del hogar."
-        : "They live, explore and test every corner of the home.",
+      quote: "Llevo 3 horas aquí arriba vigilando.\n\nTodo está bajo control.",
+      author: "— ASLAN",
     },
     {
       Icon: Lightbulb,
       title: es ? "ANALIZAN" : "THEY ANALYZE",
-      desc: es ? "Identifican necesidades reales de los gatos." : "They identify real feline needs.",
+      quote: "Esta repisa tiene 2 cm menos de lo que necesito.\n\nCompletamente inaceptable.",
+      author: "— ARES",
     },
     {
       Icon: Pencil,
       title: es ? "ACONSEJAN" : "THEY ADVISE",
-      desc: es
-        ? "Guían cada diseño para crear espacios funcionales y armoniosos."
-        : "They guide each design to create functional and harmonious spaces.",
+      quote: "Si no puedo escapar por arriba,\n\nel diseño está mal.",
+      author: "— ARAGORN",
     },
   ];
 
@@ -233,7 +232,7 @@ const ConsejoFelino = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           style={{ marginTop: "48px" }}
         >
-          {participate.map(({ Icon, title, desc }) => (
+          {participate.map(({ Icon, title, quote, author }) => (
             <div
               key={title}
               style={{
@@ -261,15 +260,30 @@ const ConsejoFelino = () => {
               </div>
               <p
                 style={{
-                  fontFamily: "'Open Sans', sans-serif",
-                  fontSize: "14px",
-                  color: "rgba(0,0,0,0.65)",
-                  marginTop: "10px",
+                  fontFamily: "'Playfair Display', 'Cormorant Garamond', serif",
+                  fontStyle: "italic",
+                  fontSize: "16px",
+                  color: "#6B5744",
+                  marginTop: "12px",
                   lineHeight: 1.6,
+                  whiteSpace: "pre-line",
                 }}
               >
-                {desc}
+                {quote}
               </p>
+              <div
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "10px",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "hsl(var(--gold))",
+                  marginTop: "12px",
+                }}
+              >
+                {author}
+              </div>
             </div>
           ))}
         </div>
