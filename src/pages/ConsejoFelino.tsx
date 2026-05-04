@@ -20,21 +20,20 @@ const ConsejoFelino = () => {
     {
       Icon: Eye,
       title: es ? "OBSERVAN" : "THEY OBSERVE",
-      desc: es
-        ? "Viven, exploran y prueban cada rincón del hogar."
-        : "They live, explore and test every corner of the home.",
+      quote: "Llevo 3 horas aquí arriba vigilando.\n\nTodo está bajo control.",
+      author: "— ASLAN",
     },
     {
       Icon: Lightbulb,
       title: es ? "ANALIZAN" : "THEY ANALYZE",
-      desc: es ? "Identifican necesidades reales de los gatos." : "They identify real feline needs.",
+      quote: "Esta repisa tiene 2 cm menos de lo que necesito.\n\nCompletamente inaceptable.",
+      author: "— ARES",
     },
     {
       Icon: Pencil,
       title: es ? "ACONSEJAN" : "THEY ADVISE",
-      desc: es
-        ? "Guían cada diseño para crear espacios funcionales y armoniosos."
-        : "They guide each design to create functional and harmonious spaces.",
+      quote: "Si no puedo escapar por arriba,\n\nel diseño está mal.",
+      author: "— ARAGORN",
     },
   ];
 
