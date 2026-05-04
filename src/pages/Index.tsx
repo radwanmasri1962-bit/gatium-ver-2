@@ -194,19 +194,8 @@ const Index = () => {
               className="text-[32px] md:text-[56px]"
             >
               {es
-                ? "Diseñamos espacios felinos con criterio, pensados desde la "
-                : "We design feline spaces with purpose, rooted in "}
-              <span
-                style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontWeight: 600,
-                  fontStyle: "italic",
-                  color: "hsl(var(--gold))",
-                  display: "block",
-                }}
-              >
-                {es ? "convivencia real." : "real cohabitation."}
-              </span>
+                ? "Soluciones para la forma en que tus gatos realmente habitan."
+                : "Solutions for the way your cats really live."}
             </h1>
             <p
               style={{
@@ -221,9 +210,45 @@ const Index = () => {
               }}
             >
               {es
-                ? "Creamos soluciones que responden a la forma en que tus gatos realmente habitan, sin romper la armonía del hogar."
-                : "We create solutions that respond to how your cats really live, without breaking the harmony of your home."}
+                ? "Diseñamos espacios felinos con criterio. Sin romper la armonía de tu hogar."
+                : "We design feline spaces with purpose. Without breaking the harmony of your home."}
             </p>
+            <div className="flex flex-wrap" style={{ marginTop: "32px", gap: "14px" }}>
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  backgroundColor: "hsl(var(--gold))",
+                  color: "hsl(var(--near-black))",
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "10px",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  padding: "14px 28px",
+                  borderRadius: "2px",
+                }}
+              >
+                {es ? "Envíanos tu espacio" : "Send us your space"}
+              </a>
+              <a
+                href="#solutions"
+                style={{
+                  border: "1px solid rgba(245,239,230,0.6)",
+                  color: "hsl(var(--cream))",
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "10px",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  padding: "14px 28px",
+                  borderRadius: "2px",
+                }}
+              >
+                {es ? "Conoce nuestras soluciones" : "Discover our solutions"}
+              </a>
+            </div>
           </div>
         </div>
       </HeroCarousel>
