@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
-import { Eye, Lightbulb, Pencil, Crown, ArrowRight, Shield, PawPrint, Moon, Zap, Star, Cat } from "lucide-react";
+import { Eye, Lightbulb, Pencil, Star, Cat } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
+import anubisImg from "@/assets/cats/anubis.jpg";
+import apoloImg from "@/assets/cats/apolo.jpg";
+import aquilesImg from "@/assets/cats/aquiles.jpg";
+import aresImg from "@/assets/cats/ares.jpg";
+import aslanImg from "@/assets/cats/aslan.jpg";
+import ateneaImg from "@/assets/cats/atenea.jpg";
+import aragornImg from "@/assets/cats/aragorn.jpg";
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
