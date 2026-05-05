@@ -47,42 +47,49 @@ const ConsejoFelino = () => {
   const cats = [
     {
       name: "ANUBIS",
+      img: anubisImg,
       desc: es
         ? "Negro absoluto, mirada dorada. Silencioso y soberano. Prefiere las alturas y los espacios propios."
         : "Absolute black, golden gaze. Silent and sovereign. Prefers heights and his own spaces.",
     },
     {
       name: "APOLO",
+      img: apoloImg,
       desc: es
         ? "Blanco inmaculado, ojos azules. Curioso y luminoso. Siempre en el centro de todo."
         : "Immaculate white, blue eyes. Curious and luminous. Always at the center of everything.",
     },
     {
       name: "AQUILES",
+      img: aquilesImg,
       desc: es
         ? "Naranja intenso, espíritu libre. Se adueña del sofá y del cuarto con la misma calma."
         : "Intense orange, free spirit. Owns the sofa and the room with the same calm.",
     },
     {
       name: "ARES",
+      img: aresImg,
       desc: es
         ? "Blanco y negro, carácter firme. Observa antes de actuar. Nunca pide permiso."
         : "Black and white, firm character. Observes before acting. Never asks permission.",
     },
     {
       name: "ASLAN",
+      img: aslanImg,
       desc: es
         ? "Atigrado dorado, presencia tranquila. Le gusta el sol, la madera y los rincones con vista."
         : "Golden tabby, calm presence. Loves the sun, wood and corners with a view.",
     },
     {
       name: "ATENEA",
+      img: ateneaImg,
       desc: es
         ? "Atigrada oscura, porte impecable. Seria, directa y dueña absoluta de su territorio."
         : "Dark tabby, impeccable bearing. Serious, direct and absolute owner of her territory.",
     },
     {
       name: "ARAGORN",
+      img: aragornImg,
       desc: es
         ? "Atigrado robusto, carácter sereno. El guardián. Siempre sabe exactamente dónde estar."
         : "Robust tabby, serene character. The guardian. Always knows exactly where to be.",
