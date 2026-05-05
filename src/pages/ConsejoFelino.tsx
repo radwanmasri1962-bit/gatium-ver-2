@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
-import { Eye, Lightbulb, Pencil, Crown, ArrowRight, Shield, PawPrint, Moon, Zap, Star, Cat } from "lucide-react";
+import { Eye, Lightbulb, Pencil, Star, Cat } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
+import anubisImg from "@/assets/cats/anubis.jpg";
+import apoloImg from "@/assets/cats/apolo.jpg";
+import aquilesImg from "@/assets/cats/aquiles.jpg";
+import aresImg from "@/assets/cats/ares.jpg";
+import aslanImg from "@/assets/cats/aslan.jpg";
+import ateneaImg from "@/assets/cats/atenea.jpg";
+import aragornImg from "@/assets/cats/aragorn.jpg";
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
@@ -40,42 +47,49 @@ const ConsejoFelino = () => {
   const cats = [
     {
       name: "ANUBIS",
+      img: anubisImg,
       desc: es
         ? "Negro absoluto, mirada dorada. Silencioso y soberano. Prefiere las alturas y los espacios propios."
         : "Absolute black, golden gaze. Silent and sovereign. Prefers heights and his own spaces.",
     },
     {
       name: "APOLO",
+      img: apoloImg,
       desc: es
         ? "Blanco inmaculado, ojos azules. Curioso y luminoso. Siempre en el centro de todo."
         : "Immaculate white, blue eyes. Curious and luminous. Always at the center of everything.",
     },
     {
       name: "AQUILES",
+      img: aquilesImg,
       desc: es
         ? "Naranja intenso, espíritu libre. Se adueña del sofá y del cuarto con la misma calma."
         : "Intense orange, free spirit. Owns the sofa and the room with the same calm.",
     },
     {
       name: "ARES",
+      img: aresImg,
       desc: es
         ? "Blanco y negro, carácter firme. Observa antes de actuar. Nunca pide permiso."
         : "Black and white, firm character. Observes before acting. Never asks permission.",
     },
     {
       name: "ASLAN",
+      img: aslanImg,
       desc: es
         ? "Atigrado dorado, presencia tranquila. Le gusta el sol, la madera y los rincones con vista."
         : "Golden tabby, calm presence. Loves the sun, wood and corners with a view.",
     },
     {
       name: "ATENEA",
+      img: ateneaImg,
       desc: es
         ? "Atigrada oscura, porte impecable. Seria, directa y dueña absoluta de su territorio."
         : "Dark tabby, impeccable bearing. Serious, direct and absolute owner of her territory.",
     },
     {
       name: "ARAGORN",
+      img: aragornImg,
       desc: es
         ? "Atigrado robusto, carácter sereno. El guardián. Siempre sabe exactamente dónde estar."
         : "Robust tabby, serene character. The guardian. Always knows exactly where to be.",
@@ -322,76 +336,75 @@ const ConsejoFelino = () => {
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="text-center" style={eyebrow}>
-          {es ? "LOS MIEMBROS DEL CONSEJO" : "COUNCIL MEMBERS"}
+          {es ? "CONSEJO FELINO" : "FELINE COUNCIL"}
         </div>
-        <div
-          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-7 gap-5"
-          style={{ marginTop: "48px" }}
+        <h2
+          className="text-center"
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontWeight: 600,
+            fontStyle: "italic",
+            fontSize: "32px",
+            color: "#000",
+            marginTop: "12px",
+            lineHeight: 1.2,
+          }}
         >
-          {cats.map(({ name, role, desc, keywords, Icon }) => (
+          {es ? "Siete gatos. Siete formas de habitar." : "Seven cats. Seven ways of living."}
+        </h2>
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto"
+          style={{ marginTop: "48px", maxWidth: "1200px" }}
+        >
+          {cats.map(({ name, img, desc }) => (
             <div
               key={name}
               className="transition-transform duration-300 hover:-translate-y-1"
               style={{
                 backgroundColor: "#FFFFFF",
-                borderRadius: "8px",
-                padding: "20px",
+                borderRadius: "12px",
+                padding: "16px",
                 boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
               }}
             >
-              <div className="aspect-square" style={{ marginBottom: "14px", borderRadius: "4px", overflow: "hidden" }}>
-                <PhotoPlaceholder label={name} />
+              <div
+                className="aspect-square"
+                style={{
+                  marginBottom: "16px",
+                  borderRadius: "8px",
+                  overflow: "hidden",
+                  backgroundColor: "hsl(var(--beige))",
+                }}
+              >
+                <img
+                  src={img}
+                  alt={name}
+                  loading="lazy"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
               </div>
               <div
                 style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "15px",
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 600,
+                  fontSize: "26px",
                   color: "#000",
+                  letterSpacing: "0.02em",
                 }}
               >
                 {name}
               </div>
-              <div
-                style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "8px",
-                  letterSpacing: "0.15em",
-                  textTransform: "uppercase",
-                  color: "hsl(var(--gold))",
-                  marginTop: "4px",
-                  lineHeight: 1.4,
-                }}
-              >
-                {role}
-              </div>
               <p
                 style={{
                   fontFamily: "'Open Sans', sans-serif",
-                  fontSize: "12px",
-                  color: "rgba(0,0,0,0.65)",
-                  marginTop: "10px",
+                  fontSize: "13px",
+                  color: "rgba(0,0,0,0.7)",
+                  marginTop: "8px",
                   lineHeight: 1.6,
                 }}
               >
                 {desc}
               </p>
-              <div
-                style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "8px",
-                  color: "hsl(var(--gold))",
-                  marginTop: "10px",
-                  letterSpacing: "0.05em",
-                }}
-              >
-                {keywords}
-              </div>
-              <div style={{ color: "hsl(var(--gold))", marginTop: "14px" }}>
-                <Icon size={24} strokeWidth={1.4} />
-              </div>
             </div>
           ))}
         </div>
