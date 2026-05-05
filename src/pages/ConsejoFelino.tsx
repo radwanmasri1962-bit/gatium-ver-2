@@ -39,69 +39,46 @@ const ConsejoFelino = () => {
 
   const cats = [
     {
-      name: "ASLAN",
-      role: es ? "Guardián del Territorio" : "Territory Guardian",
+      name: "ANUBIS",
       desc: es
-        ? "Observación, refugio y control visual. Aslan nos enseñó que cada espacio necesita un punto de mando."
-        : "Observes, protects and ensures every space has its purpose.",
-      keywords: es ? "Territorio · Observación · Refugio" : "Territory · Observation · Refuge",
-      Icon: Eye,
-    },
-    {
-      name: "ARES",
-      role: es ? "Maestro del Confort" : "Master of Comfort and Accessibility",
-      desc: es
-        ? "Descanso, ergonomía y accesos amables. Ares nos enseñó que el confort también se diseña."
-        : "Believes in deep rest and comfortable access for all cats.",
-      keywords: es ? "Confort · Accesibilidad · Bienestar" : "Comfort · Accessibility · Wellbeing",
-      Icon: Crown,
-    },
-    {
-      name: "ARAGORN",
-      role: es ? "Custodio de las Rutas" : "Custodian of Agility and Escape Routes",
-      desc: es
-        ? "Alturas, rutas seguras y fluidez. Aragorn nos enseñó que el movimiento necesita estructura."
-        : "Designs safe and fluid paths to move freely.",
-      keywords: es ? "Rutas · Fluidez · Escape" : "Routes · Fluidity · Escape",
-      Icon: ArrowRight,
+        ? "Negro absoluto, mirada dorada. Silencioso y soberano. Prefiere las alturas y los espacios propios."
+        : "Absolute black, golden gaze. Silent and sovereign. Prefers heights and his own spaces.",
     },
     {
       name: "APOLO",
-      role: es ? "Inspector de Seguridad" : "Security and Freedom Inspector",
       desc: es
-        ? "Escalada segura y libertad con límites. Apolo nos enseñó que el diseño debe ser realmente funcional."
-        : "Validates heights, structures and limits so freedom is safe.",
-      keywords: es ? "Seguridad · Libertad · Validación" : "Security · Freedom · Validation",
-      Icon: Shield,
+        ? "Blanco inmaculado, ojos azules. Curioso y luminoso. Siempre en el centro de todo."
+        : "Immaculate white, blue eyes. Curious and luminous. Always at the center of everything.",
     },
     {
       name: "AQUILES",
-      role: es ? "Embajador del Juego" : "Ambassador of Play and Exploration",
       desc: es
-        ? "Movimiento, exploración y estímulo. Aquiles nos enseñó que jugar también es una necesidad."
-        : "Promotes play, curiosity and daily stimulation.",
-      keywords: es ? "Juego · Exploración · Estímulo" : "Play · Exploration · Stimulation",
-      Icon: PawPrint,
+        ? "Naranja intenso, espíritu libre. Se adueña del sofá y del cuarto con la misma calma."
+        : "Intense orange, free spirit. Owns the sofa and the room with the same calm.",
     },
     {
-      name: "ANUBIS",
-      role: es ? "Guardián de la Calma" : "Guardian of Regulation and Calm",
+      name: "ARES",
       desc: es
-        ? "Contención, suavidad y descanso. Anubis nos enseñó que reducir el estrés también se diseña."
-        : "Cares for emotional balance and calm spaces.",
-      keywords: es
-        ? "Calma · Contención · Bienestar emocional"
-        : "Calm · Containment · Emotional wellbeing",
-      Icon: Moon,
+        ? "Blanco y negro, carácter firme. Observa antes de actuar. Nunca pide permiso."
+        : "Black and white, firm character. Observes before acting. Never asks permission.",
+    },
+    {
+      name: "ASLAN",
+      desc: es
+        ? "Atigrado dorado, presencia tranquila. Le gusta el sol, la madera y los rincones con vista."
+        : "Golden tabby, calm presence. Loves the sun, wood and corners with a view.",
     },
     {
       name: "ATENEA",
-      role: es ? "Ministra de Energía" : "Minister of Energy, Speed and Performance",
       desc: es
-        ? "Verticalidad, resistencia y alto rendimiento. Atenea nos enseñó que algunos gatos necesitan más."
-        : "Elevates design for active and high-performance cats.",
-      keywords: es ? "Energía · Velocidad · Rendimiento" : "Energy · Speed · Performance",
-      Icon: Zap,
+        ? "Atigrada oscura, porte impecable. Seria, directa y dueña absoluta de su territorio."
+        : "Dark tabby, impeccable bearing. Serious, direct and absolute owner of her territory.",
+    },
+    {
+      name: "ARAGORN",
+      desc: es
+        ? "Atigrado robusto, carácter sereno. El guardián. Siempre sabe exactamente dónde estar."
+        : "Robust tabby, serene character. The guardian. Always knows exactly where to be.",
     },
   ];
 
