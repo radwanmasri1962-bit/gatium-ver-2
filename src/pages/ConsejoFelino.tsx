@@ -353,60 +353,68 @@ const ConsejoFelino = () => {
           {es ? "Siete gatos. Siete formas de habitar." : "Seven cats. Seven ways of living."}
         </h2>
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto"
-          style={{ marginTop: "48px", maxWidth: "1200px" }}
+          className="overflow-x-auto"
+          style={{ marginTop: "48px", scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
         >
-          {cats.map(({ name, img, desc }) => (
-            <div
-              key={name}
-              className="transition-transform duration-300 hover:-translate-y-1"
-              style={{
-                backgroundColor: "#FFFFFF",
-                borderRadius: "12px",
-                padding: "16px",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
-              }}
-            >
+          <div
+            className="flex"
+            style={{ gap: "20px", padding: "8px 24px 24px", width: "max-content" }}
+          >
+            {cats.map(({ name, img, desc }) => (
               <div
-                className="aspect-square"
+                key={name}
+                className="transition-transform duration-300 hover:-translate-y-1"
                 style={{
-                  marginBottom: "16px",
-                  borderRadius: "8px",
-                  overflow: "hidden",
-                  backgroundColor: "hsl(var(--beige))",
+                  flex: "0 0 220px",
+                  width: "220px",
+                  scrollSnapAlign: "start",
+                  backgroundColor: "#FFFFFF",
+                  borderRadius: "12px",
+                  padding: "14px",
+                  boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
                 }}
               >
-                <img
-                  src={img}
-                  alt={name}
-                  loading="lazy"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
+                <div
+                  className="aspect-square"
+                  style={{
+                    marginBottom: "14px",
+                    borderRadius: "8px",
+                    overflow: "hidden",
+                    backgroundColor: "hsl(var(--beige))",
+                  }}
+                >
+                  <img
+                    src={img}
+                    alt={name}
+                    loading="lazy"
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                </div>
+                <div
+                  style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontWeight: 600,
+                    fontSize: "24px",
+                    color: "#000",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {name}
+                </div>
+                <p
+                  style={{
+                    fontFamily: "'Open Sans', sans-serif",
+                    fontSize: "12px",
+                    color: "rgba(0,0,0,0.7)",
+                    marginTop: "6px",
+                    lineHeight: 1.55,
+                  }}
+                >
+                  {desc}
+                </p>
               </div>
-              <div
-                style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontWeight: 600,
-                  fontSize: "26px",
-                  color: "#000",
-                  letterSpacing: "0.02em",
-                }}
-              >
-                {name}
-              </div>
-              <p
-                style={{
-                  fontFamily: "'Open Sans', sans-serif",
-                  fontSize: "13px",
-                  color: "rgba(0,0,0,0.7)",
-                  marginTop: "8px",
-                  lineHeight: 1.6,
-                }}
-              >
-                {desc}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
