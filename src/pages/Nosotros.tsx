@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
+import { useEffect, useState } from "react";
 import majoYaniHero from "@/assets/majo-yani-1.jpg";
 import interiorHogar from "@/assets/nosotros-interior.jpg";
-import majoYaniPortrait from "@/assets/majo-yani-2.jpg";
+import yaniDesigning from "@/assets/yani-designing.jpg";
+import majoPainting from "@/assets/majo-painting.jpg";
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
