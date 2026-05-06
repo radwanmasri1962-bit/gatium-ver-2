@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Eye, Lightbulb, Pencil, Star, Cat } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
+import groupPhoto from "@/assets/cats/group-photo.jpg";
+import ateneaMotion from "@/assets/cats/atenea-motion.jpg";
 import anubisImg from "@/assets/cats/anubis.jpg";
 import apoloImg from "@/assets/cats/apolo.jpg";
 import aquilesImg from "@/assets/cats/aquiles.jpg";
@@ -125,7 +127,7 @@ const ConsejoFelino = () => {
       {/* SECTION 1 — HERO */}
       <section
         className="grid grid-cols-1 md:grid-cols-2"
-        style={{ minHeight: "90vh", backgroundColor: "hsl(var(--cream))" }}
+        style={{ minHeight: "75vh", backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="flex flex-col justify-center px-[18px] py-[48px] md:px-16 md:py-20">
           <div className="mx-auto md:mx-0 w-full" style={{ maxWidth: "520px" }}>
@@ -202,20 +204,17 @@ const ConsejoFelino = () => {
             </a>
           </div>
         </div>
-        <div className="aspect-[16/9] md:aspect-auto md:h-full">
-          <PhotoPlaceholder
-            label={
-              es
-                ? "FOTO: LOS 7 GATOS JUNTOS EN MOBILIARIO DE MADERA"
-                : "PHOTO: THE 7 CATS TOGETHER ON WOODEN FURNITURE"
-            }
-            dark
+        <div className="w-full aspect-[16/9] md:aspect-auto md:h-full">
+          <img
+            src={groupPhoto}
+            alt={es ? "Los 7 gatos juntos" : "The 7 cats together"}
+            style={{ width: "100%", height: "100%", objectFit: "cover", aspectRatio: "16/9" }}
           />
         </div>
       </section>
 
       {/* SECTION 2 — HOW THE COUNCIL PARTICIPATES */}
-      <section className="section-padding" style={{ backgroundColor: "hsl(var(--cream))" }}>
+      <section className="py-12 md:py-16 px-6 md:px-16" style={{ backgroundColor: "hsl(var(--cream))" }}>
         <div className="text-center" style={eyebrow}>
           {es ? "ASÍ PARTICIPA EL CONSEJO EN GATIUM" : "HOW THE COUNCIL PARTICIPATES IN GATIUM"}
         </div>
@@ -282,17 +281,14 @@ const ConsejoFelino = () => {
 
       {/* SECTION 3 — INSIGHT QUOTE BAND */}
       <section
-        className="grid grid-cols-1 md:grid-cols-[45%_55%] gap-10 md:gap-0 section-padding"
+        className="grid grid-cols-1 md:grid-cols-[45%_55%] gap-10 md:gap-0 py-12 md:py-16 px-6 md:px-16"
         style={{ backgroundColor: "hsl(var(--near-black))" }}
       >
-        <div className="aspect-[4/3]">
-          <PhotoPlaceholder
-            label={
-              es
-                ? "FOTO: GATO INDIVIDUAL CONTEMPLATIVO, LUZ CÁLIDA"
-                : "PHOTO: CONTEMPLATIVE INDIVIDUAL CAT, WARM LIGHT"
-            }
-            dark
+        <div className="aspect-square w-full">
+          <img
+            src={ateneaMotion}
+            alt="Atenea"
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", aspectRatio: "1/1" }}
           />
         </div>
         <div className="flex flex-col justify-center md:pl-16">
@@ -332,7 +328,7 @@ const ConsejoFelino = () => {
       {/* SECTION 4 — COUNCIL MEMBERS GRID */}
       <section
         id="members"
-        className="section-padding"
+        className="py-12 md:py-16 px-6 md:px-16"
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="text-center" style={eyebrow}>
@@ -421,7 +417,7 @@ const ConsejoFelino = () => {
       {/* SECTION 5 — PHILOSOPHY BAND */}
       <section
         className="grid grid-cols-1 md:grid-cols-4 gap-8"
-        style={{ backgroundColor: "hsl(var(--near-black))", padding: "64px 24px" }}
+        style={{ backgroundColor: "hsl(var(--near-black))", padding: "48px 24px" }}
       >
         {philosophy.map(({ Icon, title, desc }) => (
           <div key={title}>
@@ -484,7 +480,7 @@ const ConsejoFelino = () => {
 
       {/* SECTION 6 — BOTTOM CTA */}
       <section
-        className="text-center section-padding"
+        className="text-center py-12 md:py-16 px-6 md:px-16"
         style={{ backgroundColor: "hsl(var(--beige))" }}
       >
         <h2
