@@ -5,6 +5,10 @@ import { Mail, Globe, Camera, PawPrint } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { toast } from "sonner";
+import apoloWindow from "@/assets/contacto/apolo-window.jpg";
+import anubisInterior from "@/assets/contacto/anubis-interior.jpg";
+
+void PhotoPlaceholder;
 
 const WHATSAPP = "https://wa.me/521XXXXXXXXXX";
 
@@ -173,10 +177,10 @@ const Contacto = () => {
   return (
     <>
       <section
-        className="grid grid-cols-1 md:grid-cols-2"
-        style={{ minHeight: "80vh", backgroundColor: "hsl(var(--cream))" }}
+        className="grid grid-cols-1 md:grid-cols-2 items-center"
+        style={{ backgroundColor: "hsl(var(--cream))" }}
       >
-        <div className="flex flex-col justify-center px-[18px] py-[48px] md:px-16 md:py-20">
+        <div className="flex flex-col justify-center px-[18px] py-[36px] md:px-16 md:py-14">
           <div className="mx-auto md:mx-0 w-full" style={{ maxWidth: "520px" }}>
             <div style={eyebrow}>{es ? "CONTACTO" : "CONTACT"}</div>
             <h1
@@ -237,19 +241,19 @@ const Contacto = () => {
             </a>
           </div>
         </div>
-        <div className="aspect-[16/9] md:aspect-auto md:h-full">
-          <PhotoPlaceholder
-            label={
-              es ? "FOTO: GATO MIRANDO POR VENTANA, LUZ SERENA" : "PHOTO: CAT LOOKING THROUGH WINDOW, SERENE LIGHT"
-            }
-            dark
+        <div className="w-full px-[18px] md:px-16 pb-[36px] md:pb-14 md:pt-14">
+          <img
+            src={apoloWindow}
+            alt={es ? "Gato mirando por la ventana" : "Cat looking through the window"}
+            className="w-full"
+            style={{ aspectRatio: "1 / 1", objectFit: "cover", objectPosition: "center", display: "block" }}
           />
         </div>
       </section>
 
       <section
         id="contact-form"
-        className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-12 md:gap-0 section-padding"
+        className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-10 md:gap-0 px-[18px] md:px-16 py-12 md:py-16"
         style={{ backgroundColor: "#FFFFFF" }}
       >
         <div>
@@ -635,13 +639,15 @@ const Contacto = () => {
       </section>
 
       <section
-        className="grid grid-cols-1 md:grid-cols-[30%_40%_30%] gap-8 md:gap-0"
-        style={{ backgroundColor: "hsl(var(--beige))", padding: "64px 24px" }}
+        className="grid grid-cols-1 md:grid-cols-[30%_40%_30%] gap-6 md:gap-0 items-center"
+        style={{ backgroundColor: "hsl(var(--beige))", padding: "32px 24px" }}
       >
-        <div className="aspect-[3/4] hidden md:block">
-          <PhotoPlaceholder
-            label={es ? "FOTO: GATO EN INTERIOR CÁLIDO" : "PHOTO: CAT IN WARM INTERIOR"}
-            dark
+        <div className="hidden md:block">
+          <img
+            src={anubisInterior}
+            alt={es ? "Gato en interior cálido" : "Cat in warm interior"}
+            className="w-full"
+            style={{ aspectRatio: "1 / 1", objectFit: "cover", objectPosition: "center", display: "block" }}
           />
         </div>
         <div className="flex flex-col justify-center md:px-10 text-center md:text-left">
