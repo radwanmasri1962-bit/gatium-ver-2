@@ -147,7 +147,7 @@ const Nosotros = () => {
           <img
             src={majoYaniHero}
             alt={es ? "Majo y Yani con sus gatos en casa" : "Majo and Yani with their cats at home"}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
             style={{ backgroundColor: "hsl(var(--cream))" }}
           />
         </div>
@@ -275,12 +275,12 @@ const Nosotros = () => {
           <img
               src={majoYaniPortrait}
               alt={es ? "Retrato de Majo y Yani" : "Portrait of Majo and Yani"}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
               style={{ backgroundColor: "hsl(var(--beige))" }}
             />
           </div>
           <div
-            className="md:absolute static md:bottom-0 md:right-0 md:translate-y-3/4 md:-translate-x-2 mt-6 md:mt-0"
+            className="md:absolute static md:bottom-0 md:right-0 md:translate-y-1/4 md:-translate-x-2 mt-6 md:mt-0"
             style={{
               backgroundColor: "#FFFFFF",
               borderRadius: "8px",
