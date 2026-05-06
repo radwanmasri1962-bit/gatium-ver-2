@@ -145,13 +145,15 @@ const Nosotros = () => {
             </a>
           </div>
         </div>
-        <div className="aspect-[16/9] md:aspect-auto md:h-full">
-          <img
-            src={majoYaniHero}
-            alt={es ? "Majo y Yani con sus gatos en casa" : "Majo and Yani with their cats at home"}
-            className="w-full h-full object-cover"
-            style={{ backgroundColor: "hsl(var(--cream))" }}
-          />
+        <div className="w-full md:h-full md:flex md:items-center md:px-8">
+          <div className="w-full aspect-video overflow-hidden">
+            <img
+              src={majoYaniHero}
+              alt={es ? "Majo y Yani con sus gatos en casa" : "Majo and Yani with their cats at home"}
+              className="w-full h-full object-cover object-center"
+              style={{ backgroundColor: "hsl(var(--cream))" }}
+            />
+          </div>
         </div>
       </section>
 
