@@ -42,7 +42,44 @@ const IconLeaf = () => (
   </svg>
 );
 
-const Nosotros = () => {
+const FoundersCarousel = ({ es, slides }: { es: boolean; slides: string[] }) => {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setIdx((i) => (i + 1) % slides.length), 4000);
+    return () => clearInterval(t);
+  }, [slides.length]);
+  return (
+    <div>
+      <div className="aspect-[4/3] relative overflow-hidden" style={{ backgroundColor: "hsl(var(--beige))" }}>
+        {slides.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={es ? "Foto de Majo y Yani trabajando" : "Photo of Majo and Yani at work"}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+            style={{ opacity: i === idx ? 1 : 0 }}
+          />
+        ))}
+      </div>
+      <div className="flex justify-center gap-2 mt-3">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIdx(i)}
+            aria-label={`Slide ${i + 1}`}
+            style={{
+              width: 8,
+              height: 8,
+              borderRadius: "50%",
+              backgroundColor: i === idx ? "hsl(var(--gold))" : "rgba(0,0,0,0.2)",
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
   const { lang } = useLanguage();
   const es = lang === "es";
 
