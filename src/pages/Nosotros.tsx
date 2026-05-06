@@ -275,14 +275,8 @@ const Nosotros = () => {
           </p>
         </div>
         <div className="relative">
-          <div className="aspect-[4/3]">
-          <img
-              src={majoYaniPortrait}
-              alt={es ? "Retrato de Majo y Yani" : "Portrait of Majo and Yani"}
-              className="w-full h-full object-cover"
-              style={{ backgroundColor: "hsl(var(--beige))" }}
-            />
-          </div>
+          <FoundersCarousel es={es} slides={[yaniDesigning, majoPainting]} />
+
           <div
             className="md:absolute static md:bottom-0 md:right-0 md:translate-y-1/4 md:-translate-x-2 mt-6 md:mt-0"
             style={{
