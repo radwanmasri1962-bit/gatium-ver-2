@@ -80,6 +80,7 @@ const FoundersCarousel = ({ es, slides }: { es: boolean; slides: string[] }) => 
   );
 };
 
+const Nosotros = () => {
   const { lang } = useLanguage();
   const es = lang === "es";
 
