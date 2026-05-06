@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
+import { useEffect, useState } from "react";
 import majoYaniHero from "@/assets/majo-yani-1.jpg";
 import interiorHogar from "@/assets/nosotros-interior.jpg";
-import majoYaniPortrait from "@/assets/majo-yani-2.jpg";
+import yaniDesigning from "@/assets/yani-designing.jpg";
+import majoPainting from "@/assets/majo-painting.jpg";
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
@@ -39,6 +41,44 @@ const IconLeaf = () => (
     <path d="M6 26 L18 14" />
   </svg>
 );
+
+const FoundersCarousel = ({ es, slides }: { es: boolean; slides: string[] }) => {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setIdx((i) => (i + 1) % slides.length), 4000);
+    return () => clearInterval(t);
+  }, [slides.length]);
+  return (
+    <div>
+      <div className="aspect-[4/3] relative overflow-hidden" style={{ backgroundColor: "hsl(var(--beige))" }}>
+        {slides.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={es ? "Foto de Majo y Yani trabajando" : "Photo of Majo and Yani at work"}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+            style={{ opacity: i === idx ? 1 : 0 }}
+          />
+        ))}
+      </div>
+      <div className="flex justify-center gap-2 mt-3">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIdx(i)}
+            aria-label={`Slide ${i + 1}`}
+            style={{
+              width: 8,
+              height: 8,
+              borderRadius: "50%",
+              backgroundColor: i === idx ? "hsl(var(--gold))" : "rgba(0,0,0,0.2)",
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Nosotros = () => {
   const { lang } = useLanguage();
@@ -143,13 +183,15 @@ const Nosotros = () => {
             </a>
           </div>
         </div>
-        <div className="aspect-[16/9] md:aspect-auto md:h-full">
-          <img
-            src={majoYaniHero}
-            alt={es ? "Majo y Yani con sus gatos en casa" : "Majo and Yani with their cats at home"}
-            className="w-full h-full object-cover"
-            style={{ backgroundColor: "hsl(var(--cream))" }}
-          />
+        <div className="w-full md:h-full md:flex md:items-center md:px-8">
+          <div className="w-full aspect-video overflow-hidden">
+            <img
+              src={majoYaniHero}
+              alt={es ? "Majo y Yani con sus gatos en casa" : "Majo and Yani with their cats at home"}
+              className="w-full h-full object-cover object-center"
+              style={{ backgroundColor: "hsl(var(--cream))" }}
+            />
+          </div>
         </div>
       </section>
 
@@ -271,14 +313,8 @@ const Nosotros = () => {
           </p>
         </div>
         <div className="relative">
-          <div className="aspect-[4/3]">
-          <img
-              src={majoYaniPortrait}
-              alt={es ? "Retrato de Majo y Yani" : "Portrait of Majo and Yani"}
-              className="w-full h-full object-cover"
-              style={{ backgroundColor: "hsl(var(--beige))" }}
-            />
-          </div>
+          <FoundersCarousel es={es} slides={[yaniDesigning, majoPainting]} />
+
           <div
             className="md:absolute static md:bottom-0 md:right-0 md:translate-y-1/4 md:-translate-x-2 mt-6 md:mt-0"
             style={{
