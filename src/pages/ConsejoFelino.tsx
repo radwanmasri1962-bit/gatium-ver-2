@@ -375,22 +375,22 @@ const ConsejoFelino = () => {
                 key={name}
                 className="transition-transform duration-300 hover:-translate-y-1"
                 style={{
-                  flex: "0 0 220px",
-                  width: "220px",
+                  flex: "0 0 300px",
+                  width: "300px",
                   scrollSnapAlign: "start",
                   backgroundColor: "#FFFFFF",
                   borderRadius: "12px",
-                  padding: "14px",
+                  padding: "16px",
                   boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
                 }}
               >
                 <div
-                  className="aspect-square"
                   style={{
-                    marginBottom: "14px",
+                    marginBottom: "16px",
                     borderRadius: "8px",
                     overflow: "hidden",
                     backgroundColor: "hsl(var(--beige))",
+                    aspectRatio: "4/5",
                   }}
                 >
                   <img
