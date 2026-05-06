@@ -126,18 +126,39 @@ const ConsejoFelino = () => {
     <>
       {/* SECTION 1 — HERO */}
       <section
-        className="grid grid-cols-1 md:grid-cols-2"
-        style={{ minHeight: "75vh", backgroundColor: "hsl(var(--cream))" }}
+        className="relative w-full"
+        style={{ minHeight: "80vh" }}
       >
-        <div className="flex flex-col justify-center px-[18px] py-[48px] md:px-16 md:py-20">
-          <div className="mx-auto md:mx-0 w-full" style={{ maxWidth: "520px" }}>
-            <div style={eyebrow}>{es ? "CONSEJO FELINO" : "FELINE COUNCIL"}</div>
+        <img
+          src={groupPhoto}
+          alt={es ? "Los 7 gatos juntos" : "The 7 cats together"}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.15) 65%, rgba(0,0,0,0) 100%)",
+          }}
+        />
+        <div className="relative flex flex-col justify-center px-[18px] py-[64px] md:px-16 md:py-24" style={{ minHeight: "80vh" }}>
+          <div className="w-full" style={{ maxWidth: "560px" }}>
+            <div style={{ ...eyebrow, color: "hsl(var(--gold))" }}>
+              {es ? "CONSEJO FELINO" : "FELINE COUNCIL"}
+            </div>
             <h1
               className="text-[30px] md:text-[52px]"
               style={{
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 700,
-                color: "#000",
+                color: "hsl(var(--cream))",
                 lineHeight: 1.1,
                 marginTop: "20px",
                 maxWidth: "480px",
@@ -160,7 +181,7 @@ const ConsejoFelino = () => {
               style={{
                 fontFamily: "'Open Sans', sans-serif",
                 fontSize: "15px",
-                color: "rgba(0,0,0,0.72)",
+                color: "rgba(245,239,230,0.9)",
                 maxWidth: "420px",
                 marginTop: "20px",
                 lineHeight: 1.7,
@@ -174,7 +195,7 @@ const ConsejoFelino = () => {
               style={{
                 fontFamily: "'Open Sans', sans-serif",
                 fontSize: "14px",
-                color: "rgba(0,0,0,0.65)",
+                color: "rgba(245,239,230,0.8)",
                 maxWidth: "420px",
                 marginTop: "12px",
                 lineHeight: 1.7,
@@ -189,8 +210,8 @@ const ConsejoFelino = () => {
               style={{
                 display: "inline-block",
                 marginTop: "32px",
-                backgroundColor: "#000",
-                color: "hsl(var(--cream))",
+                backgroundColor: "hsl(var(--cream))",
+                color: "#000",
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 700,
                 fontSize: "10px",
@@ -203,13 +224,6 @@ const ConsejoFelino = () => {
               {es ? "CONOCE A NUESTRO CONSEJO →" : "MEET OUR COUNCIL →"}
             </a>
           </div>
-        </div>
-        <div className="w-full aspect-[16/9] md:aspect-auto md:h-full">
-          <img
-            src={groupPhoto}
-            alt={es ? "Los 7 gatos juntos" : "The 7 cats together"}
-            style={{ width: "100%", height: "100%", objectFit: "cover", aspectRatio: "16/9" }}
-          />
         </div>
       </section>
 
