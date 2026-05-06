@@ -204,14 +204,11 @@ const ConsejoFelino = () => {
             </a>
           </div>
         </div>
-        <div className="aspect-[16/9] md:aspect-auto md:h-full">
-          <PhotoPlaceholder
-            label={
-              es
-                ? "FOTO: LOS 7 GATOS JUNTOS EN MOBILIARIO DE MADERA"
-                : "PHOTO: THE 7 CATS TOGETHER ON WOODEN FURNITURE"
-            }
-            dark
+        <div className="w-full aspect-[16/9] md:aspect-auto md:h-full">
+          <img
+            src={groupPhoto}
+            alt={es ? "Los 7 gatos juntos" : "The 7 cats together"}
+            style={{ width: "100%", height: "100%", objectFit: "cover", aspectRatio: "16/9" }}
           />
         </div>
       </section>
