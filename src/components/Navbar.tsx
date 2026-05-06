@@ -31,7 +31,7 @@ export const Navbar = () => {
             src={logoDark}
             alt="GATIUM Atelier Felino"
             style={{
-              height: "36px",
+              height: "72px",
               width: "auto",
               filter:
                 "brightness(0) saturate(100%) invert(15%) sepia(28%) saturate(1100%) hue-rotate(353deg) brightness(94%) contrast(88%)",
