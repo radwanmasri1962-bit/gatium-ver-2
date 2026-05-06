@@ -214,7 +214,7 @@ const ConsejoFelino = () => {
       </section>
 
       {/* SECTION 2 — HOW THE COUNCIL PARTICIPATES */}
-      <section className="section-padding" style={{ backgroundColor: "hsl(var(--cream))" }}>
+      <section className="py-12 md:py-16 px-6 md:px-16" style={{ backgroundColor: "hsl(var(--cream))" }}>
         <div className="text-center" style={eyebrow}>
           {es ? "ASÍ PARTICIPA EL CONSEJO EN GATIUM" : "HOW THE COUNCIL PARTICIPATES IN GATIUM"}
         </div>
@@ -281,7 +281,7 @@ const ConsejoFelino = () => {
 
       {/* SECTION 3 — INSIGHT QUOTE BAND */}
       <section
-        className="grid grid-cols-1 md:grid-cols-[45%_55%] gap-10 md:gap-0 section-padding"
+        className="grid grid-cols-1 md:grid-cols-[45%_55%] gap-10 md:gap-0 py-12 md:py-16 px-6 md:px-16"
         style={{ backgroundColor: "hsl(var(--near-black))" }}
       >
         <div className="aspect-square w-full">
@@ -328,7 +328,7 @@ const ConsejoFelino = () => {
       {/* SECTION 4 — COUNCIL MEMBERS GRID */}
       <section
         id="members"
-        className="section-padding"
+        className="py-12 md:py-16 px-6 md:px-16"
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="text-center" style={eyebrow}>
@@ -480,7 +480,7 @@ const ConsejoFelino = () => {
 
       {/* SECTION 6 — BOTTOM CTA */}
       <section
-        className="text-center section-padding"
+        className="text-center py-12 md:py-16 px-6 md:px-16"
         style={{ backgroundColor: "hsl(var(--beige))" }}
       >
         <h2
