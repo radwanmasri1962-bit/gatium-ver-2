@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Eye, Lightbulb, Pencil, Star, Cat } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
+import groupPhoto from "@/assets/cats/group-photo.jpg";
+import ateneaMotion from "@/assets/cats/atenea-motion.jpg";
 import anubisImg from "@/assets/cats/anubis.jpg";
 import apoloImg from "@/assets/cats/apolo.jpg";
 import aquilesImg from "@/assets/cats/aquiles.jpg";
