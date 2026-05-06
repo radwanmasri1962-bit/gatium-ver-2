@@ -127,7 +127,7 @@ const ConsejoFelino = () => {
       {/* SECTION 1 — HERO */}
       <section
         className="grid grid-cols-1 md:grid-cols-2"
-        style={{ minHeight: "90vh", backgroundColor: "hsl(var(--cream))" }}
+        style={{ minHeight: "75vh", backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="flex flex-col justify-center px-[18px] py-[48px] md:px-16 md:py-20">
           <div className="mx-auto md:mx-0 w-full" style={{ maxWidth: "520px" }}>
@@ -417,7 +417,7 @@ const ConsejoFelino = () => {
       {/* SECTION 5 — PHILOSOPHY BAND */}
       <section
         className="grid grid-cols-1 md:grid-cols-4 gap-8"
-        style={{ backgroundColor: "hsl(var(--near-black))", padding: "64px 24px" }}
+        style={{ backgroundColor: "hsl(var(--near-black))", padding: "48px 24px" }}
       >
         {philosophy.map(({ Icon, title, desc }) => (
           <div key={title}>
