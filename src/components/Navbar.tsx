@@ -7,9 +7,10 @@ import { LanguageToggle } from "./LanguageToggle";
 
 const links = [
   { to: "/", key: "nav.inicio" },
-  { to: "/#solutions", key: "nav.soluciones" },
-  { to: "/como-trabajamos", key: "nav.como" },
+  { to: "/nosotros", key: "nav.nosotros" },
+  
   { to: "/consejo-felino", key: "nav.consejo" },
+  { to: "/como-trabajamos", key: "nav.como" },
   { to: "/contacto", key: "nav.contacto" },
 ];
 
@@ -17,46 +18,66 @@ interface Props {
   transparent?: boolean;
 }
 
-export const Navbar = (_props: Props = {}) => {
+export const Navbar = ({ transparent = false }: Props) => {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
+
+  // When transparent: light text over hero photos. When scrolled: transparent bg, dark text/logo.
+  const headerStyle: React.CSSProperties = {
+    backgroundColor: "transparent",
+    borderBottom: "1px solid transparent",
+    transition: "background-color 400ms ease, border-color 400ms ease",
+  };
+  const iconColor = transparent ? "hsl(var(--cream))" : "#3B2A1A";
 
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50"
-      style={{
-        backgroundColor: "#F5EFE6",
-        borderBottom: "1px solid rgba(0,0,0,0.08)",
-        height: "64px",
-      }}
+      style={headerStyle}
+      data-transparent={transparent}
     >
-      <div className="h-[64px] px-4 md:px-8 flex items-center justify-between">
+      <div className="h-[60px] md:h-[72px] px-4 md:px-8 flex items-center justify-between">
+        {/* Left: Logo */}
         <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
           <img
             src={logoDark}
             alt="GATIUM Atelier Felino"
-            className="w-auto"
-            style={{
-              height: "72px",
-              filter:
-                "brightness(0) saturate(100%) invert(15%) sepia(28%) saturate(1100%) hue-rotate(353deg) brightness(94%) contrast(88%)",
-            }}
+            className="h-[52px] w-auto transition-all duration-500"
+            style={
+              transparent
+                ? {
+                    filter:
+                      "brightness(0) saturate(100%) invert(98%) sepia(8%) saturate(380%) hue-rotate(2deg) brightness(101%) contrast(94%)",
+                  }
+                : {
+                    filter:
+                      "brightness(0) saturate(100%) invert(15%) sepia(28%) saturate(1100%) hue-rotate(353deg) brightness(94%) contrast(88%)",
+                  }
+            }
           />
+
         </Link>
 
+        {/* Center: Desktop links */}
         <nav className="hidden lg:flex items-center gap-7">
           {links.map((l) => (
             <RouterNavLink
               key={l.to}
               to={l.to}
               end={l.to === "/"}
-              className="navbar-static-link"
+              className={({ isActive }) =>
+                `nav-link nav-link--${transparent ? "light" : "dark"} ${isActive ? "active" : ""}`
+              }
+              style={({ isActive }) =>
+                isActive ? undefined : { color: transparent ? "#F5EFE6" : "#3B2A1A" }
+              }
             >
               {t(l.key)}
             </RouterNavLink>
           ))}
         </nav>
 
+        {/* Right: lang + CTA */}
         <div className="hidden md:flex items-center gap-4">
           <LanguageToggle />
           <a href="#contacto" className="btn-gold" style={{ borderRadius: "8px" }}>
@@ -64,20 +85,22 @@ export const Navbar = (_props: Props = {}) => {
           </a>
         </div>
 
+        {/* Mobile hamburger */}
         <button
           onClick={() => setOpen((v) => !v)}
           className="md:hidden"
           aria-label="Menu"
-          style={{ color: "#3B2A1A" }}
+          style={{ color: iconColor }}
         >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
+      {/* Mobile overlay */}
       {open && (
         <div
-          className="md:hidden fixed inset-0 top-[64px] flex flex-col items-center justify-center gap-8 px-6"
-          style={{ backgroundColor: "#F5EFE6" }}
+          className="md:hidden fixed inset-0 top-[60px] flex flex-col items-center justify-center gap-8 px-6"
+          style={{ backgroundColor: "hsl(var(--near-black))" }}
         >
           <nav className="flex flex-col items-center gap-7">
             {links.map((l) => (
@@ -86,7 +109,7 @@ export const Navbar = (_props: Props = {}) => {
                 to={l.to}
                 end={l.to === "/"}
                 onClick={() => setOpen(false)}
-                className="navbar-static-link"
+                className={({ isActive }) => `nav-link nav-link--light text-base ${isActive ? "active" : ""}`}
                 style={{ fontSize: "16px" }}
               >
                 {t(l.key)}
