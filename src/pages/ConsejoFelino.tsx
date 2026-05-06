@@ -284,14 +284,11 @@ const ConsejoFelino = () => {
         className="grid grid-cols-1 md:grid-cols-[45%_55%] gap-10 md:gap-0 section-padding"
         style={{ backgroundColor: "hsl(var(--near-black))" }}
       >
-        <div className="aspect-[4/3]">
-          <PhotoPlaceholder
-            label={
-              es
-                ? "FOTO: GATO INDIVIDUAL CONTEMPLATIVO, LUZ CÁLIDA"
-                : "PHOTO: CONTEMPLATIVE INDIVIDUAL CAT, WARM LIGHT"
-            }
-            dark
+        <div className="aspect-square w-full">
+          <img
+            src={ateneaMotion}
+            alt="Atenea"
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", aspectRatio: "1/1" }}
           />
         </div>
         <div className="flex flex-col justify-center md:pl-16">
