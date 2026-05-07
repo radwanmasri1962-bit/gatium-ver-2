@@ -180,7 +180,7 @@ const Contacto = () => {
         className="grid grid-cols-1 md:grid-cols-2 items-center"
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
-        <div className="flex flex-col justify-center px-[18px] py-[36px] md:px-16 md:py-14">
+        <div className="flex flex-col justify-center px-[18px] py-[24px] md:px-16 md:py-10">
           <div className="mx-auto md:mx-0 w-full" style={{ maxWidth: "520px" }}>
             <div style={eyebrow}>{es ? "CONTACTO" : "CONTACT"}</div>
             <h1
@@ -241,7 +241,7 @@ const Contacto = () => {
             </a>
           </div>
         </div>
-        <div className="w-full px-[18px] md:px-16 pb-[36px] md:pb-14 md:pt-14">
+        <div className="w-full px-[18px] md:px-16 pb-[24px] md:pb-10 md:pt-10">
           <img
             src={apoloWindow}
             alt={es ? "Gato mirando por la ventana" : "Cat looking through the window"}
@@ -253,7 +253,7 @@ const Contacto = () => {
 
       <section
         id="contact-form"
-        className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-10 md:gap-0 px-[18px] md:px-16 py-12 md:py-16"
+        className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-8 md:gap-0 px-[18px] md:px-16 py-8 md:py-10"
         style={{ backgroundColor: "#FFFFFF" }}
       >
         <div>
@@ -597,12 +597,26 @@ const Contacto = () => {
             {es ? "VER MÁS SOBRE NUESTROS SERVICIOS" : "SEE MORE ABOUT OUR SERVICES"} <span>→</span>
           </Link>
 
+          <img
+            src={anubisInterior}
+            alt={es ? "Gato en interior cálido" : "Cat in warm interior"}
+            className="w-full"
+            style={{
+              aspectRatio: "1 / 1",
+              objectFit: "cover",
+              objectPosition: "center",
+              display: "block",
+              marginTop: "28px",
+              borderTopLeftRadius: "8px",
+              borderTopRightRadius: "8px",
+            }}
+          />
           <div
             style={{
               backgroundColor: "hsl(var(--near-black))",
-              borderRadius: "8px",
+              borderBottomLeftRadius: "8px",
+              borderBottomRightRadius: "8px",
               padding: "28px",
-              marginTop: "28px",
             }}
           >
             <h3
@@ -638,64 +652,6 @@ const Contacto = () => {
         </div>
       </section>
 
-      <section
-        className="grid grid-cols-1 md:grid-cols-[30%_40%_30%] gap-6 md:gap-0 items-center"
-        style={{ backgroundColor: "hsl(var(--beige))", padding: "32px 24px" }}
-      >
-        <div className="hidden md:block">
-          <img
-            src={anubisInterior}
-            alt={es ? "Gato en interior cálido" : "Cat in warm interior"}
-            className="w-full"
-            style={{ aspectRatio: "1 / 1", objectFit: "cover", objectPosition: "center", display: "block" }}
-          />
-        </div>
-        <div className="flex flex-col justify-center md:px-10 text-center md:text-left">
-          <div
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "80px",
-              lineHeight: 0.7,
-              color: "hsl(var(--gold))",
-            }}
-          >
-            “
-          </div>
-          <p
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontStyle: "italic",
-              fontSize: "26px",
-              color: "#000",
-              lineHeight: 1.4,
-              marginTop: "8px",
-            }}
-          >
-            {es ? "No diseñamos para gatos. Diseñamos con ellos." : "We don't design for cats. We design with them."}
-          </p>
-          <div
-            style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 700,
-              fontSize: "9px",
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              color: "hsl(var(--gold))",
-              marginTop: "16px",
-            }}
-          >
-            — GATIUM Atelier Felino
-          </div>
-        </div>
-        <div className="hidden md:flex items-center justify-center">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="hsl(var(--gold))" strokeWidth="1.4">
-            <path d="M20 30 L16 18 L28 26 H52 L64 18 L60 30 V52 a10 10 0 0 1 -10 10 H30 a10 10 0 0 1 -10 -10 Z" />
-            <circle cx="32" cy="44" r="1.5" fill="hsl(var(--gold))" />
-            <circle cx="48" cy="44" r="1.5" fill="hsl(var(--gold))" />
-            <path d="M36 52 Q40 56 44 52" />
-          </svg>
-        </div>
-      </section>
     </>
   );
 };
