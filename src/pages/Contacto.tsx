@@ -5,7 +5,7 @@ import { Mail, Globe, Camera, PawPrint } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { toast } from "sonner";
-import apoloWindow from "@/assets/contacto/apolo-window.jpg";
+import apoloWindow from "@/assets/contacto/apolo-window-horizontal.jpg";
 import anubisInterior from "@/assets/contacto/anubis-interior.jpg";
 
 void PhotoPlaceholder;
