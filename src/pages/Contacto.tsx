@@ -180,7 +180,7 @@ const Contacto = () => {
         className="grid grid-cols-1 md:grid-cols-2 items-center"
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
-        <div className="flex flex-col justify-center px-[18px] py-[36px] md:px-16 md:py-14">
+        <div className="flex flex-col justify-center px-[18px] py-[24px] md:px-16 md:py-10">
           <div className="mx-auto md:mx-0 w-full" style={{ maxWidth: "520px" }}>
             <div style={eyebrow}>{es ? "CONTACTO" : "CONTACT"}</div>
             <h1
