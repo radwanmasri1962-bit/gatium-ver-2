@@ -253,7 +253,7 @@ const Contacto = () => {
 
       <section
         id="contact-form"
-        className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-10 md:gap-0 px-[18px] md:px-16 py-12 md:py-16"
+        className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-8 md:gap-0 px-[18px] md:px-16 py-8 md:py-10"
         style={{ backgroundColor: "#FFFFFF" }}
       >
         <div>
