@@ -241,7 +241,7 @@ const Contacto = () => {
             </a>
           </div>
         </div>
-        <div className="w-full px-[18px] md:px-16 pb-[36px] md:pb-14 md:pt-14">
+        <div className="w-full px-[18px] md:px-16 pb-[24px] md:pb-10 md:pt-10">
           <img
             src={apoloWindow}
             alt={es ? "Gato mirando por la ventana" : "Cat looking through the window"}
