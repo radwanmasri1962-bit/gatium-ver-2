@@ -120,18 +120,43 @@ const Nosotros = () => {
       {/* SECTION 1 — HERO */}
       <section
         id="hero"
-        className="grid grid-cols-1 md:grid-cols-2"
-        style={{ minHeight: "85vh", backgroundColor: "hsl(var(--cream))" }}
+        className="relative w-full overflow-hidden"
+        style={{ height: "75vh" }}
       >
-        <div className="flex flex-col justify-center px-[18px] py-[48px] md:px-16 md:py-20">
-          <div className="mx-auto md:mx-0 w-full" style={{ maxWidth: "520px" }}>
-            <div style={eyebrow}>{es ? "NOSOTROS" : "ABOUT US"}</div>
+        <img
+          src={majoYaniHero}
+          alt={es ? "Majo y Yani con sus gatos en casa" : "Majo and Yani with their cats at home"}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%)",
+          }}
+        />
+        <div
+          className="relative h-full flex flex-col justify-end"
+          style={{ padding: "48px" }}
+        >
+          <div style={{ maxWidth: "520px" }}>
+            <div style={{ ...eyebrow, color: "hsl(var(--gold))" }}>
+              {es ? "NOSOTROS" : "ABOUT US"}
+            </div>
             <h1
               className="text-[32px] md:text-[56px]"
               style={{
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 700,
-                color: "#000",
+                color: "#fff",
                 lineHeight: 1.1,
                 marginTop: "20px",
               }}
@@ -142,8 +167,8 @@ const Nosotros = () => {
               style={{
                 fontFamily: "'Open Sans', sans-serif",
                 fontSize: "15px",
-                color: "rgba(0,0,0,0.72)",
-                maxWidth: "440px",
+                color: "rgba(255,255,255,0.7)",
+                maxWidth: "520px",
                 marginTop: "20px",
                 lineHeight: 1.7,
               }}
@@ -156,8 +181,8 @@ const Nosotros = () => {
               style={{
                 fontFamily: "'Open Sans', sans-serif",
                 fontSize: "15px",
-                color: "rgba(0,0,0,0.72)",
-                maxWidth: "440px",
+                color: "rgba(255,255,255,0.7)",
+                maxWidth: "520px",
                 marginTop: "16px",
                 lineHeight: 1.7,
               }}
@@ -176,21 +201,11 @@ const Nosotros = () => {
                 fontSize: "10px",
                 letterSpacing: "0.25em",
                 textTransform: "uppercase",
-                color: "rgba(0,0,0,0.5)",
+                color: "hsl(var(--gold))",
               }}
             >
               {es ? "NUESTRA HISTORIA ↓" : "OUR STORY ↓"}
             </a>
-          </div>
-        </div>
-        <div className="w-full md:h-full md:flex md:items-center md:px-8">
-          <div className="w-full aspect-video overflow-hidden">
-            <img
-              src={majoYaniHero}
-              alt={es ? "Majo y Yani con sus gatos en casa" : "Majo and Yani with their cats at home"}
-              className="w-full h-full object-cover object-center"
-              style={{ backgroundColor: "hsl(var(--cream))" }}
-            />
           </div>
         </div>
       </section>
