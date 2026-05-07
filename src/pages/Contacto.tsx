@@ -5,7 +5,7 @@ import { Mail, Globe, Camera, PawPrint } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { toast } from "sonner";
-import apoloWindow from "@/assets/contacto/apolo-window.jpg";
+import apoloWindow from "@/assets/contacto/apolo-window-horizontal.jpg";
 import anubisInterior from "@/assets/contacto/anubis-interior.jpg";
 
 void PhotoPlaceholder;
@@ -176,22 +176,34 @@ const Contacto = () => {
 
   return (
     <>
-      <section
-        className="grid grid-cols-1 md:grid-cols-2 items-center"
-        style={{ backgroundColor: "hsl(var(--cream))" }}
-      >
-        <div className="flex flex-col justify-center px-[18px] py-[24px] md:px-16 md:py-10">
-          <div className="mx-auto md:mx-0 w-full" style={{ maxWidth: "520px" }}>
+      <section className="relative w-full overflow-hidden" style={{ height: "75vh" }}>
+        <img
+          src={apoloWindow}
+          alt={es ? "Gato mirando por la ventana" : "Cat looking through the window"}
+          className="absolute inset-0 w-full h-full"
+          style={{ objectFit: "cover", objectPosition: "center" }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 flex flex-col justify-end"
+          style={{ padding: "48px" }}
+        >
+          <div style={{ maxWidth: "520px" }}>
             <div style={eyebrow}>{es ? "CONTACTO" : "CONTACT"}</div>
             <h1
               className="text-[30px] md:text-[52px]"
               style={{
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 700,
-                color: "#000",
+                color: "#fff",
                 lineHeight: 1.1,
                 marginTop: "20px",
-                maxWidth: "480px",
               }}
             >
               {es ? "Hablemos del hogar que tu manada " : "Let's talk about the home your colony "}
@@ -211,8 +223,8 @@ const Contacto = () => {
               style={{
                 fontFamily: "'Open Sans', sans-serif",
                 fontSize: "15px",
-                color: "rgba(0,0,0,0.72)",
-                maxWidth: "420px",
+                color: "rgba(255,255,255,0.7)",
+                maxWidth: "480px",
                 marginTop: "20px",
                 lineHeight: 1.7,
               }}
@@ -240,14 +252,6 @@ const Contacto = () => {
               {es ? "ENVÍANOS TU ESPACIO →" : "SEND US YOUR SPACE →"}
             </a>
           </div>
-        </div>
-        <div className="w-full px-[18px] md:px-16 pb-[24px] md:pb-10 md:pt-10">
-          <img
-            src={apoloWindow}
-            alt={es ? "Gato mirando por la ventana" : "Cat looking through the window"}
-            className="w-full"
-            style={{ aspectRatio: "1 / 1", objectFit: "cover", objectPosition: "center", display: "block" }}
-          />
         </div>
       </section>
 
