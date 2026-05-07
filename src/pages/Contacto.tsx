@@ -597,12 +597,26 @@ const Contacto = () => {
             {es ? "VER MÁS SOBRE NUESTROS SERVICIOS" : "SEE MORE ABOUT OUR SERVICES"} <span>→</span>
           </Link>
 
+          <img
+            src={anubisInterior}
+            alt={es ? "Gato en interior cálido" : "Cat in warm interior"}
+            className="w-full"
+            style={{
+              aspectRatio: "1 / 1",
+              objectFit: "cover",
+              objectPosition: "center",
+              display: "block",
+              marginTop: "28px",
+              borderTopLeftRadius: "8px",
+              borderTopRightRadius: "8px",
+            }}
+          />
           <div
             style={{
               backgroundColor: "hsl(var(--near-black))",
-              borderRadius: "8px",
+              borderBottomLeftRadius: "8px",
+              borderBottomRightRadius: "8px",
               padding: "28px",
-              marginTop: "28px",
             }}
           >
             <h3
