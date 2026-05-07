@@ -638,64 +638,6 @@ const Contacto = () => {
         </div>
       </section>
 
-      <section
-        className="grid grid-cols-1 md:grid-cols-[30%_40%_30%] gap-6 md:gap-0 items-center"
-        style={{ backgroundColor: "hsl(var(--beige))", padding: "32px 24px" }}
-      >
-        <div className="hidden md:block">
-          <img
-            src={anubisInterior}
-            alt={es ? "Gato en interior cálido" : "Cat in warm interior"}
-            className="w-full"
-            style={{ aspectRatio: "1 / 1", objectFit: "cover", objectPosition: "center", display: "block" }}
-          />
-        </div>
-        <div className="flex flex-col justify-center md:px-10 text-center md:text-left">
-          <div
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "80px",
-              lineHeight: 0.7,
-              color: "hsl(var(--gold))",
-            }}
-          >
-            “
-          </div>
-          <p
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontStyle: "italic",
-              fontSize: "26px",
-              color: "#000",
-              lineHeight: 1.4,
-              marginTop: "8px",
-            }}
-          >
-            {es ? "No diseñamos para gatos. Diseñamos con ellos." : "We don't design for cats. We design with them."}
-          </p>
-          <div
-            style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 700,
-              fontSize: "9px",
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              color: "hsl(var(--gold))",
-              marginTop: "16px",
-            }}
-          >
-            — GATIUM Atelier Felino
-          </div>
-        </div>
-        <div className="hidden md:flex items-center justify-center">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="hsl(var(--gold))" strokeWidth="1.4">
-            <path d="M20 30 L16 18 L28 26 H52 L64 18 L60 30 V52 a10 10 0 0 1 -10 10 H30 a10 10 0 0 1 -10 -10 Z" />
-            <circle cx="32" cy="44" r="1.5" fill="hsl(var(--gold))" />
-            <circle cx="48" cy="44" r="1.5" fill="hsl(var(--gold))" />
-            <path d="M36 52 Q40 56 44 52" />
-          </svg>
-        </div>
-      </section>
     </>
   );
 };
