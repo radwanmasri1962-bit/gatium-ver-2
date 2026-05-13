@@ -98,6 +98,7 @@ const ComoTrabajamos = () => {
   const steps = [
     {
       Icon: MessageSquare,
+      img: sketch1,
       label: es ? "PASO 1" : "STEP 1",
       desc: es
         ? "Nos compartes tu espacio y tu dinámica."
@@ -105,6 +106,7 @@ const ComoTrabajamos = () => {
     },
     {
       Icon: ClipboardList,
+      img: sketch2,
       label: es ? "PASO 2" : "STEP 2",
       desc: es
         ? "Realizamos un Diagnóstico GATIUM."
@@ -112,6 +114,7 @@ const ComoTrabajamos = () => {
     },
     {
       Icon: PenTool,
+      img: sketch3,
       label: es ? "PASO 3" : "STEP 3",
       desc: es
         ? "Diseñamos una propuesta personalizada."
@@ -119,11 +122,13 @@ const ComoTrabajamos = () => {
     },
     {
       Icon: RefreshCw,
+      img: sketch4,
       label: es ? "PASO 4" : "STEP 4",
       desc: es ? "Refinamos la propuesta contigo." : "We refine the proposal with you.",
     },
     {
       Icon: Sparkles,
+      img: sketch5,
       label: es ? "PASO 5" : "STEP 5",
       desc: es
         ? "Convertimos la idea en una solución habitable."
