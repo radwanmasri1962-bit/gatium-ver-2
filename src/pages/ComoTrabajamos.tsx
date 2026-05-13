@@ -134,31 +134,35 @@ const ComoTrabajamos = () => {
   const categories = [
     {
       key: "catios",
-      bg: "hsl(var(--beige))",
-      title: "CATIOS",
+      eyebrow: "CATIOS",
+      headline: es
+        ? "Cualquier espacio. Completamente personalizado."
+        : "Any space. Fully personalized.",
       subtext: es
         ? "Balcones pequeños, patios medianos, exteriores amplios — GATIUM adapta cada solución al espacio real de tu hogar."
         : "Small balconies, medium patios, large outdoor areas — GATIUM adapts every solution to the real space of your home.",
     },
     {
       key: "circuitos",
-      bg: "hsl(var(--cream))",
-      title: es ? "CIRCUITOS DE PARED" : "WALL CIRCUITS",
+      eyebrow: es ? "CIRCUITOS DE PARED" : "WALL CIRCUITS",
+      headline: es
+        ? "Movimiento vertical. Exploración instintiva."
+        : "Vertical movement. Instinctive exploration.",
       subtext: es
         ? "Diseñamos circuitos que respetan el comportamiento felino — escalar, observar, recorrer."
         : "We design circuits that respect feline behavior — climb, observe, traverse.",
     },
     {
       key: "mobiliario",
-      bg: "hsl(var(--beige))",
-      title: es ? "MOBILIARIO" : "FURNITURE",
+      eyebrow: es ? "MOBILIARIO" : "FURNITURE",
+      headline: es
+        ? "Integrado al hogar. Pensado para ellos."
+        : "Integrated into the home. Designed for them.",
       subtext: es
         ? "Lujo silencioso, materiales cálidos, convivencia funcional. Muebles que son parte del hogar, no un accesorio."
         : "Quiet luxury, warm materials, functional cohabitation. Furniture that is part of the home, not an accessory.",
     },
   ];
-
-  const principles = [
     {
       Icon: Cat,
       title: es ? "EMPATÍA FELINA" : "FELINE EMPATHY",
