@@ -210,11 +210,12 @@ const ComoTrabajamos = () => {
               : "At GATIUM we don't start by designing furniture. We start by observing how each cat lives, rests, explores and moves."}
           </p>
           <p
-            className="mt-5"
+            className="mt-6"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 600,
               fontStyle: "italic",
-              fontSize: "19px",
+              fontSize: "18px",
               color: "hsl(var(--gold))",
               maxWidth: "420px",
               lineHeight: 1.5,
