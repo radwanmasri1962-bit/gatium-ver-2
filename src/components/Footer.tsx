@@ -93,7 +93,7 @@ export const Footer = () => {
           <p style={{ color: "rgba(245,239,230,0.55)", fontSize: "13px", lineHeight: 1.7 }}>
             {t("footer.talkBody")}
           </p>
-          <a href="https://wa.me/521XXXXXXXXXX" target="_blank" rel="noreferrer" className="btn-gold-outline">
+          <a href={whatsappUrl(lang)} target="_blank" rel="noreferrer" className="btn-gold-outline">
             {t("footer.whatsappBtn")}
           </a>
         </div>
