@@ -37,19 +37,18 @@ const eyebrow: React.CSSProperties = {
 };
 
 const sectionTitle: React.CSSProperties = {
-  fontFamily: "'Cormorant Garamond', serif",
-  fontWeight: 400,
-  fontSize: "clamp(34px, 5vw, 58px)",
-  color: "#1a1410",
-  lineHeight: 1.05,
-  letterSpacing: "-0.01em",
+  fontFamily: "'Montserrat', sans-serif",
+  fontWeight: 700,
+  fontSize: "36px",
+  color: "#000",
+  lineHeight: 1.15,
 };
 
 const bodyText: React.CSSProperties = {
   fontFamily: "'Open Sans', sans-serif",
   fontSize: "15px",
-  color: "rgba(26,20,16,0.72)",
-  lineHeight: 1.85,
+  color: "rgba(0,0,0,0.72)",
+  lineHeight: 1.75,
 };
 
 type Img = { src: string; alt: string; ratio: string; span?: string };
@@ -164,30 +163,27 @@ const ComoTrabajamos = () => {
               {es ? "ATELIER FELINO" : "FELINE ATELIER"}
             </div>
             <h1
-              className="mt-4"
+              className="text-[32px] md:text-[56px] mt-5"
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 400,
-                fontSize: "clamp(38px, 5.4vw, 64px)",
-                color: "hsl(var(--cream))",
-                lineHeight: 1.02,
-                letterSpacing: "-0.01em",
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 700,
+                color: "#fff",
+                lineHeight: 1.1,
               }}
             >
-              {es ? "Diseño que comienza" : "Design that begins"}
-              <br />
-              <em style={{ color: "hsl(var(--gold))", fontStyle: "italic" }}>
+              {es ? "Diseño que comienza " : "Design that begins "}
+              <span style={{ color: "hsl(var(--gold))" }}>
                 {es ? "observando." : "by observing."}
-              </em>
+              </span>
             </h1>
             <p
-              className="mt-6"
+              className="mt-5"
               style={{
                 fontFamily: "'Open Sans', sans-serif",
                 fontSize: "15px",
-                color: "rgba(245,239,230,0.88)",
+                color: "rgba(255,255,255,0.7)",
                 lineHeight: 1.7,
-                maxWidth: "440px",
+                maxWidth: "520px",
               }}
             >
               {es
@@ -214,11 +210,12 @@ const ComoTrabajamos = () => {
               : "At GATIUM we don't start by designing furniture. We start by observing how each cat lives, rests, explores and moves."}
           </p>
           <p
-            className="mt-5"
+            className="mt-6"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 600,
               fontStyle: "italic",
-              fontSize: "19px",
+              fontSize: "18px",
               color: "hsl(var(--gold))",
               maxWidth: "420px",
               lineHeight: 1.5,
@@ -334,9 +331,10 @@ const ComoTrabajamos = () => {
                 <h3
                   className="mt-6"
                   style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "26px",
-                    color: "#1a1410",
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "18px",
+                    color: "#000",
                     lineHeight: 1.2,
                   }}
                 >
@@ -346,9 +344,9 @@ const ComoTrabajamos = () => {
                   className="mt-3"
                   style={{
                     fontFamily: "'Open Sans', sans-serif",
-                    fontSize: "14px",
-                    color: "rgba(26,20,16,0.65)",
-                    lineHeight: 1.7,
+                    fontSize: "15px",
+                    color: "rgba(0,0,0,0.72)",
+                    lineHeight: 1.75,
                   }}
                 >
                   {desc}
@@ -385,14 +383,12 @@ const ComoTrabajamos = () => {
             {es ? "EMPECEMOS" : "LET'S BEGIN"}
           </div>
           <h2
-            className="mt-6 mx-auto"
+            className="mt-5 mx-auto text-[28px] md:text-[42px]"
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontWeight: 400,
-              fontSize: "clamp(30px, 4.4vw, 52px)",
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 700,
               color: "hsl(var(--cream))",
-              lineHeight: 1.15,
-              letterSpacing: "-0.005em",
+              lineHeight: 1.2,
               maxWidth: "780px",
             }}
           >
