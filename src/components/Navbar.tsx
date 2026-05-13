@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink as RouterNavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logoDark from "@/assets/logo-gatium.svg";
@@ -8,7 +8,7 @@ import { LanguageToggle } from "./LanguageToggle";
 const links = [
   { to: "/", key: "nav.inicio" },
   { to: "/nosotros", key: "nav.nosotros" },
-  
+
   { to: "/consejo-felino", key: "nav.consejo" },
   { to: "/como-trabajamos", key: "nav.como" },
   { to: "/contacto", key: "nav.contacto" },
@@ -18,23 +18,33 @@ interface Props {
   transparent?: boolean;
 }
 
-export const Navbar = ({ transparent = false }: Props) => {
+export const Navbar = ({ transparent: _t = false }: Props) => {
+  void _t;
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  // When transparent: light text over hero photos. When scrolled: transparent bg, dark text/logo.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 4);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const transparent = false;
   const headerStyle: React.CSSProperties = {
-    backgroundColor: "transparent",
-    borderBottom: "1px solid transparent",
-    transition: "background-color 400ms ease, border-color 400ms ease",
+    backgroundColor: "#F6F1E8",
+    borderBottom: scrolled ? "1px solid rgba(0,0,0,0.06)" : "1px solid transparent",
+    boxShadow: scrolled ? "0 1px 12px rgba(0,0,0,0.04)" : "none",
+    transition: "border-color 300ms ease, box-shadow 300ms ease",
   };
-  const iconColor = transparent ? "hsl(var(--cream))" : "#3B2A1A";
+  const iconColor = "#3B2A1A";
 
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50"
       style={headerStyle}
-      data-transparent={transparent}
+      data-transparent={false}
     >
       <div className="h-[60px] md:h-[72px] px-4 md:px-8 flex items-center justify-between">
         {/* Left: Logo */}
