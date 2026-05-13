@@ -443,7 +443,59 @@ const Contacto = () => {
           </form>
         </div>
 
-        <div className="md:pl-16">
+        <div className="md:pl-16 flex flex-col">
+          <img
+            src={anubisInterior}
+            alt={es ? "Gato en interior cálido" : "Cat in warm interior"}
+            className="w-full"
+            style={{
+              aspectRatio: "1 / 1",
+              objectFit: "cover",
+              objectPosition: "center",
+              display: "block",
+              borderTopLeftRadius: "8px",
+              borderTopRightRadius: "8px",
+            }}
+          />
+          <div
+            style={{
+              backgroundColor: "hsl(var(--near-black))",
+              borderBottomLeftRadius: "8px",
+              borderBottomRightRadius: "8px",
+              padding: "24px 28px",
+            }}
+          >
+            <h3
+              style={{
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 700,
+                fontSize: "18px",
+                color: "hsl(var(--cream))",
+                lineHeight: 1.3,
+              }}
+            >
+              {es
+                ? "Cada hogar es único. Cada manada también."
+                : "Every home is unique. Every colony too."}
+            </h3>
+            <p
+              style={{
+                fontFamily: "'Open Sans', sans-serif",
+                fontSize: "13px",
+                color: "rgba(245,239,230,0.65)",
+                marginTop: "10px",
+                lineHeight: 1.6,
+              }}
+            >
+              {es
+                ? "Cuéntanos tu historia y diseñaremos un espacio que mejore su bienestar y transforme tu forma de convivir."
+                : "Tell us your story and we will design a space that improves their wellbeing and transforms your way of cohabiting."}
+            </p>
+            <div style={{ color: "hsl(var(--gold))", marginTop: "14px" }}>
+              <PawPrint size={26} strokeWidth={1.4} />
+            </div>
+          </div>
+
           <div
             style={{
               fontFamily: "'Montserrat', sans-serif",
@@ -452,7 +504,8 @@ const Contacto = () => {
               letterSpacing: "0.25em",
               textTransform: "uppercase",
               color: "hsl(var(--gold))",
-              marginBottom: "24px",
+              marginTop: "28px",
+              marginBottom: "8px",
             }}
           >
             {es ? "PREFIERES ESCRIBIRNOS DIRECTO" : "PREFER TO WRITE US DIRECTLY"}
