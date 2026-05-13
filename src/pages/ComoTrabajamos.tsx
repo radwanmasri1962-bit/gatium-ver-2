@@ -37,19 +37,18 @@ const eyebrow: React.CSSProperties = {
 };
 
 const sectionTitle: React.CSSProperties = {
-  fontFamily: "'Cormorant Garamond', serif",
-  fontWeight: 400,
-  fontSize: "clamp(34px, 5vw, 58px)",
-  color: "#1a1410",
-  lineHeight: 1.05,
-  letterSpacing: "-0.01em",
+  fontFamily: "'Montserrat', sans-serif",
+  fontWeight: 700,
+  fontSize: "36px",
+  color: "#000",
+  lineHeight: 1.15,
 };
 
 const bodyText: React.CSSProperties = {
   fontFamily: "'Open Sans', sans-serif",
   fontSize: "15px",
-  color: "rgba(26,20,16,0.72)",
-  lineHeight: 1.85,
+  color: "rgba(0,0,0,0.72)",
+  lineHeight: 1.75,
 };
 
 type Img = { src: string; alt: string; ratio: string; span?: string };
