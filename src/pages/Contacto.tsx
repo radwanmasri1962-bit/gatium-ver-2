@@ -64,6 +64,18 @@ const InstagramIcon = ({ size = 20 }: { size?: number }) => (
   </svg>
 );
 
+const TikTokIcon = ({ size = 20 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.83a8.16 8.16 0 0 0 4.77 1.52V6.91a4.85 4.85 0 0 1-1.84-.22z" />
+  </svg>
+);
+
+const FacebookIcon = ({ size = 20 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+  </svg>
+);
+
 void PinterestIcon;
 
 const Contacto = () => {
@@ -82,29 +94,23 @@ const Contacto = () => {
       .email({ message: es ? "Correo inválido." : "Invalid email." })
       .max(255),
     phone: z.string().trim().max(40).optional().or(z.literal("")),
-    city: z.string().trim().max(80).optional().or(z.literal("")),
-    country: z.string().trim().max(80).optional().or(z.literal("")),
-    colony: z.string().trim().max(1000).optional().or(z.literal("")),
-    space: z
+    catName: z.string().trim().max(80).optional().or(z.literal("")),
+    description: z
       .string()
       .trim()
       .min(10, { message: es ? "Cuéntanos un poco más." : "Tell us a bit more." })
       .max(2000),
-    source: z.string().trim().max(80).optional().or(z.literal("")),
   });
 
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
-    city: "",
-    country: "",
-    colony: "",
-    space: "",
-    source: "",
+    catName: "",
+    description: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [fileName, setFileName] = useState<string>("");
+  const [fileNames, setFileNames] = useState<string[]>([]);
 
   const update = (k: keyof typeof form, v: string) => {
     setForm((p) => ({ ...p, [k]: v }));
@@ -125,40 +131,19 @@ const Contacto = () => {
     }
     setErrors({});
     toast.success(
-      es ? "Gracias. Te contactaremos muy pronto." : "Thank you. We'll be in touch shortly."
+      es
+        ? "Gracias. Revisaremos tu espacio y te contactaremos muy pronto 🐾"
+        : "Thank you. We'll review your space and reach out very soon 🐾"
     );
     setForm({
       name: "",
       email: "",
       phone: "",
-      city: "",
-      country: "",
-      colony: "",
-      space: "",
-      source: "",
+      catName: "",
+      description: "",
     });
-    setFileName("");
+    setFileNames([]);
   };
-
-  const countries = [
-    "México",
-    "Colombia",
-    "Argentina",
-    "Chile",
-    "Perú",
-    "Venezuela",
-    "Ecuador",
-    "Uruguay",
-    "Costa Rica",
-    "Panamá",
-    "República Dominicana",
-    "España",
-    es ? "Otro" : "Other",
-  ];
-
-  const sources = es
-    ? ["Instagram", "Recomendación", "Búsqueda en internet", "TikTok", "Facebook", "Otro"]
-    : ["Instagram", "Recommendation", "Internet search", "TikTok", "Facebook", "Other"];
 
   const errorText = (k: string) =>
     errors[k] ? (
@@ -287,9 +272,9 @@ const Contacto = () => {
               : "The more details you share, the better we can help you."}
           </p>
 
-          <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5 md:pr-12">
+          <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-7 md:pr-12">
             <div>
-              <label style={fieldLabel}>{es ? "NOMBRE" : "NAME"}</label>
+              <label style={fieldLabel}>{es ? "NOMBRE COMPLETO" : "FULL NAME"}</label>
               <input
                 type="text"
                 value={form.name}
@@ -320,125 +305,106 @@ const Contacto = () => {
                 type="tel"
                 value={form.phone}
                 onChange={(e) => update("phone", e.target.value)}
-                placeholder="+58 412 123 4587"
+                placeholder="+52 998 293 0144"
                 style={inputStyle}
                 maxLength={40}
               />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label style={fieldLabel}>{es ? "CIUDAD" : "CITY"}</label>
-                <input
-                  type="text"
-                  value={form.city}
-                  onChange={(e) => update("city", e.target.value)}
-                  placeholder={es ? "Tu ciudad" : "Your city"}
-                  style={inputStyle}
-                  maxLength={80}
-                />
-              </div>
-              <div>
-                <label style={fieldLabel}>{es ? "PAÍS" : "COUNTRY"}</label>
-                <select
-                  value={form.country}
-                  onChange={(e) => update("country", e.target.value)}
-                  style={inputStyle}
-                >
-                  <option value="">{es ? "Selecciona" : "Select"}</option>
-                  {countries.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
+
             <div>
-              <label style={fieldLabel}>
-                {es ? "CUÉNTANOS SOBRE TU MANADA" : "TELL US ABOUT YOUR COLONY"}
-              </label>
-              <textarea
-                value={form.colony}
-                onChange={(e) => update("colony", e.target.value)}
-                placeholder={
-                  es ? "¿Cuántos gatos tienes? ¿Cómo son?" : "How many cats do you have? What are they like?"
-                }
-                style={{ ...inputStyle, height: "80px", resize: "vertical", paddingTop: "10px" }}
-                maxLength={1000}
-              />
-            </div>
-            <div>
-              <label style={fieldLabel}>
-                {es
-                  ? "CUÉNTANOS SOBRE TU ESPACIO Y LO QUE NECESITAS"
-                  : "TELL US ABOUT YOUR SPACE AND NEEDS"}
-              </label>
-              <textarea
-                value={form.space}
-                onChange={(e) => update("space", e.target.value)}
-                placeholder={
-                  es
-                    ? "Háblanos de tu hogar, tus retos y lo que te gustaría mejorar."
-                    : "Tell us about your home, your challenges and what you'd like to improve."
-                }
-                style={{ ...inputStyle, height: "100px", resize: "vertical", paddingTop: "10px" }}
-                maxLength={2000}
-                required
-              />
-              {errorText("space")}
-            </div>
-            <div>
-              <label style={fieldLabel}>{es ? "¿CÓMO NOS CONOCISTE?" : "HOW DID YOU FIND US?"}</label>
-              <select
-                value={form.source}
-                onChange={(e) => update("source", e.target.value)}
+              <label style={fieldLabel}>{es ? "NOMBRE DE TU GATO" : "YOUR CAT'S NAME"}</label>
+              <input
+                type="text"
+                value={form.catName}
+                onChange={(e) => update("catName", e.target.value)}
+                placeholder={es ? "¿Cómo se llama tu gato?" : "What's your cat's name?"}
                 style={inputStyle}
-              >
-                <option value="">{es ? "Selecciona" : "Select"}</option>
-                {sources.map((s) => (
-                  <option key={s} value={s}>
-                    {s}
-                  </option>
-                ))}
-              </select>
+                maxLength={80}
+              />
             </div>
 
             <div>
               <label style={fieldLabel}>
-                {es
-                  ? "¿PUEDES ADJUNTAR FOTOS O PLANOS? (OPCIONAL)"
-                  : "CAN YOU ATTACH PHOTOS OR PLANS? (OPTIONAL)"}
+                {es ? "ADJUNTAR FOTOS O VIDEOS" : "ATTACH PHOTOS OR VIDEOS"}
               </label>
               <label
-                className="flex flex-col items-center justify-center cursor-pointer gap-2"
+                className="flex flex-col items-center justify-center cursor-pointer gap-3 transition-colors hover:bg-[hsl(var(--cream))]/70"
                 style={{
-                  border: "1px dashed hsl(var(--gold))",
-                  borderRadius: "6px",
-                  padding: "20px",
+                  border: "1px solid rgba(0,0,0,0.10)",
+                  borderRadius: "8px",
+                  padding: "28px 20px",
                   textAlign: "center",
                   backgroundColor: "hsl(var(--cream))",
                 }}
               >
-                <Camera size={24} style={{ color: "hsl(var(--gold))" }} />
+                <Camera size={26} style={{ color: "hsl(var(--gold))" }} strokeWidth={1.4} />
                 <span
                   style={{
                     fontFamily: "'Open Sans', sans-serif",
-                    fontSize: "12px",
-                    color: "rgba(0,0,0,0.55)",
+                    fontSize: "13px",
+                    color: "rgba(0,0,0,0.6)",
+                    lineHeight: 1.6,
+                    maxWidth: "360px",
                   }}
                 >
-                  {fileName ||
-                    (es
-                      ? "Arrastra tus archivos aquí o haz clic para seleccionar imágenes, planos o referencias (opcional)"
-                      : "Drag your files here or click to select images, plans or references (optional)")}
+                  {es
+                    ? "Adjunta fotos o videos de tu espacio, balcón, muro o área que te gustaría transformar."
+                    : "Attach photos or videos of your space, balcony, wall or area you'd like to transform."}
+                </span>
+                <span
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "9px",
+                    letterSpacing: "0.25em",
+                    textTransform: "uppercase",
+                    color: "hsl(var(--gold))",
+                  }}
+                >
+                  {es ? "Hasta 4 archivos" : "Up to 4 files"}
                 </span>
                 <input
                   type="file"
-                  accept="image/*,.pdf"
+                  accept="image/*,video/*"
+                  multiple
                   className="hidden"
-                  onChange={(e) => setFileName(e.target.files?.[0]?.name ?? "")}
+                  onChange={(e) => {
+                    const files = Array.from(e.target.files ?? []).slice(0, 4);
+                    setFileNames(files.map((f) => f.name));
+                  }}
                 />
+                {fileNames.length > 0 && (
+                  <ul
+                    style={{
+                      marginTop: "6px",
+                      fontFamily: "'Open Sans', sans-serif",
+                      fontSize: "12px",
+                      color: "rgba(0,0,0,0.7)",
+                    }}
+                  >
+                    {fileNames.map((n) => (
+                      <li key={n}>· {n}</li>
+                    ))}
+                  </ul>
+                )}
               </label>
+            </div>
+
+            <div>
+              <label style={fieldLabel}>{es ? "BREVE DESCRIPCIÓN" : "BRIEF DESCRIPTION"}</label>
+              <textarea
+                value={form.description}
+                onChange={(e) => update("description", e.target.value)}
+                placeholder={
+                  es
+                    ? "Cuéntanos brevemente sobre tu espacio o la necesidad que te gustaría resolver."
+                    : "Tell us briefly about your space or the need you'd like to solve."
+                }
+                style={{ ...inputStyle, height: "120px", resize: "vertical", paddingTop: "10px" }}
+                maxLength={2000}
+                required
+              />
+              {errorText("description")}
             </div>
 
             <button
@@ -496,13 +462,13 @@ const Contacto = () => {
             {
               Icon: Mail,
               label: es ? "ESCRÍBENOS" : "EMAIL US",
-              value: "hola@gatium.com",
-              href: "mailto:hola@gatium.com",
+              value: "hola@gatium.mx",
+              href: "mailto:hola@gatium.mx",
             },
             {
               Icon: WhatsAppIcon,
               label: "WHATSAPP",
-              value: "+58 412 123 4567",
+              value: "+52 998 293 0144",
               href: whatsappUrl(lang),
             },
             {
@@ -510,6 +476,18 @@ const Contacto = () => {
               label: "INSTAGRAM",
               value: "@gatium.atelierfelino",
               href: "https://instagram.com/gatium.atelierfelino",
+            },
+            {
+              Icon: TikTokIcon,
+              label: "TIKTOK",
+              value: "@gatium.atelierfelino",
+              href: "https://tiktok.com/@gatium.atelierfelino",
+            },
+            {
+              Icon: FacebookIcon,
+              label: "FACEBOOK",
+              value: "@gatium.atelierfelino",
+              href: "https://facebook.com/gatium.atelierfelino",
             },
           ].map(({ Icon, label, value, href }) => (
             <a
