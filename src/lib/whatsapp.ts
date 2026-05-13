@@ -1,7 +1,7 @@
 import type { Lang } from "@/i18n/translations";
 
 // GATIUM WhatsApp number (placeholder — replace digits when ready)
-export const WHATSAPP_NUMBER = "521XXXXXXXXXX";
+export const WHATSAPP_NUMBER = "5219982930144";
 
 const messages: Record<Lang, string> = {
   es: `Hola, bienvenida a GATIUM Atelier Felino 🐾
