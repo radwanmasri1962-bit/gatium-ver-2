@@ -331,7 +331,7 @@ const ComoTrabajamos = () => {
 
           {/* Mobile vertical timeline */}
           <div className="md:hidden flex flex-col items-center">
-            {steps.map(({ Icon, label, desc }, idx) => (
+            {steps.map(({ Icon, img, label, desc }, idx) => (
               <div key={label} className="w-full flex flex-col items-center">
                 <div className="flex flex-col items-center text-center w-full max-w-[320px]">
                   <div
