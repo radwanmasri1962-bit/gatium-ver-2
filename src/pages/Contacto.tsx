@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+
 import { z } from "zod";
 import { Mail, Globe, Camera, PawPrint } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
