@@ -331,9 +331,10 @@ const ComoTrabajamos = () => {
                 <h3
                   className="mt-6"
                   style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "26px",
-                    color: "#1a1410",
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "18px",
+                    color: "#000",
                     lineHeight: 1.2,
                   }}
                 >
@@ -343,9 +344,9 @@ const ComoTrabajamos = () => {
                   className="mt-3"
                   style={{
                     fontFamily: "'Open Sans', sans-serif",
-                    fontSize: "14px",
-                    color: "rgba(26,20,16,0.65)",
-                    lineHeight: 1.7,
+                    fontSize: "15px",
+                    color: "rgba(0,0,0,0.72)",
+                    lineHeight: 1.75,
                   }}
                 >
                   {desc}
