@@ -119,40 +119,19 @@ const Contacto = () => {
     }
     setErrors({});
     toast.success(
-      es ? "Gracias. Te contactaremos muy pronto." : "Thank you. We'll be in touch shortly."
+      es
+        ? "Gracias. Revisaremos tu espacio y te contactaremos muy pronto 🐾"
+        : "Thank you. We'll review your space and reach out very soon 🐾"
     );
     setForm({
       name: "",
       email: "",
       phone: "",
-      city: "",
-      country: "",
-      colony: "",
-      space: "",
-      source: "",
+      catName: "",
+      description: "",
     });
-    setFileName("");
+    setFileNames([]);
   };
-
-  const countries = [
-    "México",
-    "Colombia",
-    "Argentina",
-    "Chile",
-    "Perú",
-    "Venezuela",
-    "Ecuador",
-    "Uruguay",
-    "Costa Rica",
-    "Panamá",
-    "República Dominicana",
-    "España",
-    es ? "Otro" : "Other",
-  ];
-
-  const sources = es
-    ? ["Instagram", "Recomendación", "Búsqueda en internet", "TikTok", "Facebook", "Otro"]
-    : ["Instagram", "Recommendation", "Internet search", "TikTok", "Facebook", "Other"];
 
   const errorText = (k: string) =>
     errors[k] ? (
