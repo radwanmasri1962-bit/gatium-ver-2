@@ -548,14 +548,14 @@ const Contacto = () => {
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="flex items-start gap-4"
+              className="flex items-start gap-4 transition-colors hover:bg-black/[0.02]"
               style={{
-                padding: "16px 0",
+                padding: "14px 0",
                 borderBottom: "1px solid rgba(0,0,0,0.06)",
               }}
             >
               <span style={{ color: "hsl(var(--gold))", marginTop: "2px" }}>
-                <Icon size={20} />
+                <Icon size={18} />
               </span>
               <div>
                 <div
