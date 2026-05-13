@@ -47,13 +47,19 @@ export const Footer = () => {
             {t("footer.tagline")}
           </p>
           <div className="flex items-center gap-4" style={{ color: "rgba(196,154,90,0.6)" }}>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors" aria-label="Instagram">
+            <a href="https://instagram.com/gatium.atelierfelino" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors" aria-label="Instagram">
               <Instagram size={18} />
             </a>
-            <a href="https://pinterest.com" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors" aria-label="Pinterest">
-              <PinterestIcon />
+            <a href="https://facebook.com/gatium.atelierfelino" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors" aria-label="Facebook">
+              <Facebook size={18} />
             </a>
-            <a href="mailto:hola@gatium.com" className="hover:text-gold transition-colors" aria-label="Email">
+            <a href="https://tiktok.com/@gatium.atelierfelino" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors" aria-label="TikTok">
+              <TikTokIcon size={18} />
+            </a>
+            <a href="https://linkedin.com/company/gatium" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors" aria-label="LinkedIn">
+              <Linkedin size={18} />
+            </a>
+            <a href="mailto:hola@gatium.mx" className="hover:text-gold transition-colors" aria-label="Email">
               <Mail size={18} />
             </a>
           </div>
