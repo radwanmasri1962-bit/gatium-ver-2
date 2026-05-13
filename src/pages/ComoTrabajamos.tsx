@@ -163,6 +163,8 @@ const ComoTrabajamos = () => {
         : "Quiet luxury, warm materials, functional cohabitation. Furniture that is part of the home, not an accessory.",
     },
   ];
+
+  const principles = [
     {
       Icon: Cat,
       title: es ? "EMPATÍA FELINA" : "FELINE EMPATHY",
