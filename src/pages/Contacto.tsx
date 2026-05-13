@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { z } from "zod";
-import { Mail, Globe, Camera, PawPrint } from "lucide-react";
+import { Camera, PawPrint } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { toast } from "sonner";
@@ -494,112 +494,6 @@ const Contacto = () => {
             <div style={{ color: "hsl(var(--gold))", marginTop: "14px" }}>
               <PawPrint size={26} strokeWidth={1.4} />
             </div>
-          </div>
-
-          <div
-            style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 700,
-              fontSize: "9px",
-              letterSpacing: "0.25em",
-              textTransform: "uppercase",
-              color: "hsl(var(--gold))",
-              marginTop: "28px",
-              marginBottom: "8px",
-            }}
-          >
-            {es ? "PREFIERES ESCRIBIRNOS DIRECTO" : "PREFER TO WRITE US DIRECTLY"}
-          </div>
-
-          {[
-            {
-              Icon: Mail,
-              label: es ? "ESCRÍBENOS" : "EMAIL US",
-              value: "hola@gatium.mx",
-              href: "mailto:hola@gatium.mx",
-            },
-            {
-              Icon: WhatsAppIcon,
-              label: "WHATSAPP",
-              value: "+52 998 293 0144",
-              href: whatsappUrl(lang),
-            },
-            {
-              Icon: InstagramIcon,
-              label: "INSTAGRAM",
-              value: "@gatium.atelierfelino",
-              href: "https://instagram.com/gatium.atelierfelino",
-            },
-            {
-              Icon: TikTokIcon,
-              label: "TIKTOK",
-              value: "@gatium.atelierfelino",
-              href: "https://tiktok.com/@gatium.atelierfelino",
-            },
-            {
-              Icon: FacebookIcon,
-              label: "FACEBOOK",
-              value: "@gatium.atelierfelino",
-              href: "https://facebook.com/gatium.atelierfelino",
-            },
-          ].map(({ Icon, label, value, href }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-start gap-4 transition-colors hover:bg-black/[0.02]"
-              style={{
-                padding: "14px 0",
-                borderBottom: "1px solid rgba(0,0,0,0.06)",
-              }}
-            >
-              <span style={{ color: "hsl(var(--gold))", marginTop: "2px" }}>
-                <Icon size={18} />
-              </span>
-              <div>
-                <div
-                  style={{
-                    fontFamily: "'Montserrat', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "8px",
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                    color: "rgba(0,0,0,0.4)",
-                  }}
-                >
-                  {label}
-                </div>
-                <div
-                  style={{
-                    fontFamily: "'Open Sans', sans-serif",
-                    fontSize: "14px",
-                    color: "#000",
-                    marginTop: "2px",
-                  }}
-                >
-                  {value}
-                </div>
-              </div>
-            </a>
-          ))}
-
-          <div className="flex items-start gap-3" style={{ marginTop: "20px" }}>
-            <span style={{ color: "hsl(var(--gold))", marginTop: "2px" }}>
-              <Globe size={18} />
-            </span>
-            <p
-              style={{
-                fontFamily: "'Open Sans', sans-serif",
-                fontSize: "12px",
-                color: "rgba(0,0,0,0.6)",
-                lineHeight: 1.6,
-              }}
-            >
-              {es
-                ? "Trabajamos de manera remota en toda Latinoamérica."
-                : "We work remotely throughout Latin America."}
-            </p>
           </div>
         </div>
       </section>
