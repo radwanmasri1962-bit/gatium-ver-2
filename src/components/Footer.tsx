@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Linkedin, Mail } from "lucide-react";
+import { Instagram, Facebook, Linkedin, Mail, ArrowRight } from "lucide-react";
 import logoDark from "@/assets/logo-dark.png";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { whatsappUrl } from "@/lib/whatsapp";
