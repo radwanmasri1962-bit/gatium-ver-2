@@ -1,6 +1,24 @@
-import { Cat, Home, Shield, LayoutGrid } from "lucide-react";
+import {
+  Cat,
+  Home,
+  Shield,
+  LayoutGrid,
+  MessageSquare,
+  ClipboardList,
+  PenTool,
+  RefreshCw,
+  Sparkles,
+  ArrowRight,
+  ArrowDown,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 import heroImg from "@/assets/majo-yani-drawing.jpg";
 
 const eyebrow: React.CSSProperties = {
@@ -34,71 +52,106 @@ const subText: React.CSSProperties = {
   lineHeight: 1.7,
 };
 
-const PlaceholderGallery = ({ label }: { label: string }) => (
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-    {Array.from({ length: 10 }).map((_, i) => (
-      <div
-        key={i}
-        className="w-full flex items-center justify-center"
-        style={{
-          aspectRatio: "4/3",
-          backgroundColor: "#D6C8B4",
-        }}
-      >
-        <span
-          style={{
-            fontFamily: "'Montserrat', sans-serif",
-            fontWeight: 700,
-            fontSize: "10px",
-            letterSpacing: "0.25em",
-            textTransform: "uppercase",
-            color: "rgba(0,0,0,0.4)",
-          }}
-        >
-          {label}
-        </span>
-      </div>
-    ))}
+const placeholderLabelStyle: React.CSSProperties = {
+  fontFamily: "'Montserrat', sans-serif",
+  fontWeight: 700,
+  fontSize: "10px",
+  letterSpacing: "0.25em",
+  textTransform: "uppercase",
+  color: "rgba(0,0,0,0.4)",
+};
+
+const PhotoPlaceholder = ({
+  label,
+  aspect = "4/3",
+}: {
+  label: string;
+  aspect?: string;
+}) => (
+  <div
+    className="w-full flex items-center justify-center"
+    style={{ aspectRatio: aspect, backgroundColor: "#D6C8B4" }}
+  >
+    <span style={placeholderLabelStyle}>{label}</span>
   </div>
 );
 
-const GallerySection = ({
-  bg,
-  eyebrowText,
-  title,
-  subtext,
-  placeholderLabel,
-}: {
-  bg: string;
-  eyebrowText: string;
-  title: string;
-  subtext: string;
-  placeholderLabel: string;
-}) => (
-  <section
-    className="px-[20px] md:px-16 py-[80px] md:py-[120px]"
-    style={{ backgroundColor: bg }}
-  >
-    <div className="max-w-[1400px] mx-auto">
-      <div className="mb-12 md:mb-16 max-w-[760px]">
-        <div style={eyebrow}>{eyebrowText}</div>
-        <h2 className="mt-4" style={sectionTitle}>
-          {title}
-        </h2>
-        <p className="mt-4" style={subText}>
-          {subtext}
-        </p>
-      </div>
-      <PlaceholderGallery label={placeholderLabel} />
-    </div>
-  </section>
+const ExpandedGrid = ({ label }: { label: string }) => (
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 pt-8">
+    {Array.from({ length: 10 }).map((_, i) => (
+      <PhotoPlaceholder key={i} label={label} />
+    ))}
+  </div>
 );
 
 const ComoTrabajamos = () => {
   const { lang } = useLanguage();
   const es = lang === "es";
 
-  const placeholderLabel = es ? "Foto próximamente" : "Photo coming soon";
+  const placeholderLabel = es ? "FOTO PRÓXIMAMENTE" : "PHOTO COMING SOON";
+
+  const steps = [
+    {
+      Icon: MessageSquare,
+      label: es ? "PASO 1" : "STEP 1",
+      desc: es
+        ? "Nos compartes tu espacio y tu dinámica."
+        : "You share your space and dynamics with us.",
+    },
+    {
+      Icon: ClipboardList,
+      label: es ? "PASO 2" : "STEP 2",
+      desc: es
+        ? "Realizamos un Diagnóstico GATIUM."
+        : "We perform a GATIUM Diagnosis.",
+    },
+    {
+      Icon: PenTool,
+      label: es ? "PASO 3" : "STEP 3",
+      desc: es
+        ? "Diseñamos una propuesta personalizada."
+        : "We design a personalized proposal.",
+    },
+    {
+      Icon: RefreshCw,
+      label: es ? "PASO 4" : "STEP 4",
+      desc: es ? "Refinamos la propuesta contigo." : "We refine the proposal with you.",
+    },
+    {
+      Icon: Sparkles,
+      label: es ? "PASO 5" : "STEP 5",
+      desc: es
+        ? "Convertimos la idea en una solución habitable."
+        : "We turn the idea into a livable solution.",
+    },
+  ];
+
+  const categories = [
+    {
+      key: "catios",
+      bg: "hsl(var(--beige))",
+      title: "CATIOS",
+      subtext: es
+        ? "Balcones pequeños, patios medianos, exteriores amplios — GATIUM adapta cada solución al espacio real de tu hogar."
+        : "Small balconies, medium patios, large outdoor areas — GATIUM adapts every solution to the real space of your home.",
+    },
+    {
+      key: "circuitos",
+      bg: "hsl(var(--cream))",
+      title: es ? "CIRCUITOS DE PARED" : "WALL CIRCUITS",
+      subtext: es
+        ? "Diseñamos circuitos que respetan el comportamiento felino — escalar, observar, recorrer."
+        : "We design circuits that respect feline behavior — climb, observe, traverse.",
+    },
+    {
+      key: "mobiliario",
+      bg: "hsl(var(--beige))",
+      title: es ? "MOBILIARIO" : "FURNITURE",
+      subtext: es
+        ? "Lujo silencioso, materiales cálidos, convivencia funcional. Muebles que son parte del hogar, no un accesorio."
+        : "Quiet luxury, warm materials, functional cohabitation. Furniture that is part of the home, not an accessory.",
+    },
+  ];
 
   const principles = [
     {
@@ -168,11 +221,11 @@ const ComoTrabajamos = () => {
 
       {/* SECTION 2 — PHILOSOPHY */}
       <section
-        className="px-[20px] md:px-16 py-[80px] md:py-[120px]"
+        className="px-[20px] md:px-16 py-[40px] md:py-[60px] overflow-x-auto"
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
-        <div className="mx-auto text-center" style={{ maxWidth: "680px" }}>
-          <p style={{ ...bodyText, textAlign: "center" }}>
+        <div className="mx-auto text-center">
+          <p style={{ ...bodyText, textAlign: "center", whiteSpace: "nowrap" }}>
             {es
               ? "En GATIUM, cada proyecto comienza antes del diseño. Comenzamos observando: cómo se mueve tu gato, dónde descansa, cómo explora, cómo convive. Solo entonces diseñamos."
               : "At GATIUM, every project begins before the design. We start by observing: how your cat moves, where they rest, how they explore, how they live together. Only then do we design."}
@@ -180,46 +233,190 @@ const ComoTrabajamos = () => {
         </div>
       </section>
 
-      {/* SECTION 3 — CATIOS */}
-      <GallerySection
-        bg="hsl(var(--beige))"
-        eyebrowText="CATIOS"
-        title={es ? "Cualquier espacio. Completamente personalizado." : "Any space. Completely customized."}
-        subtext={
-          es
-            ? "Balcones pequeños, patios medianos, exteriores amplios — GATIUM adapta cada solución al espacio real de tu hogar."
-            : "Small balconies, medium patios, large outdoor areas — GATIUM adapts every solution to the real space of your home."
-        }
-        placeholderLabel={placeholderLabel}
-      />
+      {/* SECTION 3 — PROCESS TIMELINE */}
+      <section
+        className="px-[20px] md:px-16 py-[80px] md:py-[120px]"
+        style={{ backgroundColor: "hsl(var(--beige))" }}
+      >
+        <div className="max-w-[1400px] mx-auto">
+          {/* Desktop horizontal timeline */}
+          <div className="hidden md:flex items-start justify-between gap-4">
+            {steps.map(({ Icon, label, desc }, idx) => (
+              <div key={label} className="flex items-start" style={{ flex: idx === steps.length - 1 ? "0 1 auto" : "1 1 0" }}>
+                <div className="flex flex-col items-center text-center" style={{ width: "180px" }}>
+                  {/* Numbered circle */}
+                  <div
+                    className="flex items-center justify-center rounded-full"
+                    style={{
+                      width: 48,
+                      height: 48,
+                      backgroundColor: "hsl(var(--gold))",
+                      color: "#fff",
+                      fontFamily: "'Montserrat', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "16px",
+                    }}
+                  >
+                    {idx + 1}
+                  </div>
+                  {/* Tall image placeholder */}
+                  <div className="w-full mt-6">
+                    <PhotoPlaceholder label={placeholderLabel} aspect="3/4" />
+                  </div>
+                  {/* Step icon */}
+                  <div className="mt-6" style={{ color: "hsl(var(--gold))" }}>
+                    <Icon size={26} strokeWidth={1.2} />
+                  </div>
+                  {/* Step label */}
+                  <div
+                    className="mt-3"
+                    style={{
+                      fontFamily: "'Montserrat', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "13px",
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "#000",
+                    }}
+                  >
+                    {label}
+                  </div>
+                  {/* Step description */}
+                  <p
+                    className="mt-2"
+                    style={{
+                      fontFamily: "'Open Sans', sans-serif",
+                      fontSize: "14px",
+                      color: "rgba(0,0,0,0.7)",
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {desc}
+                  </p>
+                </div>
+                {/* Arrow connector */}
+                {idx < steps.length - 1 && (
+                  <div
+                    className="flex items-center justify-center flex-1"
+                    style={{ height: 48, color: "hsl(var(--gold))" }}
+                  >
+                    <ArrowRight size={28} strokeWidth={1.4} />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
 
-      {/* SECTION 4 — CIRCUITOS */}
-      <GallerySection
-        bg="hsl(var(--cream))"
-        eyebrowText={es ? "CIRCUITOS DE PARED" : "WALL CIRCUITS"}
-        title={es ? "Movimiento vertical. Exploración instintiva." : "Vertical movement. Instinctive exploration."}
-        subtext={
-          es
-            ? "Diseñamos circuitos que respetan el comportamiento felino — escalar, observar, recorrer."
-            : "We design circuits that respect feline behavior — climb, observe, traverse."
-        }
-        placeholderLabel={placeholderLabel}
-      />
+          {/* Mobile vertical timeline */}
+          <div className="md:hidden flex flex-col items-center">
+            {steps.map(({ Icon, label, desc }, idx) => (
+              <div key={label} className="w-full flex flex-col items-center">
+                <div className="flex flex-col items-center text-center w-full max-w-[320px]">
+                  <div
+                    className="flex items-center justify-center rounded-full"
+                    style={{
+                      width: 48,
+                      height: 48,
+                      backgroundColor: "hsl(var(--gold))",
+                      color: "#fff",
+                      fontFamily: "'Montserrat', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "16px",
+                    }}
+                  >
+                    {idx + 1}
+                  </div>
+                  <div className="w-full mt-6">
+                    <PhotoPlaceholder label={placeholderLabel} aspect="3/4" />
+                  </div>
+                  <div className="mt-6" style={{ color: "hsl(var(--gold))" }}>
+                    <Icon size={26} strokeWidth={1.2} />
+                  </div>
+                  <div
+                    className="mt-3"
+                    style={{
+                      fontFamily: "'Montserrat', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "13px",
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "#000",
+                    }}
+                  >
+                    {label}
+                  </div>
+                  <p
+                    className="mt-2"
+                    style={{
+                      fontFamily: "'Open Sans', sans-serif",
+                      fontSize: "14px",
+                      color: "rgba(0,0,0,0.7)",
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {desc}
+                  </p>
+                </div>
+                {idx < steps.length - 1 && (
+                  <div className="my-8" style={{ color: "hsl(var(--gold))" }}>
+                    <ArrowDown size={28} strokeWidth={1.4} />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* SECTION 5 — MOBILIARIO */}
-      <GallerySection
-        bg="hsl(var(--beige))"
-        eyebrowText={es ? "MOBILIARIO" : "FURNITURE"}
-        title={es ? "Integrado al hogar. Pensado para ellos." : "Integrated into the home. Designed for them."}
-        subtext={
-          es
-            ? "Lujo silencioso, materiales cálidos, convivencia funcional. Muebles que son parte del hogar, no un accesorio."
-            : "Quiet luxury, warm materials, functional cohabitation. Furniture that is part of the home, not an accessory."
-        }
-        placeholderLabel={placeholderLabel}
-      />
+      {/* SECTIONS 4–6 — CATEGORY ACCORDIONS */}
+      <Accordion type="single" collapsible>
+        {categories.map((cat) => (
+          <AccordionItem
+            key={cat.key}
+            value={cat.key}
+            className="border-0"
+            style={{ backgroundColor: cat.bg }}
+          >
+            <section className="px-[20px] md:px-16 py-[80px] md:py-[120px]">
+              <div className="max-w-[1400px] mx-auto">
+                <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center w-full text-left">
+                    {/* Left: square image */}
+                    <div className="w-full">
+                      <PhotoPlaceholder label={placeholderLabel} aspect="1/1" />
+                    </div>
+                    {/* Right: title + subtext + CTA */}
+                    <div>
+                      <h2 style={sectionTitle}>{cat.title}</h2>
+                      <p className="mt-5" style={subText}>
+                        {cat.subtext}
+                      </p>
+                      <div
+                        className="mt-6 inline-block"
+                        style={{
+                          fontFamily: "'Montserrat', sans-serif",
+                          fontWeight: 700,
+                          fontSize: "12px",
+                          letterSpacing: "0.2em",
+                          textTransform: "uppercase",
+                          color: "hsl(var(--gold))",
+                        }}
+                      >
+                        {es ? "Ver proyectos →" : "View projects →"}
+                      </div>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ExpandedGrid label={placeholderLabel} />
+                </AccordionContent>
+              </div>
+            </section>
+          </AccordionItem>
+        ))}
+      </Accordion>
 
-      {/* SECTION 6 — PRINCIPLES */}
+      {/* SECTION 7 — PRINCIPLES */}
       <section
         className="px-[20px] md:px-16 py-[100px] md:py-[140px]"
         style={{ backgroundColor: "hsl(var(--cream))" }}
@@ -270,7 +467,7 @@ const ComoTrabajamos = () => {
         </div>
       </section>
 
-      {/* SECTION 7 — FINAL CTA */}
+      {/* SECTION 8 — FINAL CTA */}
       <section
         className="px-[20px] md:px-16 py-[120px] md:py-[160px]"
         style={{ backgroundColor: "hsl(var(--near-black))" }}
