@@ -260,9 +260,9 @@ const Contacto = () => {
               : "The more details you share, the better we can help you."}
           </p>
 
-          <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5 md:pr-12">
+          <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-7 md:pr-12">
             <div>
-              <label style={fieldLabel}>{es ? "NOMBRE" : "NAME"}</label>
+              <label style={fieldLabel}>{es ? "NOMBRE COMPLETO" : "FULL NAME"}</label>
               <input
                 type="text"
                 value={form.name}
