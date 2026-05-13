@@ -21,6 +21,8 @@ import sketch3 from "@/assets/Como_Sketch_3.jpg";
 import sketch4 from "@/assets/Como_Sketch_4.jpg";
 import sketch5 from "@/assets/Como_Sketch_5.jpg";
 import catiosImg from "@/assets/Catios_7.jpg";
+import circuitoImg from "@/assets/Circuito_1.jpg";
+import mobiliarioImg from "@/assets/Mobilario_6.png";
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
@@ -419,18 +421,26 @@ const ComoTrabajamos = () => {
                     className="w-full"
                     style={{ aspectRatio: "1/1", backgroundColor: "#D6C8B4" }}
                   >
-                    {cat.key === "catios" ? (
-                      <img
-                        src={catiosImg}
-                        alt="Catio GATIUM"
-                        className="w-full h-full"
-                        style={{ objectFit: "cover", objectPosition: "center center" }}
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <span style={placeholderLabelStyle}>{placeholderLabel}</span>
-                      </div>
-                    )}
+                    {(() => {
+                      const imgMap: Record<string, string> = {
+                        catios: catiosImg,
+                        circuitos: circuitoImg,
+                        mobiliario: mobiliarioImg,
+                      };
+                      const src = imgMap[cat.key];
+                      return src ? (
+                        <img
+                          src={src}
+                          alt={cat.eyebrow}
+                          className="w-full h-full"
+                          style={{ objectFit: "cover", objectPosition: "center center" }}
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <span style={placeholderLabelStyle}>{placeholderLabel}</span>
+                        </div>
+                      );
+                    })()}
                   </div>
                   {/* Right side: title + subtext + CTA */}
                   <div className="flex flex-col items-start">
@@ -472,7 +482,7 @@ const ComoTrabajamos = () => {
                 >
                   <div className="pt-10 md:pt-12">
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
-                      {Array.from({ length: 10 }).map((_, i) => (
+                      {Array.from({ length: 6 }).map((_, i) => (
                         <PhotoPlaceholder key={i} label={placeholderLabel} />
                       ))}
                     </div>
