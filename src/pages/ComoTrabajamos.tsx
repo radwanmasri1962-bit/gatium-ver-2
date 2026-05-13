@@ -1,37 +1,13 @@
-import { Cat, Home, Shield, Sparkles } from "lucide-react";
+import { Cat, Home, Shield, LayoutGrid } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { whatsappUrl } from "@/lib/whatsapp";
-
-import heroBg from "@/assets/cats/group-photo-brilliant.jpg";
-import philosophyImg from "@/assets/cats/atenea.jpg";
-import catio1 from "@/assets/solution-1-catios.jpg";
-import catio2 from "@/assets/hero-1.jpg";
-import catio3 from "@/assets/hero-3.jpg";
-import catio4 from "@/assets/hero-5.jpg";
-import catio5 from "@/assets/hero-7.jpg";
-import catio6 from "@/assets/solution-3-rest.jpg";
-import catio7 from "@/assets/solution-6-colonies.jpg";
-import vert1 from "@/assets/solution-2-vertical.jpg";
-import vert2 from "@/assets/cats/aragorn.jpg";
-import vert3 from "@/assets/cats/aslan.jpg";
-import vert4 from "@/assets/cats/atenea-motion.jpg";
-import vert5 from "@/assets/cats/apolo.jpg";
-import vert6 from "@/assets/cats/aquiles.jpg";
-import vert7 from "@/assets/hero-4.jpg";
-import furn1 from "@/assets/solution-4-furniture.jpg";
-import furn2 from "@/assets/solution-5-litter.jpg";
-import furn3 from "@/assets/nosotros-interior.jpg";
-import furn4 from "@/assets/cats/anubis.jpg";
-import furn5 from "@/assets/cats/ares.jpg";
-import furn6 from "@/assets/hero-2.jpg";
-import furn7 from "@/assets/hero-6.jpg";
-import ctaBg from "@/assets/cats/group-photo.jpg";
+import heroImg from "@/assets/majo-yani-drawing.jpg";
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
   fontWeight: 700,
   fontSize: "10px",
-  letterSpacing: "0.32em",
+  letterSpacing: "0.3em",
   textTransform: "uppercase",
   color: "hsl(var(--gold))",
 };
@@ -51,264 +27,197 @@ const bodyText: React.CSSProperties = {
   lineHeight: 1.75,
 };
 
-type Img = { src: string; alt: string; ratio: string; span?: string };
+const subText: React.CSSProperties = {
+  fontFamily: "'Open Sans', sans-serif",
+  fontSize: "14px",
+  color: "rgba(0,0,0,0.65)",
+  lineHeight: 1.7,
+};
 
-const Gallery = ({ images }: { images: Img[] }) => (
-  <div className="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-5">
-    {images.map((img, i) => (
-      <figure
+const PlaceholderGallery = ({ label }: { label: string }) => (
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+    {Array.from({ length: 10 }).map((_, i) => (
+      <div
         key={i}
-        className={`overflow-hidden ${img.span ?? "md:col-span-4"}`}
-        style={{ borderRadius: "2px" }}
+        className="w-full flex items-center justify-center"
+        style={{
+          aspectRatio: "4/3",
+          backgroundColor: "#D6C8B4",
+        }}
       >
-        <img
-          src={img.src}
-          alt={img.alt}
-          loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.03]"
-          style={{ aspectRatio: img.ratio, display: "block" }}
-        />
-      </figure>
+        <span
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            fontWeight: 700,
+            fontSize: "10px",
+            letterSpacing: "0.25em",
+            textTransform: "uppercase",
+            color: "rgba(0,0,0,0.4)",
+          }}
+        >
+          {label}
+        </span>
+      </div>
     ))}
   </div>
+);
+
+const GallerySection = ({
+  bg,
+  eyebrowText,
+  title,
+  subtext,
+  placeholderLabel,
+}: {
+  bg: string;
+  eyebrowText: string;
+  title: string;
+  subtext: string;
+  placeholderLabel: string;
+}) => (
+  <section
+    className="px-[20px] md:px-16 py-[80px] md:py-[120px]"
+    style={{ backgroundColor: bg }}
+  >
+    <div className="max-w-[1400px] mx-auto">
+      <div className="mb-12 md:mb-16 max-w-[760px]">
+        <div style={eyebrow}>{eyebrowText}</div>
+        <h2 className="mt-4" style={sectionTitle}>
+          {title}
+        </h2>
+        <p className="mt-4" style={subText}>
+          {subtext}
+        </p>
+      </div>
+      <PlaceholderGallery label={placeholderLabel} />
+    </div>
+  </section>
 );
 
 const ComoTrabajamos = () => {
   const { lang } = useLanguage();
   const es = lang === "es";
 
-  const catios: Img[] = [
-    { src: catio1, alt: "Catio exterior", ratio: "4/5", span: "md:col-span-7 md:row-span-2" },
-    { src: catio2, alt: "Catio detalle", ratio: "4/5", span: "md:col-span-5" },
-    { src: catio3, alt: "Catio luz", ratio: "1/1", span: "md:col-span-5" },
-    { src: catio4, alt: "Catio madera", ratio: "4/3", span: "md:col-span-5" },
-    { src: catio5, alt: "Catio panorámico", ratio: "16/10", span: "md:col-span-7" },
-    { src: catio6, alt: "Descanso exterior", ratio: "1/1", span: "md:col-span-4" },
-    { src: catio7, alt: "Convivencia exterior", ratio: "4/3", span: "md:col-span-8" },
-  ];
-
-  const circuitos: Img[] = [
-    { src: vert1, alt: "Circuito vertical", ratio: "4/5", span: "md:col-span-5" },
-    { src: vert2, alt: "Gato en altura", ratio: "1/1", span: "md:col-span-3" },
-    { src: vert3, alt: "Movimiento", ratio: "1/1", span: "md:col-span-4" },
-    { src: vert4, alt: "Atenea en movimiento", ratio: "16/10", span: "md:col-span-8" },
-    { src: vert5, alt: "Apolo explorando", ratio: "4/5", span: "md:col-span-4" },
-    { src: vert6, alt: "Aquiles", ratio: "4/3", span: "md:col-span-6" },
-    { src: vert7, alt: "Ruta vertical", ratio: "3/4", span: "md:col-span-6" },
-  ];
-
-  const mobiliario: Img[] = [
-    { src: furn1, alt: "Mobiliario funcional", ratio: "16/10", span: "md:col-span-7" },
-    { src: furn2, alt: "Estación discreta", ratio: "4/5", span: "md:col-span-5" },
-    { src: furn3, alt: "Interior con gato", ratio: "1/1", span: "md:col-span-4" },
-    { src: furn4, alt: "Anubis en mueble", ratio: "1/1", span: "md:col-span-4" },
-    { src: furn5, alt: "Ares descansando", ratio: "1/1", span: "md:col-span-4" },
-    { src: furn6, alt: "Detalle de madera", ratio: "16/9", span: "md:col-span-8" },
-    { src: furn7, alt: "Atelier", ratio: "4/5", span: "md:col-span-4" },
-  ];
+  const placeholderLabel = es ? "Foto próximamente" : "Photo coming soon";
 
   const principles = [
     {
       Icon: Cat,
-      title: es ? "Empatía felina" : "Feline empathy",
+      title: es ? "EMPATÍA FELINA" : "FELINE EMPATHY",
       desc: es
-        ? "Diseñamos desde la observación profunda de su comportamiento."
-        : "We design from deep observation of their behavior.",
+        ? "Diseñamos desde la comprensión profunda de su comportamiento y necesidades."
+        : "We design from a deep understanding of their behavior and needs.",
     },
     {
       Icon: Home,
-      title: es ? "Integración real" : "Real integration",
+      title: es ? "INTEGRACIÓN REAL" : "REAL INTEGRATION",
       desc: es
-        ? "Soluciones que se funden con la arquitectura del hogar."
-        : "Solutions that blend with the home's architecture.",
+        ? "Creamos espacios que se integran al hogar sin romper su armonía."
+        : "We create spaces that integrate into the home without breaking its harmony.",
     },
     {
       Icon: Shield,
-      title: es ? "Seguridad total" : "Total safety",
+      title: es ? "SEGURIDAD TOTAL" : "TOTAL SAFETY",
       desc: es
-        ? "Cada decisión cuida su bienestar físico y emocional."
-        : "Every decision cares for their physical and emotional well-being.",
+        ? "Cada solución prioriza la seguridad física y emocional de tu manada."
+        : "Every solution prioritizes the physical and emotional safety of your colony.",
     },
     {
-      Icon: Sparkles,
-      title: es ? "Diseño habitable" : "Livable design",
+      Icon: LayoutGrid,
+      title: es ? "DISEÑO HABITABLE" : "LIVABLE DESIGN",
       desc: es
-        ? "Espacios bellos para ellos y para ti, todos los días."
-        : "Beautiful spaces for them and for you, every day.",
+        ? "Espacios que funcionan en la vida real: para ellos y para ti."
+        : "Spaces that work in real life: for them and for you.",
     },
   ];
 
   return (
     <>
-      {/* SECTION 1 — HERO */}
-      <section
-        className="relative w-full overflow-hidden"
-        style={{ minHeight: "92vh", backgroundColor: "hsl(var(--cream))" }}
-      >
+      {/* SECTION 1 — EMOTIONAL HERO */}
+      <section className="relative w-full overflow-hidden" style={{ aspectRatio: "21/9" }}>
         <img
-          src={heroBg}
-          alt={es ? "Atelier felino GATIUM" : "GATIUM feline atelier"}
-          className="absolute inset-0 w-full h-full object-cover"
+          src={heroImg}
+          alt={es ? "Majo y Yani diseñando en el atelier GATIUM" : "Majo and Yani designing at the GATIUM atelier"}
+          className="absolute inset-0 w-full h-full"
+          style={{ objectFit: "cover", objectPosition: "center center" }}
         />
         <div
           className="absolute inset-0"
           style={{
-            background:
-              "linear-gradient(180deg, rgba(20,14,8,0.05) 0%, rgba(20,14,8,0.0) 35%, rgba(20,14,8,0.45) 100%)",
+            background: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 100%)",
           }}
         />
-        <div className="relative z-10 flex flex-col justify-end h-full px-[20px] md:px-16 pb-[56px] md:pb-[88px]" style={{ minHeight: "92vh" }}>
-          <div style={{ maxWidth: "640px" }}>
-            <div style={{ ...eyebrow, color: "hsl(var(--gold))" }}>
-              {es ? "ATELIER FELINO" : "FELINE ATELIER"}
-            </div>
-            <h1
-              className="text-[32px] md:text-[56px] mt-5"
-              style={{
-                fontFamily: "'Montserrat', sans-serif",
-                fontWeight: 700,
-                color: "#fff",
-                lineHeight: 1.1,
-              }}
-            >
-              {es ? "Diseño que comienza " : "Design that begins "}
-              <span style={{ color: "hsl(var(--gold))" }}>
-                {es ? "observando." : "by observing."}
-              </span>
-            </h1>
-            <p
-              className="mt-5"
-              style={{
-                fontFamily: "'Open Sans', sans-serif",
-                fontSize: "15px",
-                color: "rgba(255,255,255,0.7)",
-                lineHeight: 1.7,
-                maxWidth: "520px",
-              }}
-            >
-              {es
-                ? "Cada espacio GATIUM nace de cómo vive, descansa y se mueve cada gato — no de un catálogo."
-                : "Every GATIUM space is born from how each cat lives, rests and moves — not from a catalog."}
-            </p>
+        <div className="absolute inset-0 flex flex-col justify-end items-center text-center px-[20px] pb-[8%]">
+          <div style={{ ...eyebrow, color: "hsl(var(--gold))" }}>
+            {es ? "CÓMO TRABAJAMOS" : "HOW WE WORK"}
           </div>
+          <h1
+            className="text-[32px] md:text-[56px] mt-5"
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 700,
+              color: "#fff",
+              lineHeight: 1.1,
+              maxWidth: "900px",
+            }}
+          >
+            {es ? "Diseño que comienza observando." : "Design that begins by observing."}
+          </h1>
         </div>
       </section>
 
       {/* SECTION 2 — PHILOSOPHY */}
       <section
-        className="grid grid-cols-1 md:grid-cols-2"
-        style={{ backgroundColor: "hsl(var(--cream))" }}
-      >
-        <div className="flex flex-col justify-center px-[20px] py-[64px] md:px-20 md:py-32">
-          <div style={eyebrow}>{es ? "FILOSOFÍA" : "PHILOSOPHY"}</div>
-          <h2 className="mt-5" style={sectionTitle}>
-            {es ? "Cada gato habita distinto." : "Every cat inhabits differently."}
-          </h2>
-          <p className="mt-7" style={{ ...bodyText, maxWidth: "440px" }}>
-            {es
-              ? "En GATIUM no comenzamos diseñando muebles. Comenzamos observando cómo vive, descansa, explora y se mueve cada gato."
-              : "At GATIUM we don't start by designing furniture. We start by observing how each cat lives, rests, explores and moves."}
-          </p>
-          <p
-            className="mt-6"
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontWeight: 600,
-              fontStyle: "italic",
-              fontSize: "18px",
-              color: "hsl(var(--gold))",
-              maxWidth: "420px",
-              lineHeight: 1.5,
-            }}
-          >
-            {es
-              ? "Diseñar para ellos es, antes que nada, comprenderlos."
-              : "Designing for them is, above all, understanding them."}
-          </p>
-        </div>
-        <div className="relative" style={{ minHeight: "560px" }}>
-          <img
-            src={philosophyImg}
-            alt={es ? "Observación felina" : "Feline observation"}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        </div>
-      </section>
-
-      {/* SECTION 3 — CATIOS GALLERY */}
-      <section
-        className="px-[20px] md:px-16 py-[80px] md:py-[120px]"
-        style={{ backgroundColor: "hsl(var(--beige))" }}
-      >
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12 md:mb-16">
-            <div className="md:col-span-5">
-              <div style={eyebrow}>{es ? "EXTERIORES" : "OUTDOORS"}</div>
-              <h2 className="mt-4" style={sectionTitle}>
-                {es ? "Catios y espacios exteriores." : "Catios and outdoor spaces."}
-              </h2>
-            </div>
-            <div className="md:col-span-6 md:col-start-7 flex items-end">
-              <p style={bodyText}>
-                {es
-                  ? "Diseñamos catios personalizados adaptados a distintos tamaños de espacio — desde pequeños balcones hasta áreas exteriores completas. Cada proyecto se ajusta a la arquitectura del hogar y al ritmo de la manada."
-                  : "We design custom catios adapted to different sizes — from small balconies to full outdoor areas. Every project fits the home's architecture and the colony's rhythm."}
-              </p>
-            </div>
-          </div>
-          <Gallery images={catios} />
-        </div>
-      </section>
-
-      {/* SECTION 4 — CIRCUITOS GALLERY */}
-      <section
         className="px-[20px] md:px-16 py-[80px] md:py-[120px]"
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12 md:mb-16">
-            <div className="md:col-span-6">
-              <div style={eyebrow}>{es ? "MOVIMIENTO" : "MOVEMENT"}</div>
-              <h2 className="mt-4" style={sectionTitle}>
-                {es ? "Circuitos verticales." : "Vertical circuits."}
-              </h2>
-            </div>
-            <div className="md:col-span-5 md:col-start-8 flex items-end">
-              <p style={bodyText}>
-                {es
-                  ? "Recorridos pensados para escalar, observar y descansar en altura. Una arquitectura que respeta el instinto felino y activa la exploración diaria."
-                  : "Routes designed to climb, observe and rest at height. An architecture that respects feline instinct and activates daily exploration."}
-              </p>
-            </div>
-          </div>
-          <Gallery images={circuitos} />
+        <div className="mx-auto text-center" style={{ maxWidth: "680px" }}>
+          <p style={{ ...bodyText, textAlign: "center" }}>
+            {es
+              ? "En GATIUM, cada proyecto comienza antes del diseño. Comenzamos observando: cómo se mueve tu gato, dónde descansa, cómo explora, cómo convive. Solo entonces diseñamos."
+              : "At GATIUM, every project begins before the design. We start by observing: how your cat moves, where they rest, how they explore, how they live together. Only then do we design."}
+          </p>
         </div>
       </section>
 
-      {/* SECTION 5 — MOBILIARIO GALLERY */}
-      <section
-        className="px-[20px] md:px-16 py-[80px] md:py-[120px]"
-        style={{ backgroundColor: "hsl(var(--beige))" }}
-      >
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12 md:mb-16">
-            <div className="md:col-span-5">
-              <div style={eyebrow}>{es ? "INTERIORES" : "INTERIORS"}</div>
-              <h2 className="mt-4" style={sectionTitle}>
-                {es ? "Mobiliario funcional." : "Functional furniture."}
-              </h2>
-            </div>
-            <div className="md:col-span-6 md:col-start-7 flex items-end">
-              <p style={bodyText}>
-                {es
-                  ? "Piezas que conviven con tu hogar: maderas cálidas, líneas serenas y funciones pensadas para ellos. Mobiliario que no se esconde — se integra."
-                  : "Pieces that live with your home: warm woods, serene lines and functions designed for them. Furniture that doesn't hide — it integrates."}
-              </p>
-            </div>
-          </div>
-          <Gallery images={mobiliario} />
-        </div>
-      </section>
+      {/* SECTION 3 — CATIOS */}
+      <GallerySection
+        bg="hsl(var(--beige))"
+        eyebrowText="CATIOS"
+        title={es ? "Cualquier espacio. Completamente personalizado." : "Any space. Completely customized."}
+        subtext={
+          es
+            ? "Balcones pequeños, patios medianos, exteriores amplios — GATIUM adapta cada solución al espacio real de tu hogar."
+            : "Small balconies, medium patios, large outdoor areas — GATIUM adapts every solution to the real space of your home."
+        }
+        placeholderLabel={placeholderLabel}
+      />
+
+      {/* SECTION 4 — CIRCUITOS */}
+      <GallerySection
+        bg="hsl(var(--cream))"
+        eyebrowText={es ? "CIRCUITOS DE PARED" : "WALL CIRCUITS"}
+        title={es ? "Movimiento vertical. Exploración instintiva." : "Vertical movement. Instinctive exploration."}
+        subtext={
+          es
+            ? "Diseñamos circuitos que respetan el comportamiento felino — escalar, observar, recorrer."
+            : "We design circuits that respect feline behavior — climb, observe, traverse."
+        }
+        placeholderLabel={placeholderLabel}
+      />
+
+      {/* SECTION 5 — MOBILIARIO */}
+      <GallerySection
+        bg="hsl(var(--beige))"
+        eyebrowText={es ? "MOBILIARIO" : "FURNITURE"}
+        title={es ? "Integrado al hogar. Pensado para ellos." : "Integrated into the home. Designed for them."}
+        subtext={
+          es
+            ? "Lujo silencioso, materiales cálidos, convivencia funcional. Muebles que son parte del hogar, no un accesorio."
+            : "Quiet luxury, warm materials, functional cohabitation. Furniture that is part of the home, not an accessory."
+        }
+        placeholderLabel={placeholderLabel}
+      />
 
       {/* SECTION 6 — PRINCIPLES */}
       <section
@@ -316,13 +225,15 @@ const ComoTrabajamos = () => {
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-16 md:mb-24">
-            <div style={eyebrow}>{es ? "PRINCIPIOS" : "PRINCIPLES"}</div>
-            <h2 className="mt-5 mx-auto" style={{ ...sectionTitle, maxWidth: "640px" }}>
-              {es ? "Cuatro ideas que guían cada pieza." : "Four ideas that guide every piece."}
+          <div className="text-center mb-16 md:mb-20">
+            <div style={eyebrow}>
+              {es ? "ASÍ TRABAJAMOS, ASÍ DISEÑAMOS" : "HOW WE WORK, HOW WE DESIGN"}
+            </div>
+            <h2 className="mt-4 mx-auto" style={{ ...sectionTitle, maxWidth: "700px" }}>
+              {es ? "Principios que guían cada decisión." : "Principles that guide every decision."}
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
             {principles.map(({ Icon, title, desc }) => (
               <div key={title} className="flex flex-col items-start">
                 <div style={{ color: "hsl(var(--gold))" }}>
@@ -333,9 +244,11 @@ const ComoTrabajamos = () => {
                   style={{
                     fontFamily: "'Montserrat', sans-serif",
                     fontWeight: 700,
-                    fontSize: "18px",
+                    fontSize: "13px",
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
                     color: "#000",
-                    lineHeight: 1.2,
+                    lineHeight: 1.3,
                   }}
                 >
                   {title}
@@ -344,9 +257,9 @@ const ComoTrabajamos = () => {
                   className="mt-3"
                   style={{
                     fontFamily: "'Open Sans', sans-serif",
-                    fontSize: "15px",
-                    color: "rgba(0,0,0,0.72)",
-                    lineHeight: 1.75,
+                    fontSize: "14px",
+                    color: "rgba(0,0,0,0.7)",
+                    lineHeight: 1.7,
                   }}
                 >
                   {desc}
@@ -359,62 +272,40 @@ const ComoTrabajamos = () => {
 
       {/* SECTION 7 — FINAL CTA */}
       <section
-        className="relative overflow-hidden"
-        style={{ minHeight: "70vh" }}
+        className="px-[20px] md:px-16 py-[120px] md:py-[160px]"
+        style={{ backgroundColor: "hsl(var(--near-black))" }}
       >
-        <img
-          src={ctaBg}
-          alt=""
-          aria-hidden
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(15,10,6,0.78) 0%, rgba(15,10,6,0.85) 100%)",
-          }}
-        />
-        <div
-          className="relative z-10 flex flex-col items-center justify-center text-center px-[20px] py-[120px] md:py-[160px]"
-          style={{ minHeight: "70vh" }}
-        >
-          <div style={{ ...eyebrow, color: "hsl(var(--gold))" }}>
-            {es ? "EMPECEMOS" : "LET'S BEGIN"}
-          </div>
+        <div className="max-w-[820px] mx-auto text-center">
           <h2
-            className="mt-5 mx-auto text-[28px] md:text-[42px]"
+            className="text-[28px] md:text-[42px]"
             style={{
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: 700,
               color: "hsl(var(--cream))",
               lineHeight: 1.2,
-              maxWidth: "780px",
             }}
           >
             {es
               ? "Cada espacio comienza observando cómo vive tu gato."
               : "Every space begins by observing how your cat lives."}
           </h2>
-          <a
-            href={whatsappUrl(lang)}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block mt-12 transition-colors"
+          <p
+            className="mt-6 mx-auto"
             style={{
-              backgroundColor: "hsl(var(--gold))",
-              color: "#1a1410",
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 700,
-              fontSize: "10px",
-              letterSpacing: "0.28em",
-              textTransform: "uppercase",
-              padding: "16px 36px",
-              borderRadius: "1px",
+              fontFamily: "'Open Sans', sans-serif",
+              fontSize: "15px",
+              color: "rgba(245,239,230,0.75)",
+              lineHeight: 1.75,
+              maxWidth: "560px",
             }}
           >
-            {es ? "Envíanos tu espacio" : "Send us your space"}
-          </a>
+            {es
+              ? "Envíanos tu espacio y diseñamos juntos la mejor versión para toda tu manada."
+              : "Send us your space and together we design the best version for your whole colony."}
+          </p>
+          <Link to="/contacto" className="btn-gold inline-block mt-10">
+            {es ? "QUIERO EMPEZAR CON UN DIAGNÓSTICO GATIUM →" : "I WANT TO START A GATIUM DIAGNOSIS →"}
+          </Link>
         </div>
       </section>
     </>
