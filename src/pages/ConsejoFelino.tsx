@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Eye, Lightbulb, Pencil, Star, Cat } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
-import groupPhoto from "@/assets/cats/group-photo.jpg";
+import groupPhoto from "@/assets/cats/group-photo-brilliant.jpg";
 import ateneaMotion from "@/assets/cats/atenea-motion.jpg";
 import anubisImg from "@/assets/cats/anubis.jpg";
 import apoloImg from "@/assets/cats/apolo.jpg";
@@ -145,10 +145,10 @@ const ConsejoFelino = () => {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.15) 65%, rgba(0,0,0,0) 100%)",
+              "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(30,18,8,0.28) 100%)",
           }}
         />
-        <div className="relative flex flex-col justify-center px-[18px] py-[64px] md:px-16 md:py-24" style={{ minHeight: "80vh" }}>
+        <div className="relative flex flex-col justify-end px-[18px] pb-[48px] pt-[64px] md:px-12 md:pb-16 md:pt-24" style={{ minHeight: "80vh" }}>
           <div className="w-full" style={{ maxWidth: "560px" }}>
             <div style={{ ...eyebrow, color: "hsl(var(--gold))" }}>
               {es ? "CONSEJO FELINO" : "FELINE COUNCIL"}
