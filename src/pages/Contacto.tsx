@@ -82,29 +82,23 @@ const Contacto = () => {
       .email({ message: es ? "Correo inválido." : "Invalid email." })
       .max(255),
     phone: z.string().trim().max(40).optional().or(z.literal("")),
-    city: z.string().trim().max(80).optional().or(z.literal("")),
-    country: z.string().trim().max(80).optional().or(z.literal("")),
-    colony: z.string().trim().max(1000).optional().or(z.literal("")),
-    space: z
+    catName: z.string().trim().max(80).optional().or(z.literal("")),
+    description: z
       .string()
       .trim()
       .min(10, { message: es ? "Cuéntanos un poco más." : "Tell us a bit more." })
       .max(2000),
-    source: z.string().trim().max(80).optional().or(z.literal("")),
   });
 
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
-    city: "",
-    country: "",
-    colony: "",
-    space: "",
-    source: "",
+    catName: "",
+    description: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [fileName, setFileName] = useState<string>("");
+  const [fileNames, setFileNames] = useState<string[]>([]);
 
   const update = (k: keyof typeof form, v: string) => {
     setForm((p) => ({ ...p, [k]: v }));
