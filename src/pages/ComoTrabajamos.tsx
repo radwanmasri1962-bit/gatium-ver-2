@@ -163,30 +163,27 @@ const ComoTrabajamos = () => {
               {es ? "ATELIER FELINO" : "FELINE ATELIER"}
             </div>
             <h1
-              className="mt-4"
+              className="text-[32px] md:text-[56px] mt-5"
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 400,
-                fontSize: "clamp(38px, 5.4vw, 64px)",
-                color: "hsl(var(--cream))",
-                lineHeight: 1.02,
-                letterSpacing: "-0.01em",
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 700,
+                color: "#fff",
+                lineHeight: 1.1,
               }}
             >
-              {es ? "Diseño que comienza" : "Design that begins"}
-              <br />
-              <em style={{ color: "hsl(var(--gold))", fontStyle: "italic" }}>
+              {es ? "Diseño que comienza " : "Design that begins "}
+              <span style={{ color: "hsl(var(--gold))" }}>
                 {es ? "observando." : "by observing."}
-              </em>
+              </span>
             </h1>
             <p
-              className="mt-6"
+              className="mt-5"
               style={{
                 fontFamily: "'Open Sans', sans-serif",
                 fontSize: "15px",
-                color: "rgba(245,239,230,0.88)",
+                color: "rgba(255,255,255,0.7)",
                 lineHeight: 1.7,
-                maxWidth: "440px",
+                maxWidth: "520px",
               }}
             >
               {es
