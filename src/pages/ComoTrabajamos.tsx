@@ -397,91 +397,71 @@ const ComoTrabajamos = () => {
         </div>
       </section>
 
-      {/* SECTIONS 4–6 — CATEGORY CINEMATIC CARDS */}
+      {/* SECTIONS 4–6 — CATEGORY CARDS */}
       <div className="w-full">
         {categories.map((cat) => {
           const isOpen = openCategory === cat.key;
           return (
-            <div key={cat.key} className="w-full">
-              {/* Collapsed cinematic card */}
-              <button
-                type="button"
-                onClick={() => setOpenCategory(isOpen ? null : cat.key)}
-                className="relative w-full block text-left overflow-hidden"
-                style={{ minHeight: "520px", backgroundColor: "#D6C8B4" }}
-              >
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.65) 100%)",
-                  }}
-                />
-                <div
-                  className="absolute inset-x-0 bottom-0 flex flex-col items-center text-center px-[20px] md:px-16"
-                  style={{ height: "40%", justifyContent: "center" }}
+            <section
+              key={cat.key}
+              className="px-[20px] md:px-16 py-[60px] md:py-[80px]"
+              style={{ backgroundColor: "hsl(var(--cream))" }}
+            >
+              <div className="max-w-[1200px] mx-auto">
+                <button
+                  type="button"
+                  onClick={() => setOpenCategory(isOpen ? null : cat.key)}
+                  className="w-full text-left grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
                 >
-                  <div style={{ ...eyebrow, color: "hsl(var(--gold))" }}>
-                    {cat.eyebrow}
+                  {/* Square image placeholder */}
+                  <div
+                    className="w-full"
+                    style={{ aspectRatio: "1/1", backgroundColor: "#D6C8B4" }}
+                  >
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span style={placeholderLabelStyle}>{placeholderLabel}</span>
+                    </div>
                   </div>
-                  <h2
-                    className="text-[28px] md:text-[44px] mt-4"
-                    style={{
-                      fontFamily: "'Montserrat', sans-serif",
-                      fontWeight: 700,
-                      color: "#fff",
-                      lineHeight: 1.15,
-                      maxWidth: "820px",
-                    }}
-                  >
-                    {cat.headline}
-                  </h2>
-                  <p
-                    className="mt-4 mx-auto"
-                    style={{
-                      fontFamily: "'Open Sans', sans-serif",
-                      fontSize: "14px",
-                      color: "rgba(255,255,255,0.8)",
-                      lineHeight: 1.7,
-                      maxWidth: "620px",
-                    }}
-                  >
-                    {cat.subtext}
-                  </p>
-                  <span
-                    className="mt-7 inline-flex items-center justify-center"
-                    style={{
-                      border: "1px solid #fff",
-                      color: "#fff",
-                      padding: "12px 28px",
-                      fontFamily: "'Montserrat', sans-serif",
-                      fontWeight: 700,
-                      fontSize: "12px",
-                      letterSpacing: "0.2em",
-                      textTransform: "uppercase",
-                      background: "transparent",
-                    }}
-                  >
-                    {es ? "VER PROYECTOS →" : "VIEW PROJECTS →"}
-                  </span>
-                </div>
-              </button>
-
-              {/* Expanded grid */}
-              <div
-                className="overflow-hidden"
-                style={{
-                  maxHeight: isOpen ? "4000px" : "0px",
-                  transition: "max-height 350ms ease",
-                  backgroundColor: "#FAF7F2",
-                }}
-              >
-                <div className="px-[20px] md:px-16 py-[60px] md:py-[80px]">
-                  <div className="max-w-[1400px] mx-auto">
-                    <div
-                      className="grid grid-cols-2 md:grid-cols-3"
-                      style={{ gap: "12px" }}
+                  {/* Right side: title + subtext + CTA */}
+                  <div className="flex flex-col items-start">
+                    <h2
+                      style={{
+                        ...sectionTitle,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.02em",
+                      }}
                     >
+                      {cat.eyebrow}
+                    </h2>
+                    <p className="mt-5" style={{ ...subText, maxWidth: "520px" }}>
+                      {cat.subtext}
+                    </p>
+                    <span
+                      className="mt-7 inline-flex items-center"
+                      style={{
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontWeight: 700,
+                        fontSize: "12px",
+                        letterSpacing: "0.2em",
+                        textTransform: "uppercase",
+                        color: "hsl(var(--gold))",
+                      }}
+                    >
+                      {es ? "VER PROYECTOS →" : "VIEW PROJECTS →"}
+                    </span>
+                  </div>
+                </button>
+
+                {/* Expanded grid */}
+                <div
+                  className="overflow-hidden"
+                  style={{
+                    maxHeight: isOpen ? "4000px" : "0px",
+                    transition: "max-height 300ms ease",
+                  }}
+                >
+                  <div className="pt-10 md:pt-12">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
                       {Array.from({ length: 10 }).map((_, i) => (
                         <PhotoPlaceholder key={i} label={placeholderLabel} />
                       ))}
@@ -508,7 +488,7 @@ const ComoTrabajamos = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
           );
         })}
       </div>
