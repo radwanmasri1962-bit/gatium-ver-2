@@ -148,11 +148,8 @@ const ConsejoFelino = () => {
               "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(30,18,8,0.28) 100%)",
           }}
         />
-        <div className="relative flex flex-col justify-end px-[18px] pb-[48px] pt-[64px] md:px-12 md:pb-16 md:pt-24" style={{ minHeight: "80vh" }}>
-          <div className="w-full" style={{ maxWidth: "560px" }}>
-            <div style={{ ...eyebrow, color: "hsl(var(--gold))" }}>
-              {es ? "CONSEJO FELINO" : "FELINE COUNCIL"}
-            </div>
+        <div className="relative flex flex-col justify-start px-[18px] pt-[80px] md:px-12 md:pt-[110px]" style={{ minHeight: "80vh" }}>
+          <div className="w-full" style={{ maxWidth: "520px" }}>
             <h1
               className="text-[30px] md:text-[52px]"
               style={{
@@ -160,7 +157,6 @@ const ConsejoFelino = () => {
                 fontWeight: 700,
                 color: "hsl(var(--cream))",
                 lineHeight: 1.1,
-                marginTop: "20px",
                 maxWidth: "480px",
               }}
             >
@@ -181,35 +177,21 @@ const ConsejoFelino = () => {
               style={{
                 fontFamily: "'Open Sans', sans-serif",
                 fontSize: "15px",
-                color: "rgba(245,239,230,0.9)",
-                maxWidth: "420px",
-                marginTop: "20px",
-                lineHeight: 1.7,
+                color: "rgba(245,239,230,0.92)",
+                maxWidth: "440px",
+                marginTop: "18px",
+                lineHeight: 1.55,
               }}
             >
               {es
-                ? "El Consejo Felino no es un concepto inventado. Es el origen real del criterio GATIUM."
-                : "The Feline Council is not an invented concept. It is the real origin of the GATIUM criterion."}
-            </p>
-            <p
-              style={{
-                fontFamily: "'Open Sans', sans-serif",
-                fontSize: "14px",
-                color: "rgba(245,239,230,0.8)",
-                maxWidth: "420px",
-                marginTop: "12px",
-                lineHeight: 1.7,
-              }}
-            >
-              {es
-                ? "Cada gato de la manada habita distinto. Observarlos fue la base de todo lo que diseñamos."
-                : "Each cat in the colony lives differently. Observing them was the basis of everything we design."}
+                ? "El Consejo Felino no es un concepto inventado. Es el origen real del criterio GATIUM. Cada gato de la manada habita distinto. Observarlos fue la base de todo lo que diseñamos."
+                : "The Feline Council is not an invented concept. It is the real origin of the GATIUM criterion. Each cat in the colony lives differently. Observing them was the basis of everything we design."}
             </p>
             <a
               href="#members"
               style={{
                 display: "inline-block",
-                marginTop: "32px",
+                marginTop: "24px",
                 backgroundColor: "hsl(var(--cream))",
                 color: "#000",
                 fontFamily: "'Montserrat', sans-serif",
