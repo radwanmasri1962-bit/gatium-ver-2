@@ -348,8 +348,13 @@ const ComoTrabajamos = () => {
                   >
                     {idx + 1}
                   </div>
-                  <div className="w-full mt-6">
-                    <PhotoPlaceholder label={placeholderLabel} aspect="3/4" />
+                  <div className="w-full mt-6" style={{ aspectRatio: "3/4" }}>
+                    <img
+                      src={img}
+                      alt={label}
+                      className="w-full h-full"
+                      style={{ objectFit: "cover", objectPosition: "top center" }}
+                    />
                   </div>
                   <div className="mt-6" style={{ color: "hsl(var(--gold))" }}>
                     <Icon size={26} strokeWidth={1.2} />
