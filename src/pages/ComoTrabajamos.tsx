@@ -419,9 +419,18 @@ const ComoTrabajamos = () => {
                     className="w-full"
                     style={{ aspectRatio: "1/1", backgroundColor: "#D6C8B4" }}
                   >
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span style={placeholderLabelStyle}>{placeholderLabel}</span>
-                    </div>
+                    {cat.key === "catios" ? (
+                      <img
+                        src={catiosImg}
+                        alt="Catio GATIUM"
+                        className="w-full h-full"
+                        style={{ objectFit: "cover", objectPosition: "center center" }}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <span style={placeholderLabelStyle}>{placeholderLabel}</span>
+                      </div>
+                    )}
                   </div>
                   {/* Right side: title + subtext + CTA */}
                   <div className="flex flex-col items-start">
