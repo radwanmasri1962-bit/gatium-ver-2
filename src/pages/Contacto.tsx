@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { z } from "zod";
-import { Mail, Globe, Camera, PawPrint } from "lucide-react";
+import { Camera, PawPrint } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { toast } from "sonner";
