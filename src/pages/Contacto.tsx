@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+
 import { z } from "zod";
 import { Mail, Globe, Camera, PawPrint } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -443,7 +443,59 @@ const Contacto = () => {
           </form>
         </div>
 
-        <div className="md:pl-16">
+        <div className="md:pl-16 flex flex-col">
+          <img
+            src={anubisInterior}
+            alt={es ? "Gato en interior cálido" : "Cat in warm interior"}
+            className="w-full"
+            style={{
+              aspectRatio: "1 / 1",
+              objectFit: "cover",
+              objectPosition: "center",
+              display: "block",
+              borderTopLeftRadius: "8px",
+              borderTopRightRadius: "8px",
+            }}
+          />
+          <div
+            style={{
+              backgroundColor: "hsl(var(--near-black))",
+              borderBottomLeftRadius: "8px",
+              borderBottomRightRadius: "8px",
+              padding: "24px 28px",
+            }}
+          >
+            <h3
+              style={{
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 700,
+                fontSize: "18px",
+                color: "hsl(var(--cream))",
+                lineHeight: 1.3,
+              }}
+            >
+              {es
+                ? "Cada hogar es único. Cada manada también."
+                : "Every home is unique. Every colony too."}
+            </h3>
+            <p
+              style={{
+                fontFamily: "'Open Sans', sans-serif",
+                fontSize: "13px",
+                color: "rgba(245,239,230,0.65)",
+                marginTop: "10px",
+                lineHeight: 1.6,
+              }}
+            >
+              {es
+                ? "Cuéntanos tu historia y diseñaremos un espacio que mejore su bienestar y transforme tu forma de convivir."
+                : "Tell us your story and we will design a space that improves their wellbeing and transforms your way of cohabiting."}
+            </p>
+            <div style={{ color: "hsl(var(--gold))", marginTop: "14px" }}>
+              <PawPrint size={26} strokeWidth={1.4} />
+            </div>
+          </div>
+
           <div
             style={{
               fontFamily: "'Montserrat', sans-serif",
@@ -452,7 +504,8 @@ const Contacto = () => {
               letterSpacing: "0.25em",
               textTransform: "uppercase",
               color: "hsl(var(--gold))",
-              marginBottom: "24px",
+              marginTop: "28px",
+              marginBottom: "8px",
             }}
           >
             {es ? "PREFIERES ESCRIBIRNOS DIRECTO" : "PREFER TO WRITE US DIRECTLY"}
@@ -495,14 +548,14 @@ const Contacto = () => {
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="flex items-start gap-4"
+              className="flex items-start gap-4 transition-colors hover:bg-black/[0.02]"
               style={{
-                padding: "16px 0",
+                padding: "14px 0",
                 borderBottom: "1px solid rgba(0,0,0,0.06)",
               }}
             >
               <span style={{ color: "hsl(var(--gold))", marginTop: "2px" }}>
-                <Icon size={20} />
+                <Icon size={18} />
               </span>
               <div>
                 <div
@@ -531,105 +584,22 @@ const Contacto = () => {
             </a>
           ))}
 
-          <div style={{ height: "1px", backgroundColor: "rgba(0,0,0,0.06)", margin: "24px 0" }} />
-
-          <div
-            style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 700,
-              fontSize: "9px",
-              letterSpacing: "0.25em",
-              textTransform: "uppercase",
-              color: "hsl(var(--gold))",
-              marginBottom: "12px",
-            }}
-          >
-            {es ? "¿DÓNDE TRABAJAMOS?" : "WHERE DO WE WORK?"}
-          </div>
-          <div className="flex items-start gap-3">
+          <div className="flex items-start gap-3" style={{ marginTop: "20px" }}>
             <span style={{ color: "hsl(var(--gold))", marginTop: "2px" }}>
-              <Globe size={20} />
+              <Globe size={18} />
             </span>
             <p
               style={{
                 fontFamily: "'Open Sans', sans-serif",
-                fontSize: "13px",
-                color: "rgba(0,0,0,0.65)",
+                fontSize: "12px",
+                color: "rgba(0,0,0,0.6)",
                 lineHeight: 1.6,
               }}
             >
               {es
-                ? "Trabajamos de manera remota en toda Latinoamérica y creamos piezas con fabricación local según tu ubicación."
-                : "We work remotely throughout Latin America and create pieces with local manufacturing according to your location."}
+                ? "Trabajamos de manera remota en toda Latinoamérica."
+                : "We work remotely throughout Latin America."}
             </p>
-          </div>
-          <Link
-            to="/#solutions"
-            className="inline-flex items-center gap-2"
-            style={{
-              marginTop: "10px",
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 700,
-              fontSize: "9px",
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              color: "hsl(var(--gold))",
-            }}
-          >
-            {es ? "VER MÁS SOBRE NUESTROS SERVICIOS" : "SEE MORE ABOUT OUR SERVICES"} <span>→</span>
-          </Link>
-
-          <img
-            src={anubisInterior}
-            alt={es ? "Gato en interior cálido" : "Cat in warm interior"}
-            className="w-full"
-            style={{
-              aspectRatio: "1 / 1",
-              objectFit: "cover",
-              objectPosition: "center",
-              display: "block",
-              marginTop: "28px",
-              borderTopLeftRadius: "8px",
-              borderTopRightRadius: "8px",
-            }}
-          />
-          <div
-            style={{
-              backgroundColor: "hsl(var(--near-black))",
-              borderBottomLeftRadius: "8px",
-              borderBottomRightRadius: "8px",
-              padding: "28px",
-            }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Montserrat', sans-serif",
-                fontWeight: 700,
-                fontSize: "18px",
-                color: "hsl(var(--cream))",
-                lineHeight: 1.3,
-              }}
-            >
-              {es
-                ? "Cada hogar es único. Cada manada también."
-                : "Every home is unique. Every colony too."}
-            </h3>
-            <p
-              style={{
-                fontFamily: "'Open Sans', sans-serif",
-                fontSize: "13px",
-                color: "rgba(245,239,230,0.65)",
-                marginTop: "10px",
-                lineHeight: 1.6,
-              }}
-            >
-              {es
-                ? "Cuéntanos tu historia y diseñaremos un espacio que mejore su bienestar y transforme tu forma de convivir."
-                : "Tell us your story and we will design a space that improves their wellbeing and transforms your way of cohabiting."}
-            </p>
-            <div style={{ color: "hsl(var(--gold))", marginTop: "16px" }}>
-              <PawPrint size={28} strokeWidth={1.4} />
-            </div>
           </div>
         </div>
       </section>
