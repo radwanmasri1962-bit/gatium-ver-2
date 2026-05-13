@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Instagram, Mail, ArrowRight } from "lucide-react";
 import logoDark from "@/assets/logo-dark.png";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 const PinterestIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
