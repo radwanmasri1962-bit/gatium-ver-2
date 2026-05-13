@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Cat,
   Home,
@@ -13,12 +14,6 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@/components/ui/accordion";
 import heroImg from "@/assets/majo-yani-drawing.jpg";
 import sketch1 from "@/assets/Como_Sketch_1.jpg";
 import sketch2 from "@/assets/Como_Sketch_2.jpg";
