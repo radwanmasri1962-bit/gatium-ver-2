@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Cat,
   Home,
@@ -13,12 +14,6 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@/components/ui/accordion";
 import heroImg from "@/assets/majo-yani-drawing.jpg";
 import sketch1 from "@/assets/Como_Sketch_1.jpg";
 import sketch2 from "@/assets/Como_Sketch_2.jpg";
@@ -92,6 +87,7 @@ const ExpandedGrid = ({ label }: { label: string }) => (
 const ComoTrabajamos = () => {
   const { lang } = useLanguage();
   const es = lang === "es";
+  const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   const placeholderLabel = es ? "FOTO PRÓXIMAMENTE" : "PHOTO COMING SOON";
 
@@ -139,24 +135,30 @@ const ComoTrabajamos = () => {
   const categories = [
     {
       key: "catios",
-      bg: "hsl(var(--beige))",
-      title: "CATIOS",
+      eyebrow: "CATIOS",
+      headline: es
+        ? "Cualquier espacio. Completamente personalizado."
+        : "Any space. Fully personalized.",
       subtext: es
         ? "Balcones pequeños, patios medianos, exteriores amplios — GATIUM adapta cada solución al espacio real de tu hogar."
         : "Small balconies, medium patios, large outdoor areas — GATIUM adapts every solution to the real space of your home.",
     },
     {
       key: "circuitos",
-      bg: "hsl(var(--cream))",
-      title: es ? "CIRCUITOS DE PARED" : "WALL CIRCUITS",
+      eyebrow: es ? "CIRCUITOS DE PARED" : "WALL CIRCUITS",
+      headline: es
+        ? "Movimiento vertical. Exploración instintiva."
+        : "Vertical movement. Instinctive exploration.",
       subtext: es
         ? "Diseñamos circuitos que respetan el comportamiento felino — escalar, observar, recorrer."
         : "We design circuits that respect feline behavior — climb, observe, traverse.",
     },
     {
       key: "mobiliario",
-      bg: "hsl(var(--beige))",
-      title: es ? "MOBILIARIO" : "FURNITURE",
+      eyebrow: es ? "MOBILIARIO" : "FURNITURE",
+      headline: es
+        ? "Integrado al hogar. Pensado para ellos."
+        : "Integrated into the home. Designed for them.",
       subtext: es
         ? "Lujo silencioso, materiales cálidos, convivencia funcional. Muebles que son parte del hogar, no un accesorio."
         : "Quiet luxury, warm materials, functional cohabitation. Furniture that is part of the home, not an accessory.",
@@ -395,31 +397,99 @@ const ComoTrabajamos = () => {
         </div>
       </section>
 
-      {/* SECTIONS 4–6 — CATEGORY ACCORDIONS */}
-      <Accordion type="single" collapsible>
-        {categories.map((cat) => (
-          <AccordionItem
-            key={cat.key}
-            value={cat.key}
-            className="border-0"
-            style={{ backgroundColor: cat.bg }}
-          >
-            <section className="px-[20px] md:px-16 py-[80px] md:py-[120px]">
-              <div className="max-w-[1400px] mx-auto">
-                <AccordionTrigger className="hover:no-underline p-0 [&>svg]:hidden">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center w-full text-left">
-                    {/* Left: square image */}
-                    <div className="w-full">
-                      <PhotoPlaceholder label={placeholderLabel} aspect="1/1" />
+      {/* SECTIONS 4–6 — CATEGORY CINEMATIC CARDS */}
+      <div className="w-full">
+        {categories.map((cat) => {
+          const isOpen = openCategory === cat.key;
+          return (
+            <div key={cat.key} className="w-full">
+              {/* Collapsed cinematic card */}
+              <button
+                type="button"
+                onClick={() => setOpenCategory(isOpen ? null : cat.key)}
+                className="relative w-full block text-left overflow-hidden"
+                style={{ minHeight: "520px", backgroundColor: "#D6C8B4" }}
+              >
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.65) 100%)",
+                  }}
+                />
+                <div
+                  className="absolute inset-x-0 bottom-0 flex flex-col items-center text-center px-[20px] md:px-16"
+                  style={{ height: "40%", justifyContent: "center" }}
+                >
+                  <div style={{ ...eyebrow, color: "hsl(var(--gold))" }}>
+                    {cat.eyebrow}
+                  </div>
+                  <h2
+                    className="text-[28px] md:text-[44px] mt-4"
+                    style={{
+                      fontFamily: "'Montserrat', sans-serif",
+                      fontWeight: 700,
+                      color: "#fff",
+                      lineHeight: 1.15,
+                      maxWidth: "820px",
+                    }}
+                  >
+                    {cat.headline}
+                  </h2>
+                  <p
+                    className="mt-4 mx-auto"
+                    style={{
+                      fontFamily: "'Open Sans', sans-serif",
+                      fontSize: "14px",
+                      color: "rgba(255,255,255,0.8)",
+                      lineHeight: 1.7,
+                      maxWidth: "620px",
+                    }}
+                  >
+                    {cat.subtext}
+                  </p>
+                  <span
+                    className="mt-7 inline-flex items-center justify-center"
+                    style={{
+                      border: "1px solid #fff",
+                      color: "#fff",
+                      padding: "12px 28px",
+                      fontFamily: "'Montserrat', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "12px",
+                      letterSpacing: "0.2em",
+                      textTransform: "uppercase",
+                      background: "transparent",
+                    }}
+                  >
+                    {es ? "VER PROYECTOS →" : "VIEW PROJECTS →"}
+                  </span>
+                </div>
+              </button>
+
+              {/* Expanded grid */}
+              <div
+                className="overflow-hidden"
+                style={{
+                  maxHeight: isOpen ? "4000px" : "0px",
+                  transition: "max-height 350ms ease",
+                  backgroundColor: "#FAF7F2",
+                }}
+              >
+                <div className="px-[20px] md:px-16 py-[60px] md:py-[80px]">
+                  <div className="max-w-[1400px] mx-auto">
+                    <div
+                      className="grid grid-cols-2 md:grid-cols-3"
+                      style={{ gap: "12px" }}
+                    >
+                      {Array.from({ length: 10 }).map((_, i) => (
+                        <PhotoPlaceholder key={i} label={placeholderLabel} />
+                      ))}
                     </div>
-                    {/* Right: title + subtext + CTA */}
-                    <div>
-                      <h2 style={sectionTitle}>{cat.title}</h2>
-                      <p className="mt-5" style={subText}>
-                        {cat.subtext}
-                      </p>
-                      <div
-                        className="mt-6 inline-block"
+                    <div className="flex justify-center mt-10">
+                      <button
+                        type="button"
+                        onClick={() => setOpenCategory(null)}
                         style={{
                           fontFamily: "'Montserrat', sans-serif",
                           fontWeight: 700,
@@ -427,21 +497,21 @@ const ComoTrabajamos = () => {
                           letterSpacing: "0.2em",
                           textTransform: "uppercase",
                           color: "hsl(var(--gold))",
+                          background: "transparent",
+                          border: "none",
+                          cursor: "pointer",
                         }}
                       >
-                        {es ? "Ver proyectos →" : "View projects →"}
-                      </div>
+                        {es ? "— VER MENOS" : "— SHOW LESS"}
+                      </button>
                     </div>
                   </div>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <ExpandedGrid label={placeholderLabel} />
-                </AccordionContent>
+                </div>
               </div>
-            </section>
-          </AccordionItem>
-        ))}
-      </Accordion>
+            </div>
+          );
+        })}
+      </div>
 
       {/* SECTION 7 — PRINCIPLES */}
       <section
