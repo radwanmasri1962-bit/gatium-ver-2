@@ -450,13 +450,13 @@ const Contacto = () => {
             {
               Icon: Mail,
               label: es ? "ESCRÍBENOS" : "EMAIL US",
-              value: "hola@gatium.com",
-              href: "mailto:hola@gatium.com",
+              value: "hola@gatium.mx",
+              href: "mailto:hola@gatium.mx",
             },
             {
               Icon: WhatsAppIcon,
               label: "WHATSAPP",
-              value: "+58 412 123 4567",
+              value: "+52 998 293 0144",
               href: whatsappUrl(lang),
             },
             {
@@ -464,6 +464,18 @@ const Contacto = () => {
               label: "INSTAGRAM",
               value: "@gatium.atelierfelino",
               href: "https://instagram.com/gatium.atelierfelino",
+            },
+            {
+              Icon: TikTokIcon,
+              label: "TIKTOK",
+              value: "@gatium.atelierfelino",
+              href: "https://tiktok.com/@gatium.atelierfelino",
+            },
+            {
+              Icon: FacebookIcon,
+              label: "FACEBOOK",
+              value: "@gatium.atelierfelino",
+              href: "https://facebook.com/gatium.atelierfelino",
             },
           ].map(({ Icon, label, value, href }) => (
             <a
