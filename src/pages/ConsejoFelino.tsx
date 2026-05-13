@@ -148,20 +148,27 @@ const ConsejoFelino = () => {
               "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(30,18,8,0.28) 100%)",
           }}
         />
-        <div className="relative flex flex-col justify-end px-[18px] pb-[48px] pt-[64px] md:px-12 md:pb-16 md:pt-24" style={{ minHeight: "80vh" }}>
-          <div className="w-full" style={{ maxWidth: "560px" }}>
+        <div className="relative px-[18px] md:px-12" style={{ minHeight: "80vh" }}>
+          {/* Title block — shifted right, beside the black cat */}
+          <div
+            className="absolute"
+            style={{
+              top: "12%",
+              left: "min(28%, 320px)",
+              maxWidth: "440px",
+            }}
+          >
             <div style={{ ...eyebrow, color: "hsl(var(--gold))" }}>
               {es ? "CONSEJO FELINO" : "FELINE COUNCIL"}
             </div>
             <h1
-              className="text-[30px] md:text-[52px]"
+              className="text-[28px] md:text-[44px]"
               style={{
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 700,
                 color: "hsl(var(--cream))",
                 lineHeight: 1.1,
-                marginTop: "20px",
-                maxWidth: "480px",
+                marginTop: "16px",
               }}
             >
               {es ? "Siete gatos. " : "Seven cats. "}
@@ -177,13 +184,22 @@ const ConsejoFelino = () => {
                 {es ? "Siete formas de habitar." : "Seven ways of living."}
               </span>
             </h1>
+          </div>
+
+          {/* Paragraph — lower-left, over the wooden table area */}
+          <div
+            className="absolute"
+            style={{
+              bottom: "14%",
+              left: "6%",
+              maxWidth: "360px",
+            }}
+          >
             <p
               style={{
                 fontFamily: "'Open Sans', sans-serif",
-                fontSize: "15px",
-                color: "rgba(245,239,230,0.9)",
-                maxWidth: "420px",
-                marginTop: "20px",
+                fontSize: "14px",
+                color: "rgba(245,239,230,0.95)",
                 lineHeight: 1.7,
               }}
             >
@@ -194,9 +210,8 @@ const ConsejoFelino = () => {
             <p
               style={{
                 fontFamily: "'Open Sans', sans-serif",
-                fontSize: "14px",
-                color: "rgba(245,239,230,0.8)",
-                maxWidth: "420px",
+                fontSize: "13px",
+                color: "rgba(245,239,230,0.85)",
                 marginTop: "12px",
                 lineHeight: 1.7,
               }}
@@ -205,25 +220,28 @@ const ConsejoFelino = () => {
                 ? "Cada gato de la manada habita distinto. Observarlos fue la base de todo lo que diseñamos."
                 : "Each cat in the colony lives differently. Observing them was the basis of everything we design."}
             </p>
-            <a
-              href="#members"
-              style={{
-                display: "inline-block",
-                marginTop: "32px",
-                backgroundColor: "hsl(var(--cream))",
-                color: "#000",
-                fontFamily: "'Montserrat', sans-serif",
-                fontWeight: 700,
-                fontSize: "10px",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                padding: "14px 28px",
-                borderRadius: "2px",
-              }}
-            >
-              {es ? "CONOCE A NUESTRO CONSEJO →" : "MEET OUR COUNCIL →"}
-            </a>
           </div>
+
+          {/* Button — lower-right */}
+          <a
+            href="#members"
+            className="absolute"
+            style={{
+              bottom: "8%",
+              right: "6%",
+              backgroundColor: "hsl(var(--cream))",
+              color: "#000",
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 700,
+              fontSize: "10px",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              padding: "14px 28px",
+              borderRadius: "2px",
+            }}
+          >
+            {es ? "CONOCE A NUESTRO CONSEJO →" : "MEET OUR COUNCIL →"}
+          </a>
         </div>
       </section>
 
