@@ -20,6 +20,11 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import heroImg from "@/assets/majo-yani-drawing.jpg";
+import sketch1 from "@/assets/Como_Sketch_1.jpg";
+import sketch2 from "@/assets/Como_Sketch_2.jpg";
+import sketch3 from "@/assets/Como_Sketch_3.jpg";
+import sketch4 from "@/assets/Como_Sketch_4.jpg";
+import sketch5 from "@/assets/Como_Sketch_5.jpg";
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
@@ -93,6 +98,7 @@ const ComoTrabajamos = () => {
   const steps = [
     {
       Icon: MessageSquare,
+      img: sketch1,
       label: es ? "PASO 1" : "STEP 1",
       desc: es
         ? "Nos compartes tu espacio y tu dinámica."
@@ -100,6 +106,7 @@ const ComoTrabajamos = () => {
     },
     {
       Icon: ClipboardList,
+      img: sketch2,
       label: es ? "PASO 2" : "STEP 2",
       desc: es
         ? "Realizamos un Diagnóstico GATIUM."
@@ -107,6 +114,7 @@ const ComoTrabajamos = () => {
     },
     {
       Icon: PenTool,
+      img: sketch3,
       label: es ? "PASO 3" : "STEP 3",
       desc: es
         ? "Diseñamos una propuesta personalizada."
@@ -114,11 +122,13 @@ const ComoTrabajamos = () => {
     },
     {
       Icon: RefreshCw,
+      img: sketch4,
       label: es ? "PASO 4" : "STEP 4",
       desc: es ? "Refinamos la propuesta contigo." : "We refine the proposal with you.",
     },
     {
       Icon: Sparkles,
+      img: sketch5,
       label: es ? "PASO 5" : "STEP 5",
       desc: es
         ? "Convertimos la idea en una solución habitable."
@@ -221,11 +231,11 @@ const ComoTrabajamos = () => {
 
       {/* SECTION 2 — PHILOSOPHY */}
       <section
-        className="px-[20px] md:px-16 py-[40px] md:py-[60px] overflow-x-auto"
+        className="px-[20px] md:px-16 py-[24px] md:py-[36px] overflow-x-auto"
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="mx-auto text-center">
-          <p style={{ ...bodyText, textAlign: "center", whiteSpace: "nowrap" }}>
+          <p style={{ ...bodyText, fontSize: "1.25rem", textAlign: "center", whiteSpace: "nowrap" }}>
             {es
               ? "En GATIUM, cada proyecto comienza antes del diseño. Comenzamos observando: cómo se mueve tu gato, dónde descansa, cómo explora, cómo convive. Solo entonces diseñamos."
               : "At GATIUM, every project begins before the design. We start by observing: how your cat moves, where they rest, how they explore, how they live together. Only then do we design."}
@@ -239,9 +249,16 @@ const ComoTrabajamos = () => {
         style={{ backgroundColor: "hsl(var(--beige))" }}
       >
         <div className="max-w-[1400px] mx-auto">
+          {/* Section header */}
+          <div className="text-center mb-16 md:mb-20">
+            <div style={eyebrow}>{es ? "NUESTRO PROCESO" : "OUR PROCESS"}</div>
+            <h2 className="mt-4 mx-auto" style={{ ...sectionTitle, maxWidth: "800px" }}>
+              {es ? "Un proceso pensado para ellos. Hecho para ti." : "A process designed for them. Made for you."}
+            </h2>
+          </div>
           {/* Desktop horizontal timeline */}
           <div className="hidden md:flex items-start justify-between gap-4">
-            {steps.map(({ Icon, label, desc }, idx) => (
+            {steps.map(({ Icon, img, label, desc }, idx) => (
               <div key={label} className="flex items-start" style={{ flex: idx === steps.length - 1 ? "0 1 auto" : "1 1 0" }}>
                 <div className="flex flex-col items-center text-center" style={{ width: "180px" }}>
                   {/* Numbered circle */}
@@ -259,9 +276,14 @@ const ComoTrabajamos = () => {
                   >
                     {idx + 1}
                   </div>
-                  {/* Tall image placeholder */}
-                  <div className="w-full mt-6">
-                    <PhotoPlaceholder label={placeholderLabel} aspect="3/4" />
+                  {/* Sketch image */}
+                  <div className="w-full mt-6" style={{ aspectRatio: "3/4" }}>
+                    <img
+                      src={img}
+                      alt={label}
+                      className="w-full h-full"
+                      style={{ objectFit: "cover", objectPosition: "top center" }}
+                    />
                   </div>
                   {/* Step icon */}
                   <div className="mt-6" style={{ color: "hsl(var(--gold))" }}>
@@ -309,7 +331,7 @@ const ComoTrabajamos = () => {
 
           {/* Mobile vertical timeline */}
           <div className="md:hidden flex flex-col items-center">
-            {steps.map(({ Icon, label, desc }, idx) => (
+            {steps.map(({ Icon, img, label, desc }, idx) => (
               <div key={label} className="w-full flex flex-col items-center">
                 <div className="flex flex-col items-center text-center w-full max-w-[320px]">
                   <div
@@ -326,8 +348,13 @@ const ComoTrabajamos = () => {
                   >
                     {idx + 1}
                   </div>
-                  <div className="w-full mt-6">
-                    <PhotoPlaceholder label={placeholderLabel} aspect="3/4" />
+                  <div className="w-full mt-6" style={{ aspectRatio: "3/4" }}>
+                    <img
+                      src={img}
+                      alt={label}
+                      className="w-full h-full"
+                      style={{ objectFit: "cover", objectPosition: "top center" }}
+                    />
                   </div>
                   <div className="mt-6" style={{ color: "hsl(var(--gold))" }}>
                     <Icon size={26} strokeWidth={1.2} />
