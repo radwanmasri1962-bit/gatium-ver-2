@@ -11,7 +11,7 @@ const PinterestIcon = ({ size = 18 }: { size?: number }) => (
 );
 
 export const Footer = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const navLinks = [
     { to: "/", key: "nav.inicio" },
