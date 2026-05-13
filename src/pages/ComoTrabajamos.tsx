@@ -383,14 +383,12 @@ const ComoTrabajamos = () => {
             {es ? "EMPECEMOS" : "LET'S BEGIN"}
           </div>
           <h2
-            className="mt-6 mx-auto"
+            className="mt-5 mx-auto text-[28px] md:text-[42px]"
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontWeight: 400,
-              fontSize: "clamp(30px, 4.4vw, 52px)",
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 700,
               color: "hsl(var(--cream))",
-              lineHeight: 1.15,
-              letterSpacing: "-0.005em",
+              lineHeight: 1.2,
               maxWidth: "780px",
             }}
           >
