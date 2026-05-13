@@ -87,6 +87,7 @@ const ExpandedGrid = ({ label }: { label: string }) => (
 const ComoTrabajamos = () => {
   const { lang } = useLanguage();
   const es = lang === "es";
+  const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   const placeholderLabel = es ? "FOTO PRÓXIMAMENTE" : "PHOTO COMING SOON";
 
