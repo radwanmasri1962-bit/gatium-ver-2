@@ -503,7 +503,7 @@ const Contacto = () => {
               Icon: WhatsAppIcon,
               label: "WHATSAPP",
               value: "+58 412 123 4567",
-              href: WHATSAPP,
+              href: whatsappUrl(lang),
             },
             {
               Icon: InstagramIcon,
