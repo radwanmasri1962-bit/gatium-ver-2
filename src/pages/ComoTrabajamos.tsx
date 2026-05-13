@@ -20,6 +20,7 @@ import sketch2 from "@/assets/Como_Sketch_2.jpg";
 import sketch3 from "@/assets/Como_Sketch_3.jpg";
 import sketch4 from "@/assets/Como_Sketch_4.jpg";
 import sketch5 from "@/assets/Como_Sketch_5.jpg";
+import catiosImg from "@/assets/Catios_7.jpg";
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
