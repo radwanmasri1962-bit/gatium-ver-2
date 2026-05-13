@@ -20,6 +20,11 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import heroImg from "@/assets/majo-yani-drawing.jpg";
+import sketch1 from "@/assets/Como_Sketch_1.jpg";
+import sketch2 from "@/assets/Como_Sketch_2.jpg";
+import sketch3 from "@/assets/Como_Sketch_3.jpg";
+import sketch4 from "@/assets/Como_Sketch_4.jpg";
+import sketch5 from "@/assets/Como_Sketch_5.jpg";
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
