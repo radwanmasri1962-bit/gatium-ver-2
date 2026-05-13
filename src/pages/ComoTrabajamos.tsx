@@ -231,11 +231,11 @@ const ComoTrabajamos = () => {
 
       {/* SECTION 2 — PHILOSOPHY */}
       <section
-        className="px-[20px] md:px-16 py-[40px] md:py-[60px] overflow-x-auto"
+        className="px-[20px] md:px-16 py-[24px] md:py-[36px] overflow-x-auto"
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="mx-auto text-center">
-          <p style={{ ...bodyText, textAlign: "center", whiteSpace: "nowrap" }}>
+          <p style={{ ...bodyText, fontSize: "1.25rem", textAlign: "center", whiteSpace: "nowrap" }}>
             {es
               ? "En GATIUM, cada proyecto comienza antes del diseño. Comenzamos observando: cómo se mueve tu gato, dónde descansa, cómo explora, cómo convive. Solo entonces diseñamos."
               : "At GATIUM, every project begins before the design. We start by observing: how your cat moves, where they rest, how they explore, how they live together. Only then do we design."}
