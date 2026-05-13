@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Instagram, Mail, ArrowRight } from "lucide-react";
 import logoDark from "@/assets/logo-dark.png";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 const PinterestIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -10,7 +11,7 @@ const PinterestIcon = ({ size = 18 }: { size?: number }) => (
 );
 
 export const Footer = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const navLinks = [
     { to: "/", key: "nav.inicio" },
@@ -92,7 +93,7 @@ export const Footer = () => {
           <p style={{ color: "rgba(245,239,230,0.55)", fontSize: "13px", lineHeight: 1.7 }}>
             {t("footer.talkBody")}
           </p>
-          <a href="https://wa.me/521XXXXXXXXXX" target="_blank" rel="noreferrer" className="btn-gold-outline">
+          <a href={whatsappUrl(lang)} target="_blank" rel="noreferrer" className="btn-gold-outline">
             {t("footer.whatsappBtn")}
           </a>
         </div>

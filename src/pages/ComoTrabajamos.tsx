@@ -14,7 +14,7 @@ import {
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 
-const WHATSAPP = "https://wa.me/521XXXXXXXXXX";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
@@ -489,7 +489,7 @@ const ComoTrabajamos = () => {
               : "Send us your space and let's design together the best version for your whole colony."}
           </p>
           <a
-            href={WHATSAPP}
+            href={whatsappUrl(lang)}
             target="_blank"
             rel="noreferrer"
             className="inline-flex self-start"

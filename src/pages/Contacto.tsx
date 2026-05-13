@@ -10,7 +10,7 @@ import anubisInterior from "@/assets/contacto/anubis-interior.jpg";
 
 void PhotoPlaceholder;
 
-const WHATSAPP = "https://wa.me/521XXXXXXXXXX";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
@@ -503,7 +503,7 @@ const Contacto = () => {
               Icon: WhatsAppIcon,
               label: "WHATSAPP",
               value: "+58 412 123 4567",
-              href: WHATSAPP,
+              href: whatsappUrl(lang),
             },
             {
               Icon: InstagramIcon,

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const WHATSAPP = "https://wa.me/521XXXXXXXXXX";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
@@ -247,7 +247,7 @@ const FAQ = () => {
         </p>
         <div className="flex flex-wrap justify-center" style={{ marginTop: "32px", gap: "14px" }}>
           <a
-            href={WHATSAPP}
+            href={whatsappUrl(lang)}
             target="_blank"
             rel="noreferrer"
             style={{
