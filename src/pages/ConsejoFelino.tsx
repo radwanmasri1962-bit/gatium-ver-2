@@ -148,26 +148,29 @@ const ConsejoFelino = () => {
               "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(30,18,8,0.28) 100%)",
           }}
         />
-        <div className="relative flex flex-col justify-start px-[18px] pt-[80px] md:px-12 md:pt-[110px]" style={{ minHeight: "80vh" }}>
-          <div className="w-full" style={{ maxWidth: "520px" }}>
+        <div className="relative flex flex-col justify-start px-[18px] pt-[32px] md:px-20 md:pt-[48px]" style={{ minHeight: "80vh" }}>
+          <div className="w-full md:ml-[6%]" style={{ maxWidth: "520px" }}>
             <h1
-              className="text-[30px] md:text-[52px]"
+              className="text-[34px] md:text-[56px]"
               style={{
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 700,
                 color: "hsl(var(--cream))",
-                lineHeight: 1.1,
+                lineHeight: 1.05,
                 maxWidth: "480px",
               }}
             >
-              {es ? "Siete gatos. " : "Seven cats. "}
+              {es ? "Siete gatos." : "Seven cats."}
               <span
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
-                  fontWeight: 600,
+                  fontWeight: 500,
                   fontStyle: "italic",
                   color: "hsl(var(--gold))",
                   display: "block",
+                  fontSize: "0.6em",
+                  marginTop: "6px",
+                  letterSpacing: "0.01em",
                 }}
               >
                 {es ? "Siete formas de habitar." : "Seven ways of living."}
@@ -175,12 +178,15 @@ const ConsejoFelino = () => {
             </h1>
             <p
               style={{
-                fontFamily: "'Open Sans', sans-serif",
-                fontSize: "15px",
-                color: "rgba(245,239,230,0.92)",
-                maxWidth: "440px",
-                marginTop: "18px",
+                fontFamily: "'Cormorant Garamond', serif",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "13px",
+                color: "rgba(245,239,230,0.9)",
+                maxWidth: "400px",
+                marginTop: "14px",
                 lineHeight: 1.55,
+                letterSpacing: "0.01em",
               }}
             >
               {es
@@ -191,15 +197,15 @@ const ConsejoFelino = () => {
               href="#members"
               style={{
                 display: "inline-block",
-                marginTop: "24px",
+                marginTop: "18px",
                 backgroundColor: "hsl(var(--cream))",
                 color: "#000",
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 700,
-                fontSize: "10px",
+                fontSize: "9px",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                padding: "14px 28px",
+                padding: "11px 22px",
                 borderRadius: "2px",
               }}
             >
