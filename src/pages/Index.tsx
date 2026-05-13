@@ -10,7 +10,7 @@ import solution4 from "@/assets/solution-4-furniture.jpg";
 import solution5 from "@/assets/solution-5-litter.jpg";
 import solution6 from "@/assets/solution-6-colonies.jpg";
 
-const WHATSAPP = "https://wa.me/521XXXXXXXXXX";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 const PhotoPlaceholder = ({ label, ratio }: { label: string; ratio?: string }) => (
   <div
@@ -215,7 +215,7 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap" style={{ marginTop: "32px", gap: "14px" }}>
               <a
-                href={WHATSAPP}
+                href={whatsappUrl(lang)}
                 target="_blank"
                 rel="noreferrer"
                 style={{
@@ -531,7 +531,7 @@ const Index = () => {
           style={{ marginTop: "36px", gap: "14px" }}
         >
           <a
-            href={WHATSAPP}
+            href={whatsappUrl(lang)}
             target="_blank"
             rel="noreferrer"
             style={{
