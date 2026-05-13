@@ -249,9 +249,16 @@ const ComoTrabajamos = () => {
         style={{ backgroundColor: "hsl(var(--beige))" }}
       >
         <div className="max-w-[1400px] mx-auto">
+          {/* Section header */}
+          <div className="text-center mb-16 md:mb-20">
+            <div style={eyebrow}>{es ? "NUESTRO PROCESO" : "OUR PROCESS"}</div>
+            <h2 className="mt-4 mx-auto" style={{ ...sectionTitle, maxWidth: "800px" }}>
+              {es ? "Un proceso pensado para ellos. Hecho para ti." : "A process designed for them. Made for you."}
+            </h2>
+          </div>
           {/* Desktop horizontal timeline */}
           <div className="hidden md:flex items-start justify-between gap-4">
-            {steps.map(({ Icon, label, desc }, idx) => (
+            {steps.map(({ Icon, img, label, desc }, idx) => (
               <div key={label} className="flex items-start" style={{ flex: idx === steps.length - 1 ? "0 1 auto" : "1 1 0" }}>
                 <div className="flex flex-col items-center text-center" style={{ width: "180px" }}>
                   {/* Numbered circle */}
