@@ -29,8 +29,15 @@ import catio3 from "@/assets/Catios_3.jpg";
 import catio4 from "@/assets/Catios_4.jpg";
 import catio5 from "@/assets/Catios_5.jpg";
 import catio6 from "@/assets/Catios_6.jpg";
+import circuito1 from "@/assets/Circuito_grid_1.jpg";
+import circuito2 from "@/assets/Circuito_grid_2.jpg";
+import circuito3 from "@/assets/Circuito_grid_3.jpg";
+import circuito4 from "@/assets/Circuito_grid_4.jpg";
+import circuito5 from "@/assets/Circuito_grid_5.jpg";
+import circuito6 from "@/assets/Circuito_grid_6.jpg";
 
 const catiosGridImages = [catio1, catio2, catio3, catio4, catio5, catio6];
+const circuitosGridImages = [circuito1, circuito2, circuito3, circuito4, circuito5, circuito6];
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
@@ -491,7 +498,12 @@ const ComoTrabajamos = () => {
                   <div className="pt-10 md:pt-12">
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
                       {Array.from({ length: 6 }).map((_, i) => {
-                        const src = cat.key === "catios" ? catiosGridImages[i] : undefined;
+                        const src =
+                          cat.key === "catios"
+                            ? catiosGridImages[i]
+                            : cat.key === "circuitos"
+                            ? circuitosGridImages[i]
+                            : undefined;
                         if (src) {
                           return (
                             <div
