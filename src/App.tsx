@@ -9,6 +9,8 @@ import Index from "./pages/Index.tsx";
 import Nosotros from "./pages/Nosotros.tsx";
 
 import ConsejoFelino from "./pages/ConsejoFelino.tsx";
+import Blog from "./pages/Blog.tsx";
+import BlogPost from "./pages/BlogPost.tsx";
 import ComoTrabajamos from "./pages/ComoTrabajamos.tsx";
 import Contacto from "./pages/Contacto.tsx";
 import FAQ from "./pages/FAQ.tsx";
@@ -29,6 +31,8 @@ const App = () => (
               <Route path="/nosotros" element={<Nosotros />} />
               
               <Route path="/consejo-felino" element={<ConsejoFelino />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/como-trabajamos" element={<ComoTrabajamos />} />
               <Route path="/contacto" element={<Contacto />} />
               <Route path="/faq" element={<FAQ />} />

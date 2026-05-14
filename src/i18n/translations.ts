@@ -6,6 +6,7 @@ export const translations = {
     nosotros: { es: "Nosotros", en: "About" },
     soluciones: { es: "Soluciones", en: "Solutions" },
     consejo: { es: "Consejo Felino", en: "Feline Advice" },
+    blog: { es: "Blog", en: "Blog" },
     como: { es: "Cómo Trabajamos", en: "How We Work" },
     contacto: { es: "Contacto", en: "Contact" },
     cta: { es: "ENVÍANOS TU ESPACIO", en: "SEND US YOUR SPACE" },
