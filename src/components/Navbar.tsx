@@ -10,9 +10,9 @@ const links = [
   { to: "/nosotros", key: "nav.nosotros" },
 
   { to: "/consejo-felino", key: "nav.consejo" },
-  { to: "/blog", key: "nav.blog" },
   { to: "/como-trabajamos", key: "nav.como" },
   { to: "/contacto", key: "nav.contacto" },
+  { to: "/blog", key: "nav.blog" },
 ];
 
 interface Props {
