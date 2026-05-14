@@ -35,9 +35,16 @@ import circuito3 from "@/assets/Circuito_grid_3.jpg";
 import circuito4 from "@/assets/Circuito_grid_4.jpg";
 import circuito5 from "@/assets/Circuito_grid_5.jpg";
 import circuito6 from "@/assets/Circuito_grid_6.jpg";
+import mobiliario1 from "@/assets/Mobiliario_grid_1.jpg";
+import mobiliario2 from "@/assets/Mobiliario_grid_2.png";
+import mobiliario3 from "@/assets/Mobiliario_grid_3.png";
+import mobiliario4 from "@/assets/Mobiliario_grid_4.png";
+import mobiliario5 from "@/assets/Mobiliario_grid_5.png";
+import mobiliario6 from "@/assets/Mobiliario_grid_6.png";
 
 const catiosGridImages = [catio1, catio2, catio3, catio4, catio5, catio6];
 const circuitosGridImages = [circuito1, circuito2, circuito3, circuito4, circuito5, circuito6];
+const mobiliarioGridImages = [mobiliario1, mobiliario2, mobiliario3, mobiliario4, mobiliario5, mobiliario6];
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
@@ -503,6 +510,8 @@ const ComoTrabajamos = () => {
                             ? catiosGridImages[i]
                             : cat.key === "circuitos"
                             ? circuitosGridImages[i]
+                            : cat.key === "mobiliario"
+                            ? mobiliarioGridImages[i]
                             : undefined;
                         if (src) {
                           return (
