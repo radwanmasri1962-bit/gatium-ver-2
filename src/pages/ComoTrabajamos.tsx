@@ -23,6 +23,14 @@ import sketch5 from "@/assets/Como_Sketch_5.jpg";
 import catiosImg from "@/assets/Catios_7.jpg";
 import circuitoImg from "@/assets/Circuito_1.jpg";
 import mobiliarioImg from "@/assets/Mobilario_6.png";
+import catio1 from "@/assets/Catios_1.jpg";
+import catio2 from "@/assets/Catios_2.jpg";
+import catio3 from "@/assets/Catios_3.jpg";
+import catio4 from "@/assets/Catios_4.jpg";
+import catio5 from "@/assets/Catios_5.jpg";
+import catio6 from "@/assets/Catios_6.jpg";
+
+const catiosGridImages = [catio1, catio2, catio3, catio4, catio5, catio6];
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
@@ -482,9 +490,26 @@ const ComoTrabajamos = () => {
                 >
                   <div className="pt-10 md:pt-12">
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
-                      {Array.from({ length: 6 }).map((_, i) => (
-                        <PhotoPlaceholder key={i} label={placeholderLabel} />
-                      ))}
+                      {Array.from({ length: 6 }).map((_, i) => {
+                        const src = cat.key === "catios" ? catiosGridImages[i] : undefined;
+                        if (src) {
+                          return (
+                            <div
+                              key={i}
+                              className="w-full overflow-hidden"
+                              style={{ aspectRatio: "4/3", backgroundColor: "#D6C8B4" }}
+                            >
+                              <img
+                                src={src}
+                                alt={`${cat.eyebrow} ${i + 1}`}
+                                className="w-full h-full"
+                                style={{ objectFit: "cover", objectPosition: "center center" }}
+                              />
+                            </div>
+                          );
+                        }
+                        return <PhotoPlaceholder key={i} label={placeholderLabel} />;
+                      })}
                     </div>
                     <div className="flex justify-center mt-10">
                       <button
