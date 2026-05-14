@@ -490,9 +490,26 @@ const ComoTrabajamos = () => {
                 >
                   <div className="pt-10 md:pt-12">
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
-                      {Array.from({ length: 6 }).map((_, i) => (
-                        <PhotoPlaceholder key={i} label={placeholderLabel} />
-                      ))}
+                      {Array.from({ length: 6 }).map((_, i) => {
+                        const src = cat.key === "catios" ? catiosGridImages[i] : undefined;
+                        if (src) {
+                          return (
+                            <div
+                              key={i}
+                              className="w-full overflow-hidden"
+                              style={{ aspectRatio: "4/3", backgroundColor: "#D6C8B4" }}
+                            >
+                              <img
+                                src={src}
+                                alt={`${cat.eyebrow} ${i + 1}`}
+                                className="w-full h-full"
+                                style={{ objectFit: "cover", objectPosition: "center center" }}
+                              />
+                            </div>
+                          );
+                        }
+                        return <PhotoPlaceholder key={i} label={placeholderLabel} />;
+                      })}
                     </div>
                     <div className="flex justify-center mt-10">
                       <button
