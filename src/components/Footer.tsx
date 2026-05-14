@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Linkedin, Mail, ArrowRight } from "lucide-react";
 import logoDark from "@/assets/logo-dark.png";
+import jaraLogo from "@/assets/jara-ai-logo.png";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { whatsappUrl } from "@/lib/whatsapp";
 
@@ -138,6 +139,27 @@ export const Footer = () => {
             </button>
           </form>
         </div>
+      </div>
+
+      {/* Powered by JARA AI */}
+      <div
+        className="px-6 md:px-16 py-5 flex items-center justify-center"
+        style={{ borderTop: "1px solid rgba(255,255,255,0.2)" }}
+      >
+        <a
+          href="https://jaraai.co/en"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center group"
+          style={{ gap: "8px", opacity: 0.6, transition: "opacity 200ms ease" }}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.6")}
+        >
+          <img src={jaraLogo} alt="JARA AI" style={{ height: "24px", width: "auto" }} />
+          <span style={{ fontFamily: "'Roboto', sans-serif", fontSize: "13px", color: "#ffffff" }}>
+            Built with JARA AI
+          </span>
+        </a>
       </div>
 
       {/* Bottom bar */}
