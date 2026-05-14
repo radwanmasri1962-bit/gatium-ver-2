@@ -155,10 +155,10 @@ export const Footer = () => {
           onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
           onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.6")}
         >
-          <img src={jaraLogo} alt="JARA AI" style={{ height: "24px", width: "auto" }} />
           <span style={{ fontFamily: "'Roboto', sans-serif", fontSize: "13px", color: "#ffffff" }}>
-            Built with JARA AI
+            Built with
           </span>
+          <img src={jaraLogo} alt="JARA AI" style={{ height: "24px", width: "auto", verticalAlign: "middle" }} />
         </a>
       </div>
 
