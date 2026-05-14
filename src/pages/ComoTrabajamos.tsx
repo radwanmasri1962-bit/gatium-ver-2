@@ -23,6 +23,14 @@ import sketch5 from "@/assets/Como_Sketch_5.jpg";
 import catiosImg from "@/assets/Catios_7.jpg";
 import circuitoImg from "@/assets/Circuito_1.jpg";
 import mobiliarioImg from "@/assets/Mobilario_6.png";
+import catio1 from "@/assets/Catios_1.jpg";
+import catio2 from "@/assets/Catios_2.jpg";
+import catio3 from "@/assets/Catios_3.jpg";
+import catio4 from "@/assets/Catios_4.jpg";
+import catio5 from "@/assets/Catios_5.jpg";
+import catio6 from "@/assets/Catios_6.jpg";
+
+const catiosGridImages = [catio1, catio2, catio3, catio4, catio5, catio6];
 
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
