@@ -40,7 +40,7 @@ export const Footer = () => {
 
   return (
     <footer style={{ backgroundColor: "hsl(var(--near-black))" }}>
-      <div className="px-6 md:px-16 pt-16 pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+      <div className="px-6 md:px-16 pt-16 pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Col 1 */}
         <div className="space-y-5">
           <img src={logoDark} alt="GATIUM" className="h-8 w-auto" />
@@ -105,40 +105,6 @@ export const Footer = () => {
           </a>
         </div>
 
-        {/* Col 5 */}
-        <div className="space-y-4">
-          <div className="ui-label">{t("footer.newsletter")}</div>
-          <p style={{ color: "rgba(245,239,230,0.55)", fontSize: "13px", lineHeight: 1.7 }}>
-            {t("footer.newsletterBody")}
-          </p>
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="flex items-center"
-            style={{
-              backgroundColor: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(196,154,90,0.2)",
-              borderRadius: "2px",
-            }}
-          >
-            <input
-              type="email"
-              placeholder={t("footer.emailPlaceholder")}
-              className="flex-1 bg-transparent px-3 py-2 outline-none"
-              style={{
-                color: "hsl(var(--cream))",
-                fontSize: "13px",
-              }}
-            />
-            <button
-              type="submit"
-              aria-label="Subscribe"
-              className="px-3 py-2 transition-colors"
-              style={{ color: "hsl(var(--gold))" }}
-            >
-              <ArrowRight size={18} />
-            </button>
-          </form>
-        </div>
       </div>
 
       {/* Powered by JARA AI */}

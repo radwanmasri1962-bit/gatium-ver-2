@@ -160,7 +160,7 @@ const ComoTrabajamos = () => {
   const categories = [
     {
       key: "catios",
-      eyebrow: "CATIOS",
+      eyebrow: es ? "CATIOS Y ESPACIOS EXTERIORES SEGUROS" : "SAFE OUTDOOR CATIOS",
       headline: es
         ? "Cualquier espacio. Completamente personalizado."
         : "Any space. Fully personalized.",
@@ -170,7 +170,7 @@ const ComoTrabajamos = () => {
     },
     {
       key: "circuitos",
-      eyebrow: es ? "CIRCUITOS DE PARED" : "WALL CIRCUITS",
+      eyebrow: es ? "MUROS Y RECORRIDOS VERTICALES" : "VERTICAL WALLS AND PATHWAYS",
       headline: es
         ? "Movimiento vertical. Exploración instintiva."
         : "Vertical movement. Instinctive exploration.",
@@ -180,7 +180,7 @@ const ComoTrabajamos = () => {
     },
     {
       key: "mobiliario",
-      eyebrow: es ? "MOBILIARIO" : "FURNITURE",
+      eyebrow: es ? "MOBILIARIO FUNCIONAL PARA CONVIVENCIA FELINA" : "FUNCTIONAL FURNITURE FOR FELINE COHABITATION",
       headline: es
         ? "Integrado al hogar. Pensado para ellos."
         : "Integrated into the home. Designed for them.",
@@ -469,8 +469,10 @@ const ComoTrabajamos = () => {
                     <h2
                       style={{
                         ...sectionTitle,
+                        fontSize: "26px",
                         textTransform: "uppercase",
                         letterSpacing: "0.02em",
+                        lineHeight: 1.2,
                       }}
                     >
                       {cat.eyebrow}

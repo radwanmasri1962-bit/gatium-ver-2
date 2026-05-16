@@ -151,13 +151,14 @@ const ConsejoFelino = () => {
         <div className="relative flex flex-col justify-start px-[18px] pt-[32px] md:px-20 md:pt-[48px]" style={{ minHeight: "80vh" }}>
           <div className="w-full md:ml-[6%]" style={{ maxWidth: "520px" }}>
             <h1
-              className="text-[34px] md:text-[56px]"
+              className="text-[26px] md:text-[42px]"
               style={{
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 700,
                 color: "hsl(var(--cream))",
-                lineHeight: 1.05,
+                lineHeight: 1.1,
                 maxWidth: "480px",
+                letterSpacing: "-0.005em",
               }}
             >
               {es ? "Siete gatos." : "Seven cats."}
@@ -168,7 +169,7 @@ const ConsejoFelino = () => {
                   fontStyle: "italic",
                   color: "hsl(var(--gold))",
                   display: "block",
-                  fontSize: "0.6em",
+                  fontSize: "0.62em",
                   marginTop: "6px",
                   letterSpacing: "0.01em",
                 }}
@@ -178,14 +179,13 @@ const ConsejoFelino = () => {
             </h1>
             <p
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontStyle: "italic",
+                fontFamily: "'Open Sans', sans-serif",
                 fontWeight: 400,
-                fontSize: "13px",
-                color: "rgba(245,239,230,0.9)",
-                maxWidth: "400px",
-                marginTop: "14px",
-                lineHeight: 1.55,
+                fontSize: "14px",
+                color: "rgba(245,239,230,0.85)",
+                maxWidth: "440px",
+                marginTop: "20px",
+                lineHeight: 1.7,
                 letterSpacing: "0.01em",
               }}
             >
@@ -197,15 +197,15 @@ const ConsejoFelino = () => {
               href="#members"
               style={{
                 display: "inline-block",
-                marginTop: "18px",
+                marginTop: "28px",
                 backgroundColor: "hsl(var(--cream))",
                 color: "#000",
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 700,
-                fontSize: "9px",
-                letterSpacing: "0.2em",
+                fontSize: "10px",
+                letterSpacing: "0.22em",
                 textTransform: "uppercase",
-                padding: "11px 22px",
+                padding: "13px 26px",
                 borderRadius: "2px",
               }}
             >
