@@ -469,8 +469,10 @@ const ComoTrabajamos = () => {
                     <h2
                       style={{
                         ...sectionTitle,
+                        fontSize: "26px",
                         textTransform: "uppercase",
                         letterSpacing: "0.02em",
+                        lineHeight: 1.2,
                       }}
                     >
                       {cat.eyebrow}
