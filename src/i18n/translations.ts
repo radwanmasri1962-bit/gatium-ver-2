@@ -39,7 +39,7 @@ export const translations = {
       en: "Terms and conditions · Privacy policy",
     },
     sol: {
-      catios: { es: "Patios y espacios exteriores seguros", en: "Safe patios and outdoor spaces" },
+      catios: { es: "Catios y espacios exteriores seguros", en: "Catios and safe outdoor spaces" },
       verticales: { es: "Muros y recorridos verticales", en: "Vertical walls and pathways" },
       mobiliario: { es: "Mobiliario funcional para convivencia felina", en: "Functional furniture for feline cohabitation" },
     },
