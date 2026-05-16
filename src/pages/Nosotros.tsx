@@ -166,7 +166,7 @@ const Nosotros = () => {
             <p
               style={{
                 fontFamily: "'Open Sans', sans-serif",
-                fontSize: "15px",
+                fontSize: "13px",
                 color: "rgba(255,255,255,0.7)",
                 maxWidth: "520px",
                 marginTop: "20px",
@@ -180,7 +180,7 @@ const Nosotros = () => {
             <p
               style={{
                 fontFamily: "'Open Sans', sans-serif",
-                fontSize: "15px",
+                fontSize: "13px",
                 color: "rgba(255,255,255,0.7)",
                 maxWidth: "520px",
                 marginTop: "16px",
