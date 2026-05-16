@@ -145,7 +145,7 @@ const ConsejoFelino = () => {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(30,18,8,0.28) 100%)",
+              "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(20,12,4,0.55) 80%, rgba(20,12,4,0.75) 100%)",
           }}
         />
         <div className="relative flex flex-col justify-end px-[18px] pb-[40px] md:px-20 md:pb-[64px]" style={{ minHeight: "80vh" }}>
