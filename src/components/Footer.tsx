@@ -60,7 +60,7 @@ export const Footer = () => {
             <a href="https://linkedin.com/company/gatium" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors" aria-label="LinkedIn">
               <Linkedin size={18} />
             </a>
-            <a href="mailto:hola@gatium.mx" className="hover:text-gold transition-colors" aria-label="Email">
+            <a href="mailto:gatium.af@gmail.com" className="hover:text-gold transition-colors" aria-label="Email">
               <Mail size={18} />
             </a>
           </div>
