@@ -94,7 +94,7 @@ const Index = () => {
     {
       Icon: IconHouseGrid,
       image: solution1,
-      title: es ? "Patios y espacios exteriores seguros" : "Safe outdoor patios",
+      title: es ? "Catios y espacios exteriores seguros" : "Catios and safe outdoor spaces",
       desc: es
         ? "Libertad controlada para explorar, tomar sol y observar."
         : "Controlled freedom to explore, sunbathe and observe.",
