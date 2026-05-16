@@ -262,7 +262,7 @@ const ComoTrabajamos = () => {
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="mx-auto text-center">
-          <p style={{ ...bodyText, fontSize: "1.25rem", textAlign: "center", whiteSpace: "nowrap" }}>
+          <p style={{ ...bodyText, fontSize: "clamp(13px, 1.15vw, 16px)", textAlign: "center", lineHeight: 1.7, maxWidth: "1100px", marginLeft: "auto", marginRight: "auto" }}>
             {es
               ? "En GATIUM, cada proyecto comienza antes del diseño. Comenzamos observando: cómo se mueve tu gato, dónde descansa, cómo explora, cómo convive. Solo entonces diseñamos."
               : "At GATIUM, every project begins before the design. We start by observing: how your cat moves, where they rest, how they explore, how they live together. Only then do we design."}

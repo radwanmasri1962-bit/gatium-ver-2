@@ -145,20 +145,19 @@ const ConsejoFelino = () => {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(30,18,8,0.28) 100%)",
+              "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(20,12,4,0.55) 80%, rgba(20,12,4,0.75) 100%)",
           }}
         />
-        <div className="relative flex flex-col justify-start px-[18px] pt-[32px] md:px-20 md:pt-[48px]" style={{ minHeight: "80vh" }}>
-          <div className="w-full md:ml-[6%]" style={{ maxWidth: "520px" }}>
+        <div className="relative flex flex-col justify-end px-[18px] pb-[40px] md:px-20 md:pb-[64px]" style={{ minHeight: "80vh" }}>
+          <div className="w-full md:ml-[6%]" style={{ maxWidth: "560px" }}>
             <h1
-              className="text-[26px] md:text-[42px]"
               style={{
                 fontFamily: "'Montserrat', sans-serif",
-                fontWeight: 700,
+                fontWeight: 600,
+                fontSize: "clamp(28px, 3.4vw, 44px)",
                 color: "hsl(var(--cream))",
-                lineHeight: 1.1,
-                maxWidth: "480px",
-                letterSpacing: "-0.005em",
+                lineHeight: 1.15,
+                letterSpacing: "-0.01em",
               }}
             >
               {es ? "Siete gatos." : "Seven cats."}
@@ -169,9 +168,9 @@ const ConsejoFelino = () => {
                   fontStyle: "italic",
                   color: "hsl(var(--gold))",
                   display: "block",
-                  fontSize: "0.62em",
-                  marginTop: "6px",
-                  letterSpacing: "0.01em",
+                  fontSize: "0.72em",
+                  marginTop: "10px",
+                  letterSpacing: "0.005em",
                 }}
               >
                 {es ? "Siete formas de habitar." : "Seven ways of living."}
@@ -181,12 +180,12 @@ const ConsejoFelino = () => {
               style={{
                 fontFamily: "'Open Sans', sans-serif",
                 fontWeight: 400,
-                fontSize: "14px",
-                color: "rgba(245,239,230,0.85)",
-                maxWidth: "440px",
-                marginTop: "20px",
-                lineHeight: 1.7,
-                letterSpacing: "0.01em",
+                fontSize: "15px",
+                color: "rgba(245,239,230,0.9)",
+                maxWidth: "480px",
+                marginTop: "22px",
+                lineHeight: 1.75,
+                letterSpacing: "0.005em",
               }}
             >
               {es
@@ -198,15 +197,16 @@ const ConsejoFelino = () => {
               style={{
                 display: "inline-block",
                 marginTop: "28px",
-                backgroundColor: "hsl(var(--cream))",
-                color: "#000",
+                backgroundColor: "hsl(var(--gold))",
+                color: "hsl(var(--near-black))",
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 700,
                 fontSize: "10px",
                 letterSpacing: "0.22em",
                 textTransform: "uppercase",
-                padding: "13px 26px",
+                padding: "13px 28px",
                 borderRadius: "2px",
+                boxShadow: "0 6px 24px rgba(0,0,0,0.25)",
               }}
             >
               {es ? "CONOCE A NUESTRO CONSEJO →" : "MEET OUR COUNCIL →"}
