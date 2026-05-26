@@ -28,99 +28,122 @@ const ConsejoFelino = () => {
   const participate = [
     {
       Icon: Eye,
-      title: es ? "OBSERVAN" : "THEY OBSERVE",
-      quote: "Llevo 3 horas aquí arriba vigilando.\n\nTodo está bajo control.",
-      author: "— ASLAN",
+      title: "SEGURIDAD",
+      main: "Un gato no descansa por completo si no se siente seguro.",
+      small:
+        "Las alturas, refugios y rutas de escape les permiten relajarse y habitar el espacio con tranquilidad.",
     },
     {
       Icon: Lightbulb,
-      title: es ? "ANALIZAN" : "THEY ANALYZE",
-      quote: "Esta repisa tiene 2 cm menos de lo que necesito.\n\nCompletamente inaceptable.",
-      author: "— ARES",
+      title: "PERSONALIDAD",
+      main: "No todos los gatos necesitan lo mismo.",
+      small:
+        "Cada integrante del Consejo Felino interactúa distinto con el hogar y nos enseñó que cada espacio debe adaptarse a su personalidad.",
     },
     {
       Icon: Pencil,
-      title: es ? "ACONSEJAN" : "THEY ADVISE",
-      quote: "Si no puedo escapar por arriba,\n\nel diseño está mal.",
-      author: "— ARAGORN",
+      title: "CONVIVENCIA",
+      main: "El bienestar también transforma la convivencia.",
+      small:
+        "Cuando un gato tiene espacios pensados para él, el hogar se vuelve más armónico para todos.",
     },
   ];
 
   const cats = [
     {
-      name: "ANUBIS",
-      img: anubisImg,
-      desc: es
-        ? "Negro absoluto, mirada dorada. Silencioso y soberano. Prefiere las alturas y los espacios propios."
-        : "Absolute black, golden gaze. Silent and sovereign. Prefers heights and his own spaces.",
-    },
-    {
-      name: "APOLO",
-      img: apoloImg,
-      desc: es
-        ? "Blanco inmaculado, ojos azules. Curioso y luminoso. Siempre en el centro de todo."
-        : "Immaculate white, blue eyes. Curious and luminous. Always at the center of everything.",
-    },
-    {
-      name: "AQUILES",
-      img: aquilesImg,
-      desc: es
-        ? "Naranja intenso, espíritu libre. Se adueña del sofá y del cuarto con la misma calma."
-        : "Intense orange, free spirit. Owns the sofa and the room with the same calm.",
-    },
-    {
-      name: "ARES",
-      img: aresImg,
-      desc: es
-        ? "Blanco y negro, carácter firme. Observa antes de actuar. Nunca pide permiso."
-        : "Black and white, firm character. Observes before acting. Never asks permission.",
-    },
-    {
-      name: "ASLAN",
+      name: "Aslan",
       img: aslanImg,
-      desc: es
-        ? "Atigrado dorado, presencia tranquila. Le gusta el sol, la madera y los rincones con vista."
-        : "Golden tabby, calm presence. Loves the sun, wood and corners with a view.",
+      title: "Aslan — Guardián del Territorio",
+      tagline:
+        "Nos enseñó que sentirse seguro también transforma la manera de convivir.",
+      tags: "Territorio · Refugio · Convivencia",
+      desc:
+        "Aslan nos enseñó que la convivencia no sucede por sí sola: también necesita espacios, límites y seguridad. Su manera de proteger territorios, reaccionar a cambios y buscar lugares donde sentirse tranquilo nos mostró que algunos gatos necesitan mayor control sobre su entorno para sentirse en equilibrio. Con el tiempo hicimos cambios en casa, creamos separaciones y respetamos mejor sus espacios. Poco a poco algo empezó a cambiar: Aslan se volvió más relajado, más juguetón, más sociable y el estrés dentro de la manada disminuyó. Aslan nos dejó una lección importante: cuando el espacio responde a las necesidades reales del gato, el bienestar también transforma la convivencia.",
     },
     {
-      name: "ATENEA",
-      img: ateneaImg,
-      desc: es
-        ? "Atigrada oscura, porte impecable. Seria, directa y dueña absoluta de su territorio."
-        : "Dark tabby, impeccable bearing. Serious, direct and absolute owner of her territory.",
+      name: "Ares",
+      img: aresImg,
+      title: "Ares — Guardián de la Accesibilidad",
+      tagline:
+        "Nos enseñó que cuando el espacio se adapta al gato, el bienestar cambia por completo.",
+      tags: "Accesibilidad · Bienestar · Confort",
+      desc:
+        "Ares nos enseñó que no todos los gatos habitan el espacio de la misma manera. Durante un tiempo notamos que exploraba menos, evitaba ciertas alturas y disfrutaba espacios distintos a los que otros miembros de la manada utilizaban con facilidad. Descubrimos que no era falta de interés: algunos accesos simplemente no respondían a sus necesidades. Adaptamos recorridos y encontramos algo importante: no era la altura lo que hacía la diferencia, sino la manera de llegar a ella. Al crear rutas más cómodas y accesibles, volvió a disfrutar las alturas, recuperó dinamismo y empezó a habitar el espacio con más confianza. El señor Ares nos recordó algo que seguimos aplicando hasta hoy: diseñar para gatos no significa asumir lo que necesitan; significa permitir que ellos mismos nos lo enseñen.",
     },
     {
-      name: "ARAGORN",
+      name: "Aragorn",
       img: aragornImg,
-      desc: es
-        ? "Atigrado robusto, carácter sereno. El guardián. Siempre sabe exactamente dónde estar."
-        : "Robust tabby, serene character. The guardian. Always knows exactly where to be.",
+      title: "Aragorn — Guardián de la Confianza",
+      tagline: "Nos enseñó que sentirse seguro también significa tener una salida.",
+      tags: "Confianza · Rutas · Seguridad",
+      desc:
+        "Aragorn nos enseñó que el estrés puede cambiar la forma en que un gato habita su hogar. Durante una etapa difícil descubrimos algo importante: necesitaba refugios, rutas de escape y espacios donde pudiera moverse sin sentirse acorralado. Creamos recorridos con distintas salidas, respetamos sus tiempos y empezamos a darle más opciones para elegir cómo vivir el espacio. Poco a poco comenzó a recuperar tranquilidad, volvió a disfrutar el juego y empezó a sentirse más seguro dentro de la manada. Aragorn nos mostró que la confianza no aparece de inmediato; necesita espacio para construirse.",
+    },
+    {
+      name: "Apolo",
+      img: apoloImg,
+      title: "Apolo — Guardián de los Límites",
+      tagline:
+        "Nos enseñó que un espacio seguro también debe responder a distintas formas de percibir el mundo.",
+      tags: "Seguridad · Adaptación · Exploración",
+      desc:
+        "Apolo nos enseñó que no todos los gatos perciben y exploran el mundo de la misma manera. Su sordera parcial, curiosidad y persistencia nos hicieron entender que aquello que parecía seguro para otros, para él no siempre lo era. Su manera de seguir estímulos visuales, buscar el exterior y explorar cada límite nos obligó a mirar detalles que antes pasábamos por alto. Reforzamos estructuras, adaptamos espacios y transformamos recorridos para responder a necesidades que antes no habíamos considerado. Apolo cambió nuestra forma de ver la seguridad: un espacio seguro no limita la exploración; permite descubrir con confianza.",
+    },
+    {
+      name: "Aquiles",
+      img: aquilesImg,
+      title: "Aquiles — Guardián del Instinto",
+      tagline:
+        "Nos enseñó que jugar también es una forma de expresar su naturaleza.",
+      tags: "Juego · Caza · Estímulo",
+      desc:
+        "Aquiles nos enseñó que el juego es mucho más que entretenimiento: también es una forma de expresar comportamientos naturales. Su manera de perseguir, capturar y transformar cada dinámica en un reto nos mostró que algunos gatos necesitan espacios que les permitan estimular su curiosidad, su energía y su instinto natural. Descubrimos que el bienestar también puede construirse a través de experiencias que les permitan explorar, jugar y sentirse libres para ser ellos mismos. Aquiles nos recordó que un espacio pensado para gatos no solo cubre necesidades físicas; también alimenta su naturaleza.",
+    },
+    {
+      name: "Anubis",
+      img: anubisImg,
+      title: "Anubis — Guardián del Vínculo",
+      tagline:
+        "Nos enseñó que sentirse bien también significa sentirse conectado.",
+      tags: "Vínculo · Presencia · Bienestar",
+      desc:
+        "Anubis nos enseñó que algunos gatos necesitan algo más que espacios cómodos: necesitan sentirse parte de lo que sucede a su alrededor. Su manera de buscarnos, vocalizar para encontrarnos y participar constantemente en la dinámica de la casa nos mostró que la tranquilidad también puede nacer de la conexión y la compañía. Le encanta jugar, convivir con sus hermanos y convertir cualquier pequeño detalle en parte de su experiencia. Pequeños cambios hicieron una gran diferencia: creamos espacios donde pudiera vernos, mantenerse cerca y sentirse incluido sin experimentar aislamiento innecesario. Anubis nos enseñó que el bienestar también puede nacer de sentirse parte de algo.",
+    },
+    {
+      name: "Atenea",
+      img: ateneaImg,
+      title: "Atenea — Guardiana de la Energía",
+      tagline:
+        "Nos enseñó que algunos gatos necesitan espacios donde su energía pueda expresarse.",
+      tags: "Energía · Estímulo · Movimiento",
+      desc:
+        "Atenea nos enseñó que algunos gatos viven el espacio desde el movimiento constante y la búsqueda continua de estímulos. Su energía, curiosidad y necesidad de explorar todo a su alrededor nos mostraron que algunos gatos necesitan mucho más que lugares para descansar: necesitan recorridos, experiencias y espacios que les permitan expresar su naturaleza sin sentirse limitados. Con ella descubrimos que el bienestar también puede construirse desde el juego, el movimiento y la posibilidad de encontrar siempre algo nuevo. Atenea llegó para derrumbar una idea: algunos gatos no necesitan más espacio; necesitan más posibilidades para expresarse.",
     },
   ];
 
   const philosophy = [
     {
       Icon: Star,
-      title: es ? "EXPERIENCIA REAL" : "REAL EXPERIENCE",
-      desc: es
-        ? "Convivimos con ellos y entendemos sus comportamientos."
-        : "We live with them and understand their behaviors.",
+      title: "EXPERIENCIA REAL",
+      main: "No nació desde una teoría.",
+      desc:
+        "Nació viviendo, equivocándonos, ajustando y aprendiendo junto a nuestra propia manada.",
     },
     {
       Icon: Eye,
-      title: es ? "OBSERVACIÓN DIARIA" : "DAILY OBSERVATION",
-      desc: es
-        ? "Cada decisión de diseño nace de lo que ellos nos enseñan."
-        : "Every design decision comes from what they teach us.",
+      title: "OBSERVACIÓN DIARIA",
+      main: "Cada comportamiento deja una pista.",
+      desc:
+        "Aprendimos que pequeñas preferencias y hábitos pueden cambiar por completo la manera en que un gato vive el espacio.",
     },
     {
       Icon: Pencil,
-      title: es ? "DISEÑO CON PROPÓSITO" : "DESIGN WITH PURPOSE",
-      desc: es
-        ? "Creamos espacios que mejoran su bienestar y el de todos."
-        : "We create spaces that improve their wellbeing and everyone's.",
+      title: "DISEÑO CON PROPÓSITO",
+      main: "No diseñamos pensando en un gato ideal.",
+      desc: "Diseñamos espacios que responden a necesidades reales.",
     },
   ];
+
 
   return (
     <>
@@ -138,6 +161,7 @@ const ConsejoFelino = () => {
             width: "100%",
             height: "100%",
             objectFit: "cover",
+            objectPosition: "center right",
           }}
         />
         <div
@@ -156,11 +180,13 @@ const ConsejoFelino = () => {
                 fontWeight: 600,
                 fontSize: "clamp(28px, 3.4vw, 44px)",
                 color: "hsl(var(--cream))",
-                lineHeight: 1.15,
+                lineHeight: 1.2,
                 letterSpacing: "-0.01em",
               }}
             >
-              {es ? "Siete gatos." : "Seven cats."}
+              Son nuestra manada,<br />
+              nuestros maestros<br />
+              y la razón por la que
               <span
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
@@ -168,12 +194,12 @@ const ConsejoFelino = () => {
                   fontStyle: "italic",
                   color: "hsl(var(--gold))",
                   display: "block",
-                  fontSize: "0.72em",
-                  marginTop: "10px",
+                  fontSize: "0.95em",
+                  marginTop: "8px",
                   letterSpacing: "0.005em",
                 }}
               >
-                {es ? "Siete formas de habitar." : "Seven ways of living."}
+                diseñamos diferente.
               </span>
             </h1>
             <p
@@ -186,11 +212,10 @@ const ConsejoFelino = () => {
                 marginTop: "22px",
                 lineHeight: 1.75,
                 letterSpacing: "0.005em",
+                whiteSpace: "pre-line",
               }}
             >
-              {es
-                ? "El Consejo Felino no es un concepto inventado. Es el origen real del criterio GATIUM. Cada gato de la manada habita distinto. Observarlos fue la base de todo lo que diseñamos."
-                : "The Feline Council is not an invented concept. It is the real origin of the GATIUM criterion. Each cat in the colony lives differently. Observing them was the basis of everything we design."}
+              {"El Consejo Felino no nació como una idea de marca. Nació de convivir con siete gatos completamente distintos.\n\nObservándolos entendimos algo importante: cada gato necesita habitar el espacio de una manera diferente."}
             </p>
             <a
               href="#members"
@@ -209,22 +234,23 @@ const ConsejoFelino = () => {
                 boxShadow: "0 6px 24px rgba(0,0,0,0.25)",
               }}
             >
-              {es ? "CONOCE A NUESTRO CONSEJO →" : "MEET OUR COUNCIL →"}
+              CONOCE AL CONSEJO →
             </a>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2 — HOW THE COUNCIL PARTICIPATES */}
+
+      {/* SECTION 2 — WHAT WE LEARNED */}
       <section className="py-12 md:py-16 px-6 md:px-16" style={{ backgroundColor: "hsl(var(--cream))" }}>
         <div className="text-center" style={eyebrow}>
-          {es ? "ASÍ PARTICIPA EL CONSEJO EN GATIUM" : "HOW THE COUNCIL PARTICIPATES IN GATIUM"}
+          LO QUE APRENDIMOS VIVIENDO CON ELLOS
         </div>
         <div
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           style={{ marginTop: "48px" }}
         >
-          {participate.map(({ Icon, title, quote, author }) => (
+          {participate.map(({ Icon, title, main, small }) => (
             <div
               key={title}
               style={{
@@ -254,32 +280,44 @@ const ConsejoFelino = () => {
                 style={{
                   fontFamily: "'Playfair Display', 'Cormorant Garamond', serif",
                   fontStyle: "italic",
-                  fontSize: "16px",
-                  color: "#6B5744",
-                  marginTop: "12px",
-                  lineHeight: 1.6,
-                  whiteSpace: "pre-line",
+                  fontSize: "18px",
+                  color: "#3a2f24",
+                  marginTop: "14px",
+                  lineHeight: 1.5,
                 }}
               >
-                {quote}
+                {main}
               </p>
-              <div
+              <p
                 style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "10px",
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  color: "hsl(var(--gold))",
+                  fontFamily: "'Open Sans', sans-serif",
+                  fontSize: "13px",
+                  color: "rgba(0,0,0,0.65)",
                   marginTop: "12px",
+                  lineHeight: 1.65,
                 }}
               >
-                {author}
-              </div>
+                {small}
+              </p>
             </div>
           ))}
         </div>
+        <p
+          className="text-center mx-auto"
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontStyle: "italic",
+            fontSize: "18px",
+            color: "#3a2f24",
+            marginTop: "40px",
+            maxWidth: "720px",
+            lineHeight: 1.55,
+          }}
+        >
+          Gracias a ellos entendemos lo que otros pasan por alto y diseñamos soluciones que realmente funcionan.
+        </p>
       </section>
+
 
       {/* SECTION 3 — INSIGHT QUOTE BAND */}
       <section
@@ -304,26 +342,24 @@ const ConsejoFelino = () => {
               color: "hsl(var(--gold))",
               lineHeight: 1.4,
               marginTop: "16px",
-              maxWidth: "480px",
+              maxWidth: "520px",
             }}
           >
-            {es
-              ? "“No diseñamos para que se vea bonito. Diseñamos para que vivir juntos sea mejor.”"
-              : "“We don't design for it to look pretty. We design so that living together is better.”"}
+            “Algunos gatos no necesitan más espacio; necesitan más posibilidades.”
           </p>
-          <div
+          <p
             style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 700,
-              fontSize: "9px",
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              color: "rgba(245,239,230,0.5)",
-              marginTop: "20px",
+              fontFamily: "'Open Sans', sans-serif",
+              fontSize: "14px",
+              color: "rgba(245,239,230,0.78)",
+              marginTop: "18px",
+              lineHeight: 1.7,
+              maxWidth: "520px",
             }}
           >
-            {es ? "— Atenea, Ministra de Energía y Velocidad" : "— Atenea, Minister of Energy and Speed"}
-          </div>
+            Gracias a Atenea entendimos la importancia de crear estructuras resistentes, recorridos verticales y espacios que acompañen su energía.
+          </p>
+
         </div>
       </section>
 
@@ -334,7 +370,7 @@ const ConsejoFelino = () => {
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="text-center" style={eyebrow}>
-          {es ? "CONSEJO FELINO" : "FELINE COUNCIL"}
+          CONSEJO FELINO
         </div>
         <h2
           className="text-center"
@@ -348,28 +384,44 @@ const ConsejoFelino = () => {
             lineHeight: 1.2,
           }}
         >
-          {es ? "Siete gatos. Siete formas de habitar." : "Seven cats. Seven ways of living."}
+          Integrantes del Consejo Felino
         </h2>
+        <p
+          className="text-center mx-auto"
+          style={{
+            fontFamily: "'Open Sans', sans-serif",
+            fontSize: "14px",
+            color: "rgba(0,0,0,0.7)",
+            marginTop: "16px",
+            maxWidth: "640px",
+            lineHeight: 1.7,
+            whiteSpace: "pre-line",
+          }}
+        >
+          {"Siete gatos. Siete formas distintas de habitar un mismo hogar.\n\nCada integrante del Consejo dejó una enseñanza que transformó nuestra manera de observar, diseñar y entender el bienestar felino."}
+        </p>
         <div
           className="overflow-x-auto"
-          style={{ marginTop: "48px", scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
+          style={{ marginTop: "40px", scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
         >
           <div
             className="flex"
             style={{ gap: "20px", padding: "8px 24px 24px", width: "max-content" }}
           >
-            {cats.map(({ name, img, desc }) => (
+            {cats.map(({ name, img, title, tagline, tags, desc }) => (
               <div
                 key={name}
                 className="transition-transform duration-300 hover:-translate-y-1"
                 style={{
-                  flex: "0 0 300px",
-                  width: "300px",
+                  flex: "0 0 320px",
+                  width: "320px",
                   scrollSnapAlign: "start",
                   backgroundColor: "#FFFFFF",
                   borderRadius: "12px",
                   padding: "16px",
                   boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+                  display: "flex",
+                  flexDirection: "column",
                 }}
               >
                 <div
@@ -392,20 +444,46 @@ const ConsejoFelino = () => {
                   style={{
                     fontFamily: "'Cormorant Garamond', serif",
                     fontWeight: 600,
-                    fontSize: "24px",
+                    fontSize: "20px",
                     color: "#000",
-                    letterSpacing: "0.02em",
+                    letterSpacing: "0.01em",
+                    lineHeight: 1.25,
                   }}
                 >
-                  {name}
+                  {title}
+                </div>
+                <p
+                  style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontStyle: "italic",
+                    fontSize: "14px",
+                    color: "#6B5744",
+                    marginTop: "8px",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {tagline}
+                </p>
+                <div
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "9px",
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "hsl(var(--gold))",
+                    marginTop: "10px",
+                  }}
+                >
+                  {tags}
                 </div>
                 <p
                   style={{
                     fontFamily: "'Open Sans', sans-serif",
                     fontSize: "12px",
-                    color: "rgba(0,0,0,0.7)",
-                    marginTop: "6px",
-                    lineHeight: 1.55,
+                    color: "rgba(0,0,0,0.72)",
+                    marginTop: "12px",
+                    lineHeight: 1.6,
                   }}
                 >
                   {desc}
@@ -416,12 +494,13 @@ const ConsejoFelino = () => {
         </div>
       </section>
 
+
       {/* SECTION 5 — PHILOSOPHY BAND */}
       <section
         className="grid grid-cols-1 md:grid-cols-4 gap-8"
         style={{ backgroundColor: "hsl(var(--near-black))", padding: "48px 24px" }}
       >
-        {philosophy.map(({ Icon, title, desc }) => (
+        {philosophy.map(({ Icon, title, main, desc }) => (
           <div key={title}>
             <div style={{ color: "hsl(var(--gold))", marginBottom: "14px" }}>
               <Icon size={32} strokeWidth={1.4} />
@@ -438,6 +517,18 @@ const ConsejoFelino = () => {
             >
               {title}
             </div>
+            <p
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontStyle: "italic",
+                fontSize: "17px",
+                color: "hsl(var(--gold))",
+                marginTop: "10px",
+                lineHeight: 1.5,
+              }}
+            >
+              {main}
+            </p>
             <p
               style={{
                 fontFamily: "'Open Sans', sans-serif",
@@ -466,19 +557,30 @@ const ConsejoFelino = () => {
             style={{
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: 700,
-              fontSize: "14px",
+              fontSize: "13px",
               color: "#000",
-              lineHeight: 1.6,
-              textTransform: "uppercase",
-              letterSpacing: "0.05em",
+              lineHeight: 1.55,
+              letterSpacing: "0.02em",
             }}
           >
-            {es
-              ? "EL CONSEJO FELINO ES EL CORAZÓN DE GATIUM. ELLOS NOS ENSEÑAN. NOSOTROS DISEÑAMOS."
-              : "THE FELINE COUNCIL IS THE HEART OF GATIUM. THEY TEACH US. WE DESIGN."}
+            El Consejo Felino es el corazón de GATIUM. Ellos nos enseñan. Nosotros diseñamos.
+          </div>
+          <div
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 700,
+              fontSize: "10px",
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "hsl(var(--gold))",
+              marginTop: "14px",
+            }}
+          >
+            Escuchamos · Proponemos · Adaptamos · Diseñamos
           </div>
         </div>
       </section>
+
 
       {/* SECTION 6 — BOTTOM CTA */}
       <section
@@ -497,8 +599,8 @@ const ConsejoFelino = () => {
           }}
         >
           {es
-            ? "No diseñamos para gatos imaginarios. Diseñamos desde una convivencia real."
-            : "We don't design for imaginary cats. We design from real cohabitation."}
+            ? "Tú conoces a tu gato. Nosotros ayudamos a transformar eso en un espacio pensado para él."
+            : "You know your cat. We help turn that into a space designed for them."}
         </h2>
         <Link
           to="/#solutions"
@@ -516,8 +618,9 @@ const ConsejoFelino = () => {
             borderRadius: "2px",
           }}
         >
-          {es ? "CONOCE NUESTRAS SOLUCIONES →" : "DISCOVER OUR SOLUTIONS →"}
+          Conoce nuestras soluciones →
         </Link>
+
       </section>
     </>
   );
