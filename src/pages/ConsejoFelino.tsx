@@ -342,26 +342,24 @@ const ConsejoFelino = () => {
               color: "hsl(var(--gold))",
               lineHeight: 1.4,
               marginTop: "16px",
-              maxWidth: "480px",
+              maxWidth: "520px",
             }}
           >
-            {es
-              ? "“No diseñamos para que se vea bonito. Diseñamos para que vivir juntos sea mejor.”"
-              : "“We don't design for it to look pretty. We design so that living together is better.”"}
+            “Algunos gatos no necesitan más espacio; necesitan más posibilidades.”
           </p>
-          <div
+          <p
             style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 700,
-              fontSize: "9px",
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              color: "rgba(245,239,230,0.5)",
-              marginTop: "20px",
+              fontFamily: "'Open Sans', sans-serif",
+              fontSize: "14px",
+              color: "rgba(245,239,230,0.78)",
+              marginTop: "18px",
+              lineHeight: 1.7,
+              maxWidth: "520px",
             }}
           >
-            {es ? "— Atenea, Ministra de Energía y Velocidad" : "— Atenea, Minister of Energy and Speed"}
-          </div>
+            Gracias a Atenea entendimos la importancia de crear estructuras resistentes, recorridos verticales y espacios que acompañen su energía.
+          </p>
+
         </div>
       </section>
 
