@@ -241,16 +241,16 @@ const ConsejoFelino = () => {
       </section>
 
 
-      {/* SECTION 2 — HOW THE COUNCIL PARTICIPATES */}
+      {/* SECTION 2 — WHAT WE LEARNED */}
       <section className="py-12 md:py-16 px-6 md:px-16" style={{ backgroundColor: "hsl(var(--cream))" }}>
         <div className="text-center" style={eyebrow}>
-          {es ? "ASÍ PARTICIPA EL CONSEJO EN GATIUM" : "HOW THE COUNCIL PARTICIPATES IN GATIUM"}
+          LO QUE APRENDIMOS VIVIENDO CON ELLOS
         </div>
         <div
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           style={{ marginTop: "48px" }}
         >
-          {participate.map(({ Icon, title, quote, author }) => (
+          {participate.map(({ Icon, title, main, small }) => (
             <div
               key={title}
               style={{
@@ -280,32 +280,44 @@ const ConsejoFelino = () => {
                 style={{
                   fontFamily: "'Playfair Display', 'Cormorant Garamond', serif",
                   fontStyle: "italic",
-                  fontSize: "16px",
-                  color: "#6B5744",
-                  marginTop: "12px",
-                  lineHeight: 1.6,
-                  whiteSpace: "pre-line",
+                  fontSize: "18px",
+                  color: "#3a2f24",
+                  marginTop: "14px",
+                  lineHeight: 1.5,
                 }}
               >
-                {quote}
+                {main}
               </p>
-              <div
+              <p
                 style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "10px",
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  color: "hsl(var(--gold))",
+                  fontFamily: "'Open Sans', sans-serif",
+                  fontSize: "13px",
+                  color: "rgba(0,0,0,0.65)",
                   marginTop: "12px",
+                  lineHeight: 1.65,
                 }}
               >
-                {author}
-              </div>
+                {small}
+              </p>
             </div>
           ))}
         </div>
+        <p
+          className="text-center mx-auto"
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontStyle: "italic",
+            fontSize: "18px",
+            color: "#3a2f24",
+            marginTop: "40px",
+            maxWidth: "720px",
+            lineHeight: 1.55,
+          }}
+        >
+          Gracias a ellos entendemos lo que otros pasan por alto y diseñamos soluciones que realmente funcionan.
+        </p>
       </section>
+
 
       {/* SECTION 3 — INSIGHT QUOTE BAND */}
       <section
