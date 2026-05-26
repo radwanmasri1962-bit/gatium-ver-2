@@ -500,7 +500,7 @@ const ConsejoFelino = () => {
         className="grid grid-cols-1 md:grid-cols-4 gap-8"
         style={{ backgroundColor: "hsl(var(--near-black))", padding: "48px 24px" }}
       >
-        {philosophy.map(({ Icon, title, desc }) => (
+        {philosophy.map(({ Icon, title, main, desc }) => (
           <div key={title}>
             <div style={{ color: "hsl(var(--gold))", marginBottom: "14px" }}>
               <Icon size={32} strokeWidth={1.4} />
@@ -517,6 +517,18 @@ const ConsejoFelino = () => {
             >
               {title}
             </div>
+            <p
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontStyle: "italic",
+                fontSize: "17px",
+                color: "hsl(var(--gold))",
+                marginTop: "10px",
+                lineHeight: 1.5,
+              }}
+            >
+              {main}
+            </p>
             <p
               style={{
                 fontFamily: "'Open Sans', sans-serif",
@@ -545,19 +557,30 @@ const ConsejoFelino = () => {
             style={{
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: 700,
-              fontSize: "14px",
+              fontSize: "13px",
               color: "#000",
-              lineHeight: 1.6,
-              textTransform: "uppercase",
-              letterSpacing: "0.05em",
+              lineHeight: 1.55,
+              letterSpacing: "0.02em",
             }}
           >
-            {es
-              ? "EL CONSEJO FELINO ES EL CORAZÓN DE GATIUM. ELLOS NOS ENSEÑAN. NOSOTROS DISEÑAMOS."
-              : "THE FELINE COUNCIL IS THE HEART OF GATIUM. THEY TEACH US. WE DESIGN."}
+            El Consejo Felino es el corazón de GATIUM. Ellos nos enseñan. Nosotros diseñamos.
+          </div>
+          <div
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 700,
+              fontSize: "10px",
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "hsl(var(--gold))",
+              marginTop: "14px",
+            }}
+          >
+            Escuchamos · Proponemos · Adaptamos · Diseñamos
           </div>
         </div>
       </section>
+
 
       {/* SECTION 6 — BOTTOM CTA */}
       <section
