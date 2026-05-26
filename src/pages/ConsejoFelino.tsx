@@ -370,7 +370,7 @@ const ConsejoFelino = () => {
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
         <div className="text-center" style={eyebrow}>
-          {es ? "CONSEJO FELINO" : "FELINE COUNCIL"}
+          CONSEJO FELINO
         </div>
         <h2
           className="text-center"
@@ -384,28 +384,44 @@ const ConsejoFelino = () => {
             lineHeight: 1.2,
           }}
         >
-          {es ? "Siete gatos. Siete formas de habitar." : "Seven cats. Seven ways of living."}
+          Integrantes del Consejo Felino
         </h2>
+        <p
+          className="text-center mx-auto"
+          style={{
+            fontFamily: "'Open Sans', sans-serif",
+            fontSize: "14px",
+            color: "rgba(0,0,0,0.7)",
+            marginTop: "16px",
+            maxWidth: "640px",
+            lineHeight: 1.7,
+            whiteSpace: "pre-line",
+          }}
+        >
+          {"Siete gatos. Siete formas distintas de habitar un mismo hogar.\n\nCada integrante del Consejo dejó una enseñanza que transformó nuestra manera de observar, diseñar y entender el bienestar felino."}
+        </p>
         <div
           className="overflow-x-auto"
-          style={{ marginTop: "48px", scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
+          style={{ marginTop: "40px", scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
         >
           <div
             className="flex"
             style={{ gap: "20px", padding: "8px 24px 24px", width: "max-content" }}
           >
-            {cats.map(({ name, img, desc }) => (
+            {cats.map(({ name, img, title, tagline, tags, desc }) => (
               <div
                 key={name}
                 className="transition-transform duration-300 hover:-translate-y-1"
                 style={{
-                  flex: "0 0 300px",
-                  width: "300px",
+                  flex: "0 0 320px",
+                  width: "320px",
                   scrollSnapAlign: "start",
                   backgroundColor: "#FFFFFF",
                   borderRadius: "12px",
                   padding: "16px",
                   boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+                  display: "flex",
+                  flexDirection: "column",
                 }}
               >
                 <div
@@ -428,20 +444,46 @@ const ConsejoFelino = () => {
                   style={{
                     fontFamily: "'Cormorant Garamond', serif",
                     fontWeight: 600,
-                    fontSize: "24px",
+                    fontSize: "20px",
                     color: "#000",
-                    letterSpacing: "0.02em",
+                    letterSpacing: "0.01em",
+                    lineHeight: 1.25,
                   }}
                 >
-                  {name}
+                  {title}
+                </div>
+                <p
+                  style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontStyle: "italic",
+                    fontSize: "14px",
+                    color: "#6B5744",
+                    marginTop: "8px",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {tagline}
+                </p>
+                <div
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "9px",
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "hsl(var(--gold))",
+                    marginTop: "10px",
+                  }}
+                >
+                  {tags}
                 </div>
                 <p
                   style={{
                     fontFamily: "'Open Sans', sans-serif",
                     fontSize: "12px",
-                    color: "rgba(0,0,0,0.7)",
-                    marginTop: "6px",
-                    lineHeight: 1.55,
+                    color: "rgba(0,0,0,0.72)",
+                    marginTop: "12px",
+                    lineHeight: 1.6,
                   }}
                 >
                   {desc}
@@ -451,6 +493,7 @@ const ConsejoFelino = () => {
           </div>
         </div>
       </section>
+
 
       {/* SECTION 5 — PHILOSOPHY BAND */}
       <section
