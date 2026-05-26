@@ -161,6 +161,7 @@ const ConsejoFelino = () => {
             width: "100%",
             height: "100%",
             objectFit: "cover",
+            objectPosition: "center right",
           }}
         />
         <div
@@ -179,11 +180,13 @@ const ConsejoFelino = () => {
                 fontWeight: 600,
                 fontSize: "clamp(28px, 3.4vw, 44px)",
                 color: "hsl(var(--cream))",
-                lineHeight: 1.15,
+                lineHeight: 1.2,
                 letterSpacing: "-0.01em",
               }}
             >
-              {es ? "Siete gatos." : "Seven cats."}
+              Son nuestra manada,<br />
+              nuestros maestros<br />
+              y la razón por la que
               <span
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
@@ -191,12 +194,12 @@ const ConsejoFelino = () => {
                   fontStyle: "italic",
                   color: "hsl(var(--gold))",
                   display: "block",
-                  fontSize: "0.72em",
-                  marginTop: "10px",
+                  fontSize: "0.95em",
+                  marginTop: "8px",
                   letterSpacing: "0.005em",
                 }}
               >
-                {es ? "Siete formas de habitar." : "Seven ways of living."}
+                diseñamos diferente.
               </span>
             </h1>
             <p
@@ -209,11 +212,10 @@ const ConsejoFelino = () => {
                 marginTop: "22px",
                 lineHeight: 1.75,
                 letterSpacing: "0.005em",
+                whiteSpace: "pre-line",
               }}
             >
-              {es
-                ? "El Consejo Felino no es un concepto inventado. Es el origen real del criterio GATIUM. Cada gato de la manada habita distinto. Observarlos fue la base de todo lo que diseñamos."
-                : "The Feline Council is not an invented concept. It is the real origin of the GATIUM criterion. Each cat in the colony lives differently. Observing them was the basis of everything we design."}
+              {"El Consejo Felino no nació como una idea de marca. Nació de convivir con siete gatos completamente distintos.\n\nObservándolos entendimos algo importante: cada gato necesita habitar el espacio de una manera diferente."}
             </p>
             <a
               href="#members"
@@ -232,11 +234,12 @@ const ConsejoFelino = () => {
                 boxShadow: "0 6px 24px rgba(0,0,0,0.25)",
               }}
             >
-              {es ? "CONOCE A NUESTRO CONSEJO →" : "MEET OUR COUNCIL →"}
+              CONOCE AL CONSEJO →
             </a>
           </div>
         </div>
       </section>
+
 
       {/* SECTION 2 — HOW THE COUNCIL PARTICIPATES */}
       <section className="py-12 md:py-16 px-6 md:px-16" style={{ backgroundColor: "hsl(var(--cream))" }}>
