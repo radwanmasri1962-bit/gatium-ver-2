@@ -599,8 +599,8 @@ const ConsejoFelino = () => {
           }}
         >
           {es
-            ? "No diseñamos para gatos imaginarios. Diseñamos desde una convivencia real."
-            : "We don't design for imaginary cats. We design from real cohabitation."}
+            ? "Tú conoces a tu gato. Nosotros ayudamos a transformar eso en un espacio pensado para él."
+            : "You know your cat. We help turn that into a space designed for them."}
         </h2>
         <Link
           to="/#solutions"
@@ -618,8 +618,9 @@ const ConsejoFelino = () => {
             borderRadius: "2px",
           }}
         >
-          {es ? "CONOCE NUESTRAS SOLUCIONES →" : "DISCOVER OUR SOLUTIONS →"}
+          Conoce nuestras soluciones →
         </Link>
+
       </section>
     </>
   );
