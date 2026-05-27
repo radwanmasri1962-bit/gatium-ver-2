@@ -89,9 +89,9 @@ export const Navbar = ({ transparent: _t = false }: Props) => {
 
         {/* Right: CTA */}
         <div className="hidden md:flex items-center gap-4">
-          <a href="#contacto" className="btn-gold" style={{ borderRadius: "8px" }}>
+          <Link to="/contacto" className="btn-gold" style={{ borderRadius: "8px" }}>
             {t("nav.cta")}
-          </a>
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -126,9 +126,9 @@ export const Navbar = ({ transparent: _t = false }: Props) => {
             ))}
           </nav>
           <div className="flex flex-col items-center gap-5 mt-4">
-            <a href="#contacto" className="btn-gold" onClick={() => setOpen(false)}>
+            <Link to="/contacto" className="btn-gold" onClick={() => setOpen(false)}>
               {t("nav.cta")}
-            </a>
+            </Link>
           </div>
         </div>
       )}
