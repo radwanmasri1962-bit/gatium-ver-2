@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Eye, Lightbulb, Pencil, Star, Cat } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
@@ -217,25 +216,6 @@ const ConsejoFelino = () => {
             >
               {"El Consejo Felino no nació como una idea de marca. Nació de convivir con siete gatos completamente distintos.\n\nObservándolos entendimos algo importante: cada gato necesita habitar el espacio de una manera diferente."}
             </p>
-            <a
-              href="#members"
-              style={{
-                display: "inline-block",
-                marginTop: "28px",
-                backgroundColor: "hsl(var(--gold))",
-                color: "hsl(var(--near-black))",
-                fontFamily: "'Montserrat', sans-serif",
-                fontWeight: 700,
-                fontSize: "10px",
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                padding: "13px 28px",
-                borderRadius: "2px",
-                boxShadow: "0 6px 24px rgba(0,0,0,0.25)",
-              }}
-            >
-              CONOCE AL CONSEJO →
-            </a>
           </div>
         </div>
       </section>
@@ -602,24 +582,6 @@ const ConsejoFelino = () => {
             ? "Tú conoces a tu gato. Nosotros ayudamos a transformar eso en un espacio pensado para él."
             : "You know your cat. We help turn that into a space designed for them."}
         </h2>
-        <Link
-          to="/#solutions"
-          className="inline-flex"
-          style={{
-            marginTop: "32px",
-            backgroundColor: "#000",
-            color: "hsl(var(--cream))",
-            fontFamily: "'Montserrat', sans-serif",
-            fontWeight: 700,
-            fontSize: "10px",
-            letterSpacing: "0.2em",
-            textTransform: "uppercase",
-            padding: "14px 28px",
-            borderRadius: "2px",
-          }}
-        >
-          Conoce nuestras soluciones →
-        </Link>
 
       </section>
     </>

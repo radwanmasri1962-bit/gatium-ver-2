@@ -10,7 +10,7 @@ import solution4 from "@/assets/solution-4-furniture.jpg";
 import solution5 from "@/assets/solution-5-litter.jpg";
 import solution6 from "@/assets/solution-6-colonies.jpg";
 
-import { whatsappUrl } from "@/lib/whatsapp";
+
 
 const PhotoPlaceholder = ({ label, ratio }: { label: string; ratio?: string }) => (
   <div
@@ -214,10 +214,8 @@ const Index = () => {
                 : "We design feline spaces with purpose. Without breaking the harmony of your home."}
             </p>
             <div className="flex flex-wrap" style={{ marginTop: "32px", gap: "14px" }}>
-              <a
-                href={whatsappUrl(lang)}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                to="/contacto"
                 style={{
                   backgroundColor: "hsl(var(--gold))",
                   color: "hsl(var(--near-black))",
@@ -231,7 +229,7 @@ const Index = () => {
                 }}
               >
                 {es ? "Envíanos tu espacio" : "Send us your space"}
-              </a>
+              </Link>
               <a
                 href="#solutions"
                 style={{
@@ -530,10 +528,8 @@ const Index = () => {
           className="flex flex-wrap justify-center"
           style={{ marginTop: "36px", gap: "14px" }}
         >
-          <a
-            href={whatsappUrl(lang)}
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            to="/contacto"
             style={{
               backgroundColor: "hsl(var(--gold))",
               color: "hsl(var(--near-black))",
@@ -547,7 +543,7 @@ const Index = () => {
             }}
           >
             {es ? "ENVÍANOS TU ESPACIO" : "SEND US YOUR SPACE"}
-          </a>
+          </Link>
           <Link
             to="/contacto"
             style={{
