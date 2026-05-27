@@ -126,9 +126,9 @@ export const Navbar = ({ transparent: _t = false }: Props) => {
             ))}
           </nav>
           <div className="flex flex-col items-center gap-5 mt-4">
-            <a href="#contacto" className="btn-gold" onClick={() => setOpen(false)}>
+            <Link to="/contacto" className="btn-gold" onClick={() => setOpen(false)}>
               {t("nav.cta")}
-            </a>
+            </Link>
           </div>
         </div>
       )}
