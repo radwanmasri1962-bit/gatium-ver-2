@@ -27,11 +27,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLangState] = useState<Lang>("es");
 
   useEffect(() => {
-    const stored = localStorage.getItem("gatium-lang") as Lang | null;
-    if (stored === "es" || stored === "en") setLangState(stored);
-  }, []);
-
-  useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
 

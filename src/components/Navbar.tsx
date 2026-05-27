@@ -3,7 +3,6 @@ import { Link, NavLink as RouterNavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logoDark from "@/assets/logo-gatium.svg";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { LanguageToggle } from "./LanguageToggle";
 
 const links = [
   { to: "/", key: "nav.inicio" },
@@ -88,9 +87,8 @@ export const Navbar = ({ transparent: _t = false }: Props) => {
           ))}
         </nav>
 
-        {/* Right: lang + CTA */}
+        {/* Right: CTA */}
         <div className="hidden md:flex items-center gap-4">
-          <LanguageToggle />
           <a href="#contacto" className="btn-gold" style={{ borderRadius: "8px" }}>
             {t("nav.cta")}
           </a>
@@ -128,7 +126,6 @@ export const Navbar = ({ transparent: _t = false }: Props) => {
             ))}
           </nav>
           <div className="flex flex-col items-center gap-5 mt-4">
-            <LanguageToggle />
             <a href="#contacto" className="btn-gold" onClick={() => setOpen(false)}>
               {t("nav.cta")}
             </a>
