@@ -160,8 +160,9 @@ const ConsejoFelino = () => {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: "center right",
+            objectPosition: "50% 20%",
           }}
+
         />
         <div
           style={{
@@ -171,8 +172,9 @@ const ConsejoFelino = () => {
               "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(20,12,4,0.55) 80%, rgba(20,12,4,0.75) 100%)",
           }}
         />
-        <div className="relative flex flex-col justify-end px-[18px] pb-[40px] md:px-20 md:pb-[64px]" style={{ minHeight: "80vh" }}>
-          <div className="w-full md:ml-[6%]" style={{ maxWidth: "560px" }}>
+        <div className="relative flex flex-col justify-end px-[18px] pb-[40px] md:px-16 md:pb-[64px]" style={{ minHeight: "80vh" }}>
+          <div className="w-full" style={{ maxWidth: "560px" }}>
+
             <h1
               style={{
                 fontFamily: "'Montserrat', sans-serif",
@@ -191,7 +193,8 @@ const ConsejoFelino = () => {
                   fontFamily: "'Cormorant Garamond', serif",
                   fontWeight: 500,
                   fontStyle: "italic",
-                  color: "hsl(var(--gold))",
+                  color: "#ffffff",
+
                   display: "block",
                   fontSize: "0.95em",
                   marginTop: "8px",
@@ -349,23 +352,20 @@ const ConsejoFelino = () => {
         className="py-12 md:py-16 px-6 md:px-16"
         style={{ backgroundColor: "hsl(var(--cream))" }}
       >
-        <div className="text-center" style={eyebrow}>
-          CONSEJO FELINO
-        </div>
         <h2
           className="text-center"
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontWeight: 600,
-            fontStyle: "italic",
-            fontSize: "32px",
-            color: "#000",
-            marginTop: "12px",
-            lineHeight: 1.2,
+            fontFamily: "'Montserrat', sans-serif",
+            fontWeight: 700,
+            fontSize: "10px",
+            letterSpacing: "0.3em",
+            textTransform: "uppercase",
+            color: "hsl(var(--gold))",
           }}
         >
           Integrantes del Consejo Felino
         </h2>
+
         <p
           className="text-center mx-auto"
           style={{
