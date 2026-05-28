@@ -429,9 +429,11 @@ const ComoTrabajamos = () => {
           return (
             <section
               key={cat.key}
+              id={cat.key}
               className="px-[20px] md:px-16 py-[60px] md:py-[80px]"
               style={{ backgroundColor: "hsl(var(--cream))" }}
             >
+
               <div className="max-w-[1200px] mx-auto">
                 <button
                   type="button"
