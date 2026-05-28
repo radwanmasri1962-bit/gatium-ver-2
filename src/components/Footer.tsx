@@ -40,7 +40,8 @@ export const Footer = () => {
 
   return (
     <footer style={{ backgroundColor: "hsl(var(--near-black))" }}>
-      <div className="px-6 md:px-16 pt-16 pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="px-6 md:px-16 pt-16 pb-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+
         {/* Col 1 */}
         <div className="space-y-5">
           <img src={logoDark} alt="GATIUM" className="h-8 w-auto" />
@@ -80,19 +81,6 @@ export const Footer = () => {
           </ul>
         </div>
 
-        {/* Col 3 */}
-        <div>
-          <div className="ui-label mb-4">{t("footer.solutions")}</div>
-          <ul>
-            {solLinks.map((k) => (
-              <li key={k}>
-                <Link to="/#solutions" style={linkStyle} className="hover:!text-[hsl(var(--gold))]">
-                  {t(k)}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
 
         {/* Col 4 */}
         <div className="space-y-4">

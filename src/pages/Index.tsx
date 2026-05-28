@@ -94,6 +94,7 @@ const Index = () => {
     {
       Icon: IconHouseGrid,
       image: solution1,
+      to: "/como-trabajamos#catios",
       title: es ? "Catios y espacios exteriores seguros" : "Catios and safe outdoor spaces",
       desc: es
         ? "Libertad controlada para explorar, tomar sol y observar."
@@ -102,6 +103,7 @@ const Index = () => {
     {
       Icon: IconVertical,
       image: solution2,
+      to: "/como-trabajamos#circuitos",
       title: es ? "Muros y recorridos verticales" : "Wall circuits and vertical routes",
       desc: es
         ? "Altura, circulación y territorio en equilibrio."
@@ -110,12 +112,14 @@ const Index = () => {
     {
       Icon: IconFurniture,
       image: solution4,
+      to: "/como-trabajamos#mobiliario",
       title: es ? "Mobiliario funcional para convivencia felina" : "Functional feline furniture",
       desc: es
         ? "Espacios que facilitan la limpieza y la convivencia."
         : "Spaces that ease cleaning and cohabitation.",
     },
   ];
+
 
   
 
@@ -214,22 +218,6 @@ const Index = () => {
                 : "We design feline spaces with purpose. Without breaking the harmony of your home."}
             </p>
             <div className="flex flex-wrap" style={{ marginTop: "32px", gap: "14px" }}>
-              <Link
-                to="/contacto"
-                style={{
-                  backgroundColor: "hsl(var(--gold))",
-                  color: "hsl(var(--near-black))",
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "10px",
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  padding: "14px 28px",
-                  borderRadius: "2px",
-                }}
-              >
-                {es ? "Envíanos tu espacio" : "Send us your space"}
-              </Link>
               <a
                 href="#solutions"
                 style={{
@@ -247,6 +235,7 @@ const Index = () => {
                 {es ? "Conoce nuestras soluciones" : "Discover our solutions"}
               </a>
             </div>
+
           </div>
         </div>
       </HeroCarousel>
@@ -426,7 +415,7 @@ const Index = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           style={{ marginTop: "48px" }}
         >
-          {solutions.map(({ image, title, desc }) => (
+          {solutions.map(({ image, title, desc, to }) => (
             <div
               key={title}
               className="overflow-hidden transition-transform duration-300 hover:-translate-y-1 group"
@@ -469,7 +458,7 @@ const Index = () => {
                   {desc}
                 </p>
                 <Link
-                  to="/contacto"
+                  to={to}
                   className="inline-flex items-center gap-2"
                   style={{
                     marginTop: "18px",
@@ -486,6 +475,7 @@ const Index = () => {
               </div>
             </div>
           ))}
+
         </div>
       </section>
 
@@ -528,22 +518,6 @@ const Index = () => {
           className="flex flex-wrap justify-center"
           style={{ marginTop: "36px", gap: "14px" }}
         >
-          <Link
-            to="/contacto"
-            style={{
-              backgroundColor: "hsl(var(--gold))",
-              color: "hsl(var(--near-black))",
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 700,
-              fontSize: "10px",
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              padding: "14px 28px",
-              borderRadius: "2px",
-            }}
-          >
-            {es ? "ENVÍANOS TU ESPACIO" : "SEND US YOUR SPACE"}
-          </Link>
           <Link
             to="/contacto"
             style={{
