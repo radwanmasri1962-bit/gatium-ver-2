@@ -93,21 +93,7 @@ const Contacto = () => {
   };
 
   return (
-  const errorText = (k: string) =>
-    errors[k] ? (
-      <div
-        style={{
-          fontFamily: "'Open Sans', sans-serif",
-          fontSize: "11px",
-          color: "#b34a3a",
-          marginTop: "4px",
-        }}
-      >
-        {errors[k]}
-      </div>
-    ) : null;
-
-  return (
+    <>
     <>
       <section className="relative w-full overflow-hidden" style={{ height: "75vh" }}>
         <img
