@@ -17,7 +17,6 @@ export const Footer = () => {
   const navLinks = [
     { to: "/", key: "nav.inicio" },
     { to: "/nosotros", key: "nav.nosotros" },
-    { to: "/#solutions", key: "nav.soluciones" },
     { to: "/consejo-felino", key: "nav.consejo" },
     { to: "/como-trabajamos", key: "nav.como" },
     { to: "/contacto", key: "nav.contacto" },
