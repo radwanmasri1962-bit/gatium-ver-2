@@ -358,6 +358,7 @@ const Contacto = () => {
 
             <button
               type="submit"
+              disabled={submitting}
               style={{
                 marginTop: "8px",
                 backgroundColor: "#000",
@@ -371,11 +372,27 @@ const Contacto = () => {
                 width: "100%",
                 borderRadius: "2px",
                 border: "none",
-                cursor: "pointer",
+                cursor: submitting ? "not-allowed" : "pointer",
+                opacity: submitting ? 0.6 : 1,
               }}
             >
-              {es ? "ENVIAR MI ESPACIO →" : "SEND MY SPACE →"}
+              {submitting
+                ? es ? "ENVIANDO..." : "SENDING..."
+                : es ? "ENVIAR MI ESPACIO →" : "SEND MY SPACE →"}
             </button>
+            {submitMessage && (
+              <p
+                className="text-center"
+                style={{
+                  fontFamily: "'Open Sans', sans-serif",
+                  fontSize: "12px",
+                  color: "#000",
+                  marginTop: "4px",
+                }}
+              >
+                {submitMessage}
+              </p>
+            )}
             <p
               className="text-center"
               style={{
