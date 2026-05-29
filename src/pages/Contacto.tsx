@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Camera, PawPrint } from "lucide-react";
+import { PawPrint } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import apoloWindow from "@/assets/contacto/apolo-window-horizontal.jpg";
@@ -86,7 +86,7 @@ const Contacto = () => {
     catName: "",
     description: "",
   });
-  const [fileNames, setFileNames] = useState<string[]>([]);
+  
 
   const update = (k: keyof typeof form, v: string) => {
     setForm((p) => ({ ...p, [k]: v }));
@@ -208,7 +208,6 @@ const Contacto = () => {
           <form
             action="https://formspree.io/f/mvzyldqg"
             method="POST"
-            encType="multipart/form-data"
             noValidate
             className="flex flex-col gap-7 md:pr-12"
           >
@@ -264,73 +263,6 @@ const Contacto = () => {
               />
             </div>
 
-            <div>
-              <label style={fieldLabel}>
-                {es ? "ADJUNTAR FOTOS O VIDEOS" : "ATTACH PHOTOS OR VIDEOS"}
-              </label>
-              <label
-                className="flex flex-col items-center justify-center cursor-pointer gap-3 transition-colors hover:bg-[hsl(var(--cream))]/70"
-                style={{
-                  border: "1px solid rgba(0,0,0,0.10)",
-                  borderRadius: "8px",
-                  padding: "28px 20px",
-                  textAlign: "center",
-                  backgroundColor: "hsl(var(--cream))",
-                }}
-              >
-                <Camera size={26} style={{ color: "hsl(var(--gold))" }} strokeWidth={1.4} />
-                <span
-                  style={{
-                    fontFamily: "'Open Sans', sans-serif",
-                    fontSize: "13px",
-                    color: "rgba(0,0,0,0.6)",
-                    lineHeight: 1.6,
-                    maxWidth: "360px",
-                  }}
-                >
-                  {es
-                    ? "Adjunta fotos o videos de tu espacio, balcón, muro o área que te gustaría transformar."
-                    : "Attach photos or videos of your space, balcony, wall or area you'd like to transform."}
-                </span>
-                <span
-                  style={{
-                    fontFamily: "'Montserrat', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "9px",
-                    letterSpacing: "0.25em",
-                    textTransform: "uppercase",
-                    color: "hsl(var(--gold))",
-                  }}
-                >
-                  {es ? "Hasta 4 archivos" : "Up to 4 files"}
-                </span>
-                <input
-                  type="file"
-                  name="attachments"
-                  accept="image/*,video/*"
-                  multiple
-                  className="hidden"
-                  onChange={(e) => {
-                    const files = Array.from(e.target.files ?? []).slice(0, 4);
-                    setFileNames(files.map((f) => f.name));
-                  }}
-                />
-                {fileNames.length > 0 && (
-                  <ul
-                    style={{
-                      marginTop: "6px",
-                      fontFamily: "'Open Sans', sans-serif",
-                      fontSize: "12px",
-                      color: "rgba(0,0,0,0.7)",
-                    }}
-                  >
-                    {fileNames.map((n) => (
-                      <li key={n}>· {n}</li>
-                    ))}
-                  </ul>
-                )}
-              </label>
-            </div>
 
             <div>
               <label style={fieldLabel}>{es ? "BREVE DESCRIPCIÓN" : "BRIEF DESCRIPTION"}</label>
