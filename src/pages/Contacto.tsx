@@ -86,7 +86,7 @@ const Contacto = () => {
     catName: "",
     description: "",
   });
-  const [fileNames, setFileNames] = useState<string[]>([]);
+  
 
   const update = (k: keyof typeof form, v: string) => {
     setForm((p) => ({ ...p, [k]: v }));
