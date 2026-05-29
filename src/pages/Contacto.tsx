@@ -94,7 +94,6 @@ const Contacto = () => {
 
   return (
     <>
-    <>
       <section className="relative w-full overflow-hidden" style={{ height: "75vh" }}>
         <img
           src={apoloWindow}
