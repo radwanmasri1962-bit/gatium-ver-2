@@ -240,11 +240,13 @@ const Contacto = () => {
           </p>
 
           <form
-            action="https://formspree.io/f/mvzyldqg"
-            method="POST"
+            onSubmit={handleSubmit}
+            encType="multipart/form-data"
             noValidate
             className="flex flex-col gap-7 md:pr-12"
           >
+            <input type="hidden" name="access_key" value="0805a822-565f-4371-86e1-2903c95458f2" />
+
             <div>
               <label style={fieldLabel}>{es ? "NOMBRE COMPLETO" : "FULL NAME"}</label>
               <input
