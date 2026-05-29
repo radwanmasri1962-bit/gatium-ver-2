@@ -88,8 +88,42 @@ const Contacto = () => {
   });
   
 
+  const [submitting, setSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState<string | null>(null);
+
   const update = (k: keyof typeof form, v: string) => {
     setForm((p) => ({ ...p, [k]: v }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formEl = e.currentTarget;
+    const fileInput = formEl.querySelector<HTMLInputElement>('input[type="file"]');
+    if (fileInput && fileInput.files && fileInput.files.length > 4) {
+      setSubmitMessage(es ? "Máximo 4 archivos permitidos." : "Maximum 4 files allowed.");
+      return;
+    }
+    setSubmitting(true);
+    setSubmitMessage(null);
+    try {
+      const data = new FormData(formEl);
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+      });
+      const json = await res.json();
+      if (json.success) {
+        setSubmitMessage(es ? "¡Gracias! Tu mensaje fue enviado." : "Thank you! Your message has been sent.");
+        formEl.reset();
+        setForm({ name: "", email: "", phone: "", catName: "", description: "" });
+      } else {
+        setSubmitMessage(es ? "Hubo un error. Intenta de nuevo." : "There was an error. Please try again.");
+      }
+    } catch {
+      setSubmitMessage(es ? "Hubo un error. Intenta de nuevo." : "There was an error. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
