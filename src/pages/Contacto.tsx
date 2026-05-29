@@ -204,7 +204,12 @@ const Contacto = () => {
             {es
               ? "Entre más detalles compartas, mejor podremos ayudarte."
               : "The more details you share, the better we can help you."}
+          </p>
+
           <form
+            action="https://formspree.io/f/3gUCJhTYzuP6Cn"
+            method="POST"
+            encType="multipart/form-data"
             action="https://formspree.io/f/3gUCJhTYzuP6Cn"
             method="POST"
             encType="multipart/form-data"
