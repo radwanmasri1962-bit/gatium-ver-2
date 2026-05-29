@@ -88,8 +88,42 @@ const Contacto = () => {
   });
   
 
+  const [submitting, setSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState<string | null>(null);
+
   const update = (k: keyof typeof form, v: string) => {
     setForm((p) => ({ ...p, [k]: v }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formEl = e.currentTarget;
+    const fileInput = formEl.querySelector<HTMLInputElement>('input[type="file"]');
+    if (fileInput && fileInput.files && fileInput.files.length > 4) {
+      setSubmitMessage(es ? "Máximo 4 archivos permitidos." : "Maximum 4 files allowed.");
+      return;
+    }
+    setSubmitting(true);
+    setSubmitMessage(null);
+    try {
+      const data = new FormData(formEl);
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+      });
+      const json = await res.json();
+      if (json.success) {
+        setSubmitMessage(es ? "¡Gracias! Tu mensaje fue enviado." : "Thank you! Your message has been sent.");
+        formEl.reset();
+        setForm({ name: "", email: "", phone: "", catName: "", description: "" });
+      } else {
+        setSubmitMessage(es ? "Hubo un error. Intenta de nuevo." : "There was an error. Please try again.");
+      }
+    } catch {
+      setSubmitMessage(es ? "Hubo un error. Intenta de nuevo." : "There was an error. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -206,11 +240,13 @@ const Contacto = () => {
           </p>
 
           <form
-            action="https://formspree.io/f/mvzyldqg"
-            method="POST"
+            onSubmit={handleSubmit}
+            encType="multipart/form-data"
             noValidate
             className="flex flex-col gap-7 md:pr-12"
           >
+            <input type="hidden" name="access_key" value="0805a822-565f-4371-86e1-2903c95458f2" />
+
             <div>
               <label style={fieldLabel}>{es ? "NOMBRE COMPLETO" : "FULL NAME"}</label>
               <input
@@ -281,8 +317,48 @@ const Contacto = () => {
               />
             </div>
 
+            <div>
+              <label style={fieldLabel}>
+                {es
+                  ? "ADJUNTA FOTOS O VIDEOS DE TU ESPACIO (MÁXIMO 4 ARCHIVOS)"
+                  : "ATTACH PHOTOS OR VIDEOS OF YOUR SPACE (MAX 4 FILES)"}
+              </label>
+              <input
+                type="file"
+                name="attachment[]"
+                accept="image/*,video/*"
+                multiple
+                onChange={(e) => {
+                  if (e.target.files && e.target.files.length > 4) {
+                    setSubmitMessage(es ? "Máximo 4 archivos permitidos." : "Maximum 4 files allowed.");
+                    e.target.value = "";
+                  } else {
+                    setSubmitMessage(null);
+                  }
+                }}
+                style={{
+                  ...inputStyle,
+                  padding: "12px 0",
+                  fontSize: "13px",
+                }}
+              />
+              <p
+                style={{
+                  fontFamily: "'Open Sans', sans-serif",
+                  fontSize: "11px",
+                  color: "rgba(0,0,0,0.55)",
+                  marginTop: "6px",
+                }}
+              >
+                {es
+                  ? "Formatos aceptados: JPG, PNG, MP4. Máx. 4 archivos."
+                  : "Accepted formats: JPG, PNG, MP4. Max 4 files."}
+              </p>
+            </div>
+
             <button
               type="submit"
+              disabled={submitting}
               style={{
                 marginTop: "8px",
                 backgroundColor: "#000",
@@ -296,11 +372,27 @@ const Contacto = () => {
                 width: "100%",
                 borderRadius: "2px",
                 border: "none",
-                cursor: "pointer",
+                cursor: submitting ? "not-allowed" : "pointer",
+                opacity: submitting ? 0.6 : 1,
               }}
             >
-              {es ? "ENVIAR MI ESPACIO →" : "SEND MY SPACE →"}
+              {submitting
+                ? es ? "ENVIANDO..." : "SENDING..."
+                : es ? "ENVIAR MI ESPACIO →" : "SEND MY SPACE →"}
             </button>
+            {submitMessage && (
+              <p
+                className="text-center"
+                style={{
+                  fontFamily: "'Open Sans', sans-serif",
+                  fontSize: "12px",
+                  color: "#000",
+                  marginTop: "4px",
+                }}
+              >
+                {submitMessage}
+              </p>
+            )}
             <p
               className="text-center"
               style={{
