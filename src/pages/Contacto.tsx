@@ -317,6 +317,45 @@ const Contacto = () => {
               />
             </div>
 
+            <div>
+              <label style={fieldLabel}>
+                {es
+                  ? "ADJUNTA FOTOS O VIDEOS DE TU ESPACIO (MÁXIMO 4 ARCHIVOS)"
+                  : "ATTACH PHOTOS OR VIDEOS OF YOUR SPACE (MAX 4 FILES)"}
+              </label>
+              <input
+                type="file"
+                name="attachment[]"
+                accept="image/*,video/*"
+                multiple
+                onChange={(e) => {
+                  if (e.target.files && e.target.files.length > 4) {
+                    setSubmitMessage(es ? "Máximo 4 archivos permitidos." : "Maximum 4 files allowed.");
+                    e.target.value = "";
+                  } else {
+                    setSubmitMessage(null);
+                  }
+                }}
+                style={{
+                  ...inputStyle,
+                  padding: "12px 0",
+                  fontSize: "13px",
+                }}
+              />
+              <p
+                style={{
+                  fontFamily: "'Open Sans', sans-serif",
+                  fontSize: "11px",
+                  color: "rgba(0,0,0,0.55)",
+                  marginTop: "6px",
+                }}
+              >
+                {es
+                  ? "Formatos aceptados: JPG, PNG, MP4. Máx. 4 archivos."
+                  : "Accepted formats: JPG, PNG, MP4. Max 4 files."}
+              </p>
+            </div>
+
             <button
               type="submit"
               style={{
