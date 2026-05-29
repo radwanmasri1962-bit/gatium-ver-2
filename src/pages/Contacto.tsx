@@ -206,7 +206,7 @@ const Contacto = () => {
           </p>
 
           <form
-            action="https://formspree.io/f/3gUCJhTYzuP6Cn"
+            action="https://formspree.io/f/mvzyldqg"
             method="POST"
             encType="multipart/form-data"
             noValidate
