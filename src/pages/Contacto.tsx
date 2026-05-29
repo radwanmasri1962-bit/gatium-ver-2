@@ -209,9 +209,6 @@ const Contacto = () => {
             action="https://formspree.io/f/3gUCJhTYzuP6Cn"
             method="POST"
             encType="multipart/form-data"
-            action="https://formspree.io/f/3gUCJhTYzuP6Cn"
-            method="POST"
-            encType="multipart/form-data"
             noValidate
             className="flex flex-col gap-7 md:pr-12"
           >
