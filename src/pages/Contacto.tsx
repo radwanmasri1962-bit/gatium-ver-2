@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Camera, PawPrint } from "lucide-react";
+import { PawPrint } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import apoloWindow from "@/assets/contacto/apolo-window-horizontal.jpg";
