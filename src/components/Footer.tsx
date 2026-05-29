@@ -77,6 +77,11 @@ export const Footer = () => {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link to="/faq" style={linkStyle} className="hover:!text-[hsl(var(--gold))]">
+                Preguntas Frecuentes
+              </Link>
+            </li>
           </ul>
         </div>
 
