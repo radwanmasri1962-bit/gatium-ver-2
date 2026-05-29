@@ -1,17 +1,14 @@
 import { useState } from "react";
 
-import { z } from "zod";
 import { Camera, PawPrint } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
-import { toast } from "sonner";
 import apoloWindow from "@/assets/contacto/apolo-window-horizontal.jpg";
 import anubisInterior from "@/assets/contacto/anubis-interior.jpg";
 
 void PhotoPlaceholder;
 
 import { whatsappUrl } from "@/lib/whatsapp";
-
 const eyebrow: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
   fontWeight: 700,
@@ -82,26 +79,6 @@ const Contacto = () => {
   const { lang } = useLanguage();
   const es = lang === "es";
 
-  const schema = z.object({
-    name: z
-      .string()
-      .trim()
-      .min(2, { message: es ? "Nombre demasiado corto." : "Name too short." })
-      .max(100),
-    email: z
-      .string()
-      .trim()
-      .email({ message: es ? "Correo inválido." : "Invalid email." })
-      .max(255),
-    phone: z.string().trim().max(40).optional().or(z.literal("")),
-    catName: z.string().trim().max(80).optional().or(z.literal("")),
-    description: z
-      .string()
-      .trim()
-      .min(10, { message: es ? "Cuéntanos un poco más." : "Tell us a bit more." })
-      .max(2000),
-  });
-
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -109,55 +86,11 @@ const Contacto = () => {
     catName: "",
     description: "",
   });
-  const [errors, setErrors] = useState<Record<string, string>>({});
   const [fileNames, setFileNames] = useState<string[]>([]);
 
   const update = (k: keyof typeof form, v: string) => {
     setForm((p) => ({ ...p, [k]: v }));
   };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const result = schema.safeParse(form);
-    if (!result.success) {
-      const fieldErrors: Record<string, string> = {};
-      result.error.issues.forEach((iss) => {
-        const k = String(iss.path[0]);
-        if (!fieldErrors[k]) fieldErrors[k] = iss.message;
-      });
-      setErrors(fieldErrors);
-      toast.error(es ? "Revisa los campos marcados." : "Please check the highlighted fields.");
-      return;
-    }
-    setErrors({});
-    toast.success(
-      es
-        ? "Gracias. Revisaremos tu espacio y te contactaremos muy pronto 🐾"
-        : "Thank you. We'll review your space and reach out very soon 🐾"
-    );
-    setForm({
-      name: "",
-      email: "",
-      phone: "",
-      catName: "",
-      description: "",
-    });
-    setFileNames([]);
-  };
-
-  const errorText = (k: string) =>
-    errors[k] ? (
-      <div
-        style={{
-          fontFamily: "'Open Sans', sans-serif",
-          fontSize: "11px",
-          color: "#b34a3a",
-          marginTop: "4px",
-        }}
-      >
-        {errors[k]}
-      </div>
-    ) : null;
 
   return (
     <>
@@ -272,11 +205,18 @@ const Contacto = () => {
               : "The more details you share, the better we can help you."}
           </p>
 
-          <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-7 md:pr-12">
+          <form
+            action="https://formspree.io/f/3gUCJhTYzuP6Cn"
+            method="POST"
+            encType="multipart/form-data"
+            noValidate
+            className="flex flex-col gap-7 md:pr-12"
+          >
             <div>
               <label style={fieldLabel}>{es ? "NOMBRE COMPLETO" : "FULL NAME"}</label>
               <input
                 type="text"
+                name="name"
                 value={form.name}
                 onChange={(e) => update("name", e.target.value)}
                 placeholder={es ? "Tu nombre" : "Your name"}
@@ -284,12 +224,12 @@ const Contacto = () => {
                 maxLength={100}
                 required
               />
-              {errorText("name")}
             </div>
             <div>
               <label style={fieldLabel}>{es ? "CORREO ELECTRÓNICO" : "EMAIL"}</label>
               <input
                 type="email"
+                name="_replyto"
                 value={form.email}
                 onChange={(e) => update("email", e.target.value)}
                 placeholder="tu@email.com"
@@ -297,12 +237,12 @@ const Contacto = () => {
                 maxLength={255}
                 required
               />
-              {errorText("email")}
             </div>
             <div>
               <label style={fieldLabel}>{es ? "TELÉFONO / WHATSAPP" : "PHONE / WHATSAPP"}</label>
               <input
                 type="tel"
+                name="phone"
                 value={form.phone}
                 onChange={(e) => update("phone", e.target.value)}
                 placeholder="+52 998 293 0144"
@@ -315,6 +255,7 @@ const Contacto = () => {
               <label style={fieldLabel}>{es ? "NOMBRE DE TU GATO" : "YOUR CAT'S NAME"}</label>
               <input
                 type="text"
+                name="catName"
                 value={form.catName}
                 onChange={(e) => update("catName", e.target.value)}
                 placeholder={es ? "¿Cómo se llama tu gato?" : "What's your cat's name?"}
@@ -365,6 +306,7 @@ const Contacto = () => {
                 </span>
                 <input
                   type="file"
+                  name="attachments"
                   accept="image/*,video/*"
                   multiple
                   className="hidden"
@@ -393,6 +335,7 @@ const Contacto = () => {
             <div>
               <label style={fieldLabel}>{es ? "BREVE DESCRIPCIÓN" : "BRIEF DESCRIPTION"}</label>
               <textarea
+                name="description"
                 value={form.description}
                 onChange={(e) => update("description", e.target.value)}
                 placeholder={
@@ -404,7 +347,6 @@ const Contacto = () => {
                 maxLength={2000}
                 required
               />
-              {errorText("description")}
             </div>
 
             <button

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Cat,
   Home,
@@ -113,6 +113,16 @@ const ComoTrabajamos = () => {
   const { lang } = useLanguage();
   const es = lang === "es";
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const el = document.getElementById(hash.replace('#', ''));
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+  }, []);
 
   const placeholderLabel = es ? "FOTO PRÓXIMAMENTE" : "PHOTO COMING SOON";
 
